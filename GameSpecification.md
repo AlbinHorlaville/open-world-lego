@@ -16,7 +16,8 @@
 * S -> Go backwards (in the opposite direction of vision).
 * D -> Take a step to the right.
 * Esc -> Jump
-* 1 to 9 -> Choose a element from 
-
-
-
+* 1 to 9 -> Choose a item    from the toolbar
+* E -> Open the inventory
+* A -> Release the current item.
+* Echap -> Open the game menu
+  

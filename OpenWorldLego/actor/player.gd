@@ -29,3 +29,21 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+	# var scene_main = get_node("/root/Main")
+	# var limit_map = scene_main.
+	# get_export("limit_map")
+	# # Control that the player doesn't leave the map
+	# if position.x < 0:
+	# 	position.x = 0
+	# elif position.x > limit_map.x:
+	#	position.x = limit_map.x
+	# if position.y < 0:
+	#	position.y = 0
+	# elif position.y > limit_map.y:
+	#	position.y = limit_map.y
+	# if position.z < 0:
+	#	position.z = 0
+	# elif position.z > limit_map.z:
+	#	position.z = limit_map.z
+	

@@ -6,6 +6,7 @@
 - Groupe : Création des users stories
 - Albin-Gregory : Formation Godot
 - Romain-Louane : Formation LDraw
+- Albin : Création du projet Godot et du README
 <br>
 <br>
 

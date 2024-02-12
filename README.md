@@ -50,8 +50,8 @@ gitGraph
 - Subject : https://air.imag.fr/index.php/Open_World_Lego_avec_Godot_et_LDraw
 
 ## Contact
-- Project manager : romain.miras@etu.univ-grenoble-alpes.fr
-- Git manager : **TODO Define**
+- Project manager : albin.horlaville@etu.univ-grenoble-alpes.fr
+- Git manager : romain.miras@etu.univ-grenoble-alpes.fr
 
 ## Authors
 - Romain MIRAS @mirasr (Scrum master)

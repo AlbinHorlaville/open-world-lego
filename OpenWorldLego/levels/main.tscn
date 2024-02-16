@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfhcgfhwneaq4"]
+[gd_scene load_steps=11 format=3 uid="uid://dfhcgfhwneaq4"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_1c0l0"]
 [ext_resource type="PackedScene" uid="uid://bcrxb66y5ubhl" path="res://actor/player.tscn" id="1_hphc1"]
 [ext_resource type="PackedScene" uid="uid://dkm25wxado0qi" path="res://blocks/dirt.tscn" id="2_h6mns"]
 [ext_resource type="PackedScene" uid="uid://ccchkqqsmlq6h" path="res://blocks/tree.tscn" id="3_1fss3"]
+[ext_resource type="Script" path="res://levels/Label.gd" id="5_hl650"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_4in38"]
 frequency = 0.007
@@ -18,11 +19,14 @@ albedo_color = Color(0, 0.254902, 0.513726, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oq4gy"]
 albedo_color = Color(1, 1, 0.458824, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_rilnt"]
+font_size = 50
+
 [node name="Main" type="Node"]
 script = ExtResource("1_1c0l0")
 dirt_scene = ExtResource("2_h6mns")
 tree_scene = ExtResource("3_1fss3")
-limit_map = Vector3(100, 100, 100)
+limit_map = Vector3(200, 100, 100)
 perlin_noise = SubResource("FastNoiseLite_4in38")
 color_dirt = SubResource("StandardMaterial3D_ydsef")
 color_water = SubResource("StandardMaterial3D_4oo4c")
@@ -37,3 +41,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5, 2.08165e-12)
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(-0.987794, -0.139096, 0.0701019, -0.00803732, 0.494972, 0.868872, -0.155555, 0.857703, -0.490048, -2.45818, 25.1483, -5.97979)
 fov = 104.062
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_rilnt")
+script = ExtResource("5_hl650")

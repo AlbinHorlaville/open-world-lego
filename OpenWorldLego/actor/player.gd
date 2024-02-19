@@ -46,4 +46,6 @@ func _physics_process(delta: float) -> void:
 	#	position.z = 0
 	# elif position.z > limit_map.z:
 	#	position.z = limit_map.z
-	
+
+func getCoordChunk():
+	return Vector3(int(position.x/16), int(position.y/16), int(position.z/16))

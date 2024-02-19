@@ -1,12 +1,8 @@
 extends Node
 
-@export var dirt_scene: PackedScene
-@export var tree_scene: PackedScene
 @export var limit_map: Vector3
-@export var perlin_noise: Noise
-@export var color_dirt: Material
-@export var color_water: Material
-@export var color_sand: Material
+
+@export var Chunk: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,26 +12,20 @@ func generateMap() -> void:
 	# Change the seed each time we play the game, comment to change it manualy
 	# perlin_noise.seed = randi()
 	# generate every block on the map
-	for i in range(limit_map.x):
-		for j in range(limit_map.z):
-			
-			var block = dirt_scene.instantiate()
-			
-			var currentPN = perlin_noise.get_noise_2d(i, j)
-			if currentPN < -0.1:
-				block.changeMaterial(color_water)
-				block.position = Vector3(i, 0, j)
-			elif currentPN <= 0.1:
-				block.changeMaterial(color_sand)
-				block.position = Vector3(i, 0, j)
+	for i in range(limit_map.x/16): # gives the number of chunks
+		for j in range(limit_map.z/16): # gives the number of chunks
+			var chunk = Chunk.instantiate()
+			chunk.CreateChunk(i, j)
+			$World.add_child(chunk)
+
+func _process(delta: float) -> void:
+	var children = $World.get_children()
+	for child in children:
+		if child is Node:
+			if distance(child.getCoordChunk(), $Player.getCoordChunk())<2:
+				child.set_visible(true)
 			else:
-				block.changeMaterial(color_dirt)
-				block.position = Vector3(i, int(currentPN*10), j)
-				
-				# Plant a tree (1 chance per 100)
-				if randi_range(0, 100)==1:
-					var tree = tree_scene.instantiate()
-					tree.position = Vector3(i, int(currentPN*10), j)
-					add_child(tree)
-				
-			add_child(block)
+				child.set_visible(false)
+
+func distance(p1, p2):
+	return sqrt(pow(p1.x-p2.x,2)+pow(p1.y-p2.y,2)+pow(p1.z-p2.z,2))

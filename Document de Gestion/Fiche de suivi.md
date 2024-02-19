@@ -18,7 +18,7 @@
 
 ## Tache réalisé du jour : 
 - Groupe : Création du Trello
-- Albin- : TODO
+- Albin- : Génération terrain. Création d'un bloc test et d'un arbre. Génération procédurale avec bruit de Perlin pour générer un environnement par Biôme.
 - Gregory : TODO
 - Loaune : TODO
 - Romain : Création de la première version du Gantt + Document de gestion
@@ -34,10 +34,14 @@
 
 ## Tache réalisé du jour : 
 - Romain-Louanne : Listages des différents assets voulus pour le jeu
+- Albin : Ajout du nombre de FPS pour mesurer les performances. Recherche d'optimisation quant au nombre d'objet gérer en simultané par Godot. 
 <br>
 <br>
 
 ## Questions du jour : 
 <br>
+Comment changer le material d'un fichier.glb importé ?
+Comment optimiser le nombre d'objet calculer chaque frame ?
+A quelle condition un objet in game doit-il être soumis à la gravité ?
 <br>
 

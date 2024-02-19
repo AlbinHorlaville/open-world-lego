@@ -10,6 +10,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Player.position = Vector3(100, 3, 100)
 	generateMap()
 
 func generateMap() -> void:
@@ -20,7 +21,7 @@ func generateMap() -> void:
 		for j in range(limit_map.z):
 			
 			var block = dirt_scene.instantiate()
-			
+			# 
 			var currentPN = perlin_noise.get_noise_2d(i, j)
 			if currentPN < -0.1:
 				block.changeMaterial(color_water)
@@ -37,5 +38,17 @@ func generateMap() -> void:
 					var tree = tree_scene.instantiate()
 					tree.position = Vector3(i, int(currentPN*10), j)
 					add_child(tree)
-				
+			block.set_visible(false)
 			add_child(block)
+
+func _process(delta: float) -> void:
+	for child in get_children():
+		if not (child is DirectionalLight3D or child is CharacterBody3D or child is Label):
+			var dist = distance(child.position, $Player.position)
+			if dist<20 && dist!=0:
+				child.set_visible(true)
+			else:
+				child.set_visible(false)
+
+func distance(position1, position2):
+	return sqrt(pow(position1.x-position2.x, 2) + pow(position1.y-position2.y, 2) + pow(position1.z-position2.z, 2))

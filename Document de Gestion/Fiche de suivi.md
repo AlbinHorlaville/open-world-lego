@@ -30,10 +30,10 @@
 <br>
 <br>
 
-# 12 Frevier
+# 19 Frevier
 
 ## Tache réalisé du jour : 
-TODO
+- Romain-Louanne : Listages des différents assets voulus pour le jeu
 <br>
 <br>
 

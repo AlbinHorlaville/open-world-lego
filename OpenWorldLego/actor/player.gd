@@ -48,4 +48,16 @@ func _physics_process(delta: float) -> void:
 	#	position.z = limit_map.z
 
 func getCoordChunk():
-	return Vector3(int(position.x/16), int(position.y/16), int(position.z/16))
+	return Vector2(int(position.x/16), int(position.z/16))
+
+# Return the position of all neighbors of a chunk and it position.
+#  XXX
+#  XOX
+#  XXX
+func getBehaviorsChunks():
+	var cur_pos =  getCoordChunk()
+	var neighbor = []
+	for x in range(cur_pos.x-1, cur_pos.x+2):
+		for y in range(cur_pos.y-1, cur_pos.y+2):
+			neighbor.append(Vector2(x, y))
+	return neighbor

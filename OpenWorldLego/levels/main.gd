@@ -4,28 +4,46 @@ extends Node
 
 @export var Chunk: PackedScene
 
+var DictChunk_ON:Dictionary # Dictionnary of chunks charged
+var DictChunk_OFF:Dictionary # Dictionnary of chunks uncharged
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	generateMap()
+	DictChunk_ON = {}
+	DictChunk_OFF = {}
+	# The player has to be on positives coordinates
+	$Player.position = Vector3(500, 10, 500)
 
-func generateMap() -> void:
-	# Change the seed each time we play the game, comment to change it manualy
-	# perlin_noise.seed = randi()
-	# generate every block on the map
-	for i in range(limit_map.x/16): # gives the number of chunks
-		for j in range(limit_map.z/16): # gives the number of chunks
-			var chunk = Chunk.instantiate()
-			chunk.CreateChunk(i, j)
-			$World.add_child(chunk)
+func _process(_delta: float) -> void:
+	var neighbors = $Player.getBehaviorsChunks()
+	var chunk
+	
+	# Remove entry of DictChunk_ON who does not appears in neighbors
+	for pos_chunk in DictChunk_ON:
+		if not pos_chunk in neighbors:
+			chunk = DictChunk_ON[pos_chunk]
+			DictChunk_OFF[pos_chunk] = chunk
+			chunk.set_visible(false)
+			DictChunk_ON.erase(pos_chunk)
 
-func _process(delta: float) -> void:
-	var children = $World.get_children()
-	for child in children:
-		if child is Node:
-			if distance(child.getCoordChunk(), $Player.getCoordChunk())<2:
-				child.set_visible(true)
-			else:
-				child.set_visible(false)
+	# Update DictChunk_ON and DictChunk_OFF
+	for pos_chunk in neighbors:
+		if pos_chunk in DictChunk_ON:
+			continue
+		if pos_chunk in DictChunk_OFF:
+			# Get the chunk and place it in DictChunk_ON
+			chunk = DictChunk_OFF[pos_chunk]
+			DictChunk_OFF.erase(pos_chunk)
+			DictChunk_ON[pos_chunk] = chunk
+			chunk.set_visible(true)
+			continue
+		# Case of new chunk who as to be charged
+		chunk = Chunk.instantiate()
+		chunk.CreateChunk(pos_chunk.x, pos_chunk.y)
+		chunk.set_visible(true)
+		DictChunk_ON[pos_chunk] = chunk
+		$World.add_child(chunk)
 
 func distance(p1, p2):
 	return sqrt(pow(p1.x-p2.x,2)+pow(p1.y-p2.y,2)+pow(p1.z-p2.z,2))
+	

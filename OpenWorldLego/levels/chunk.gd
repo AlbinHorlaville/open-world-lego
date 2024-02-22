@@ -11,7 +11,21 @@ extends Node
 
 var coordChunk:Vector2
 
+# To avoid to call an random generator each time we create a chunk,
+# We prebuild a random tab and iterate on it to decide if we build a tree on the current block
+var TabRandom:Array
+var k_TabRandom:int
+var is_Build:bool=false
+func BuildRandTab() -> void:
+	if not is_Build:
+		k_TabRandom = 0
+		TabRandom = []
+		for i in range(100):
+			TabRandom.append(randi_range(0, 200))
+		is_Build = true
+
 func CreateChunk(x, y):
+	BuildRandTab()
 	coordChunk = Vector2(x, y)
 	for i in range(tailleChunk):
 		for j in range(tailleChunk):
@@ -28,8 +42,11 @@ func CreateChunk(x, y):
 				block.changeMaterial(color_dirt)
 				block.position = Vector3(x*tailleChunk+i, int(currentPN*10), y*tailleChunk+j)
 				
-				# Plant a tree (1 chance per 100)
-				if randi_range(0, 100)==1:
+				k_TabRandom+=1
+				if k_TabRandom==100:
+					k_TabRandom = 0
+				## Plant a tree (1 chance per 100)
+				if TabRandom[k_TabRandom]==TabRandom[0]:
 					var tree = tree_scene.instantiate()
 					tree.position = Vector3(tailleChunk*x+i, int(currentPN*10), tailleChunk*y+j)
 					add_child(tree)

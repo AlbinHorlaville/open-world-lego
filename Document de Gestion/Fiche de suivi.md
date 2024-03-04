@@ -47,3 +47,21 @@ Comment optimiser le nombre d'objet calculer chaque frame ?
 A quelle condition un objet in game doit-il être soumis à la gravité ?
 <br>
 
+# 4 Mars
+
+## Tache réalisé du jour : 
+- Romain-Louane : 
+- Louane : 
+- Romain : 
+- Albin : Adaptation de la génération du monde aux LEGO. Chaque pièce LEGO doit être scale de 62.5 pour matcher qu'une largeur de pièce 2x2 fasse 1 mêtre.
+<br>
+<br>
+
+## Questions du jour : 
+<br>
+Comment faire de l'eau ? (interaction eau/personnage)
+Comment faire des biomes ? (avec du bruit de Perlin)
+<br>
+
+
+

@@ -52,7 +52,7 @@ A quelle condition un objet in game doit-il être soumis à la gravité ?
 ## Tache réalisé du jour : 
 - Romain-Louane : 
 - Louane : 
-- Romain : 
+- Romain : Gestion de changement de matérial node3D. Gestion de projet (Matrice de Motivation). Formation Godot + Animation Personnage
 - Albin : Adaptation de la génération du monde aux LEGO. Chaque pièce LEGO doit être scale de 62.5 pour matcher qu'une largeur de pièce 2x2 fasse 1 mêtre.
 <br>
 <br>

@@ -7,9 +7,6 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-# limit of the viewing range of the player (in chunks)
-var limit_view:int = 2
-
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -32,15 +29,21 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-
-func getCoordChunk():
-	return Vector2(int(position.x/16), int(position.z/16))
-
-# Return the position of all neighbors of a chunk in it range vision.
-func getBehaviorsChunks():
-	var cur_pos =  getCoordChunk()
-	var neighbor = []
-	for x in range(cur_pos.x-limit_view, cur_pos.x+limit_view+1):
-		for y in range(cur_pos.y-limit_view, cur_pos.y+limit_view+1):
-			neighbor.append(Vector2(x, y))
-	return neighbor
+	
+	# var scene_main = get_node("/root/Main")
+	# var limit_map = scene_main.
+	# get_export("limit_map")
+	# # Control that the player doesn't leave the map
+	# if position.x < 0:
+	# 	position.x = 0
+	# elif position.x > limit_map.x:
+	#	position.x = limit_map.x
+	# if position.y < 0:
+	#	position.y = 0
+	# elif position.y > limit_map.y:
+	#	position.y = limit_map.y
+	# if position.z < 0:
+	#	position.z = 0
+	# elif position.z > limit_map.z:
+	#	position.z = limit_map.z
+	

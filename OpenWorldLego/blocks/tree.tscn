@@ -17,6 +17,7 @@ albedo_color = Color(0, 0.772549, 0, 1)
 material = SubResource("StandardMaterial3D_laglk")
 
 [node name="Tree" type="Node3D"]
+visible = false
 
 [node name="Tronc" type="Node3D" parent="."]
 

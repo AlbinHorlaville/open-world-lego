@@ -11,6 +11,9 @@ extends Node
 
 var coordChunk:Vector2
 
+# Dimension Lego piece 2x2 = 16x16x9,6
+var hlego:float = 9.6/16
+
 # To avoid to call an random generator each time we create a chunk,
 # We prebuild a random tab and iterate on it to decide if we build a tree on the current block
 var TabRandom:Array
@@ -40,7 +43,7 @@ func CreateChunk(x, y):
 				block.position = Vector3(x*tailleChunk+i, 0, y*tailleChunk+j)
 			else:
 				block.changeMaterial(color_dirt)
-				block.position = Vector3(x*tailleChunk+i, int(currentPN*10), y*tailleChunk+j)
+				block.position = Vector3(x*tailleChunk+i, int(currentPN*10)*hlego, y*tailleChunk+j)
 				
 				k_TabRandom+=1
 				if k_TabRandom==100:
@@ -48,7 +51,7 @@ func CreateChunk(x, y):
 				## Plant a tree (1 chance per 100)
 				if TabRandom[k_TabRandom]==TabRandom[0]:
 					var tree = tree_scene.instantiate()
-					tree.position = Vector3(tailleChunk*x+i, int(currentPN*10), tailleChunk*y+j)
+					tree.position = Vector3(tailleChunk*x+i, int(currentPN*10)*hlego, tailleChunk*y+j)
 					add_child(tree)
 				
 			add_child(block)

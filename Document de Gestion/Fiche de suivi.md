@@ -35,7 +35,6 @@
 ## Tache réalisé du jour : 
 - Romain-Louane : Listages des différents assets voulus pour le jeu
 - Louane : Recherche des éléments listés précédement
-- Romain : 
 - Albin : Ajout du nombre de FPS pour mesurer les performances. Recherche d'optimisation quant au nombre d'objet gérer en simultané par Godot. 
 <br>
 <br>
@@ -49,9 +48,8 @@ A quelle condition un objet in game doit-il être soumis à la gravité ?
 
 # 4 Mars
 
-## Tache réalisé du jour : 
-- Romain-Louane : 
-- Louane : 
+## Tache réalisé du jour :
+- Louane : Changement stratégie pour les assets, création des assets à l'aide d'un logiciel
 - Romain : Gestion de changement de matérial node3D. Gestion de projet (Matrice de Motivation). Formation Godot + Animation Personnage
 - Albin : Adaptation de la génération du monde aux LEGO. Chaque pièce LEGO doit être scale de 62.5 pour matcher qu'une largeur de pièce 2x2 fasse 1 mêtre.
 <br>

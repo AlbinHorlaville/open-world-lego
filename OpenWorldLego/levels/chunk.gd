@@ -2,7 +2,6 @@ extends Node
 
 @export var dirt_scene: PackedScene
 @export var tree_scene: PackedScene
-@export var perlin_noise: Noise
 @export var color_dirt: Material
 @export var color_water: Material
 @export var color_sand: Material
@@ -27,7 +26,7 @@ func BuildRandTab() -> void:
 			TabRandom.append(randi_range(0, 200))
 		is_Build = true
 
-func CreateChunk(x, y):
+func CreateChunk(x, y, perlin_noise):
 	BuildRandTab()
 	coordChunk = Vector2(x, y)
 	for i in range(tailleChunk):

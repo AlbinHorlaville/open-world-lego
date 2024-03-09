@@ -37,7 +37,8 @@ func _process(_delta: float) -> void:
 		if not pos_chunk in neighbors:
 			chunk = DictChunk_ON[pos_chunk]
 			DictChunk_OFF[pos_chunk] = chunk
-			chunk.set_visible(false)
+			#chunk.set_visible(false)
+			$World.remove_child(chunk)
 			DictChunk_ON.erase(pos_chunk)
 
 	# Update DictChunk_ON and DictChunk_OFF
@@ -49,7 +50,8 @@ func _process(_delta: float) -> void:
 			chunk = DictChunk_OFF[pos_chunk]
 			DictChunk_OFF.erase(pos_chunk)
 			DictChunk_ON[pos_chunk] = chunk
-			chunk.set_visible(true)
+			#chunk.set_visible(true)
+			$World.add_child(chunk)
 			continue
 		if not pos_chunk in ChunksToBuild:
 			# Case of new chunk who as to be charged

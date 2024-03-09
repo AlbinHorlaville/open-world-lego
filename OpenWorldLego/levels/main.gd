@@ -4,6 +4,8 @@ extends Node
 
 @export var Chunk: PackedScene
 
+@export var perlin_noise: Noise
+
 var DictChunk_ON:Dictionary # Dictionnary of chunks charged
 var DictChunk_OFF:Dictionary # Dictionnary of chunks uncharged
 var ChunksToBuild:Array # Chunks that need to be generate in the few next frames
@@ -17,6 +19,8 @@ func _ready() -> void:
 	# The player has to be on positives coordinates
 	$Player.position = Vector3(500, 10, 500)
 	count = 0
+	# Choose the seed for Perlin Noise
+	perlin_noise.set_seed(randi_range(0, 100000))
 
 func _process(_delta: float) -> void:
 	# Create 1 chunk as maximum per frame
@@ -33,7 +37,8 @@ func _process(_delta: float) -> void:
 		if not pos_chunk in neighbors:
 			chunk = DictChunk_ON[pos_chunk]
 			DictChunk_OFF[pos_chunk] = chunk
-			chunk.set_visible(false)
+			#chunk.set_visible(false)
+			$World.remove_child(chunk)
 			DictChunk_ON.erase(pos_chunk)
 
 	# Update DictChunk_ON and DictChunk_OFF
@@ -45,7 +50,8 @@ func _process(_delta: float) -> void:
 			chunk = DictChunk_OFF[pos_chunk]
 			DictChunk_OFF.erase(pos_chunk)
 			DictChunk_ON[pos_chunk] = chunk
-			chunk.set_visible(true)
+			#chunk.set_visible(true)
+			$World.add_child(chunk)
 			continue
 		if not pos_chunk in ChunksToBuild:
 			# Case of new chunk who as to be charged
@@ -57,7 +63,7 @@ func ChunkInit():
 	if len(ChunksToBuild)>0:
 		var pos_chunk = ChunksToBuild.pop_front()
 		var chunk = Chunk.instantiate()
-		chunk.CreateChunk(pos_chunk.x, pos_chunk.y)
+		chunk.CreateChunk(pos_chunk.x, pos_chunk.y, perlin_noise)
 		DictChunk_ON[pos_chunk] = chunk
 		$World.add_child(chunk)
 		return

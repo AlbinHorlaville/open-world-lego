@@ -1,51 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccchkqqsmlq6h"]
+[gd_scene load_steps=6 format=3 uid="uid://ccchkqqsmlq6h"]
 
 [ext_resource type="PackedScene" uid="uid://dkm25wxado0qi" path="res://blocks/dirt.tscn" id="1_nybd8"]
+[ext_resource type="Script" path="res://blocks/tree.gd" id="1_xlkee"]
+[ext_resource type="Material" uid="uid://bat5ftja3r7db" path="res://materials/Leaf.tres" id="2_r6u78"]
+[ext_resource type="Material" uid="uid://dqsrw7u44jy2e" path="res://materials/Wood.tres" id="2_sv346"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8nxx8"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lt3i"]
-albedo_color = Color(0.372549, 0.14902, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_raxgd"]
-material = SubResource("StandardMaterial3D_2lt3i")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_laglk"]
-albedo_color = Color(0, 0.772549, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_jwfy4"]
-material = SubResource("StandardMaterial3D_laglk")
-
 [node name="Tree" type="Node3D"]
+script = ExtResource("1_xlkee")
+color_leaf = ExtResource("2_r6u78")
+color_wood = ExtResource("2_sv346")
 
 [node name="Tronc" type="Node3D" parent="."]
 
 [node name="tronc" parent="Tronc" instance=ExtResource("1_nybd8")]
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tronc/tronc"]
-mesh = SubResource("BoxMesh_raxgd")
-
 [node name="tronc2" parent="Tronc" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tronc/tronc2"]
-mesh = SubResource("BoxMesh_raxgd")
 
 [node name="tronc3" parent="Tronc" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, 2.08165e-12)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tronc/tronc3"]
-mesh = SubResource("BoxMesh_raxgd")
-
 [node name="tronc4" parent="Tronc" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 3, 2.08165e-12)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tronc/tronc4"]
-mesh = SubResource("BoxMesh_raxgd")
 
 [node name="Leaf" type="Node3D" parent="."]
 
@@ -53,194 +35,110 @@ mesh = SubResource("BoxMesh_raxgd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 2.08165e-12)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf3" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 4, 1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf3"]
-mesh = SubResource("BoxMesh_jwfy4")
 
 [node name="leaf4" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 4, -1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf4"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf2" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 2.08165e-12)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf2"]
-mesh = SubResource("BoxMesh_jwfy4")
 
 [node name="leaf5" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 5, 2.08165e-12)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf5"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf6" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf6"]
-mesh = SubResource("BoxMesh_jwfy4")
 
 [node name="leaf7" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5, 1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf7"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf8" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf8"]
-mesh = SubResource("BoxMesh_jwfy4")
 
 [node name="leaf9" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 2.08165e-12)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf9"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf10" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, -1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf10"]
-mesh = SubResource("BoxMesh_jwfy4")
 
 [node name="leaf11" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5, -1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf11"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf12" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, -1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf12"]
-mesh = SubResource("BoxMesh_jwfy4")
 
 [node name="leaf13" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, 2.08165e-12)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf13"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf14" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6, 1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf14"]
-mesh = SubResource("BoxMesh_jwfy4")
 
 [node name="leaf15" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, 1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf15"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf16" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6, 1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf16"]
-mesh = SubResource("BoxMesh_jwfy4")
 
 [node name="leaf17" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6, 2.08165e-12)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf17"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf28" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6, 2.08165e-12)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf28"]
-mesh = SubResource("BoxMesh_jwfy4")
 
 [node name="leaf18" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6, -1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf18"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf19" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, -1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf19"]
-mesh = SubResource("BoxMesh_jwfy4")
 
 [node name="leaf20" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6, -1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf20"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf21" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, -2)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf21"]
-mesh = SubResource("BoxMesh_jwfy4")
 
 [node name="leaf22" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, 2)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf22"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf23" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 7, 2.08165e-12)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf23"]
-mesh = SubResource("BoxMesh_jwfy4")
 
 [node name="leaf26" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 7, 2.08165e-12)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf26"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf24" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 7, 1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf24"]
-mesh = SubResource("BoxMesh_jwfy4")
 
 [node name="leaf27" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 7, -1)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf27"]
-mesh = SubResource("BoxMesh_jwfy4")
-
 [node name="leaf25" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 7, 2.08165e-12)
 physics_material_override = SubResource("PhysicsMaterial_8nxx8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Leaf/leaf25"]
-mesh = SubResource("BoxMesh_jwfy4")

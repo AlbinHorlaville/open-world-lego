@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfhcgfhwneaq4"]
+[gd_scene load_steps=7 format=3 uid="uid://dfhcgfhwneaq4"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_1c0l0"]
 [ext_resource type="PackedScene" uid="uid://bcrxb66y5ubhl" path="res://actor/player.tscn" id="1_hphc1"]
 [ext_resource type="PackedScene" uid="uid://b41qnafv5nqn0" path="res://levels/chunk.tscn" id="2_8ee1a"]
 [ext_resource type="Script" path="res://levels/Label.gd" id="5_hl650"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sievh"]
+frequency = 0.007
 
 [sub_resource type="LabelSettings" id="LabelSettings_rilnt"]
 font_size = 50
@@ -12,6 +15,7 @@ font_size = 50
 script = ExtResource("1_1c0l0")
 limit_map = Vector3(1000, 100, 1000)
 Chunk = ExtResource("2_8ee1a")
+perlin_noise = SubResource("FastNoiseLite_sievh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, -6.50845e-16, 1.74393e-16, 1.74393e-16, 0.5, 0.866025, -6.50845e-16, -0.866025, 0.5, 2.08165e-12, 10, 2.08165e-12)

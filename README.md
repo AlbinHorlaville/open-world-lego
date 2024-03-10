@@ -57,4 +57,4 @@ gitGraph
 - Romain MIRAS @mirasr (Scrum master)
 - Albin HORLAVILLE @horlavia
 - Louane LESUR @lesurl
-- Gregory PITTITO @pitittog
+- Gregory PITITTO @pitittog

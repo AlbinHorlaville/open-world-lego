@@ -19,7 +19,7 @@
 ## Tache réalisé du jour : 
 - Groupe : Création du Trello
 - Albin- : Génération terrain. Création d'un bloc test et d'un arbre. Génération procédurale avec bruit de Perlin pour générer un environnement par Biôme.
-- Gregory : TODO
+- Gregory : Formation Godot
 - Louane : Tests sur les conversions de fichiers entre Ldraw et GODOT
 - Romain : Création de la première version du Gantt + Document de gestion
 - Romain-Louane : Réflexion sur les formats d'échange entre Ldraw et GODOT
@@ -36,6 +36,7 @@
 - Romain-Louane : Listages des différents assets voulus pour le jeu
 - Louane : Recherche des éléments listés précédement
 - Albin : Ajout du nombre de FPS pour mesurer les performances. Recherche d'optimisation quant au nombre d'objet gérer en simultané par Godot. 
+- Greg : Début de la spécification des interactions du player + début d'implem des mouvements
 <br>
 <br>
 
@@ -52,6 +53,7 @@ A quelle condition un objet in game doit-il être soumis à la gravité ?
 - Louane : Changement stratégie pour les assets, création des assets à l'aide d'un logiciel
 - Romain : Gestion de changement de matérial node3D. Gestion de projet (Matrice de Motivation). Formation Godot + Animation Personnage
 - Albin : Adaptation de la génération du monde aux LEGO. Chaque pièce LEGO doit être scale de 62.5 pour matcher qu'une largeur de pièce 2x2 fasse 1 mêtre.
+- Greg : Fin des 1ères implémentation pour le mouvement du joueur + début de recherche pour une vue fps
 <br>
 <br>
 

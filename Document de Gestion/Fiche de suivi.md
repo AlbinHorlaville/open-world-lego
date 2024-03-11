@@ -70,7 +70,7 @@ Résoudre problème d'import fichier dae sur godot
 
 ## Tache réalisé du jour :
 - Louane : 
-- Romain : 
+- Romain : Fix du soucis de collision + Formation Godot + Début de la création de l'interface utilisateur
 - Albin : 
 - Greg : Fix des bugs de la souris + masquage de la souris (pour tourner indéfiniment) + affichage viseur
 - Romain + Greg : Ajout du skin du player

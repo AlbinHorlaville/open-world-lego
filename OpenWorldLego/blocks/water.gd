@@ -1,13 +1,15 @@
 extends StaticBody3D
-var k:int
-func _ready() -> void:
-	k+=1
+
+func changeMaterial() -> void:
 	# get the instance
 	var mesh_inst = $brick_2x2.get_child(0)
 	# Assign the material
 	mesh_inst.set_surface_override_material(0, load("res://materials/Water.tres"))
 
+# Movement of the sea waves
+var t:float=0
 func _process(delta: float) -> void:
-	
-	position.y = (2*sin(delta*(position.x+k)) + 2*sin(delta*(position.z+k)))/2
-	k+=1
+	if t>2*PI*100:
+		t=0
+	t+=delta
+	position.y = 0.5*(sin((position.x+t)/2)*sin((t-position.z))/2) - 1

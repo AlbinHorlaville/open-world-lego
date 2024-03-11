@@ -16,3 +16,5 @@ tree_scene = ExtResource("3_3ntne")
 color_dirt = ExtResource("4_oetqn")
 color_water = ExtResource("5_oniqs")
 color_sand = ExtResource("6_v8esd")
+
+[node name="Water" type="Node" parent="."]

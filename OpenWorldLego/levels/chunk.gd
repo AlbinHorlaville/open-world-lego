@@ -40,7 +40,9 @@ func CreateChunk(x, y, perlin_noise):
 			# WATER
 			if currentPN < -0.05: # 0.5 permit to have few blocks of sand between dirt and water
 				block = water_scene.instantiate()
-				block.position = Vector3(x*tailleChunk+i, 0, y*tailleChunk+j)
+				block.changeMaterial()
+				block.position = Vector3(x*tailleChunk+i, block.position.y, y*tailleChunk+j)
+				$Water.add_child(block)
 			# SAND
 			else:
 				block = dirt_scene.instantiate()
@@ -69,7 +71,7 @@ func CreateChunk(x, y, perlin_noise):
 					block.changeMaterial(color_dirt)
 					block.position = Vector3(x*tailleChunk+i, int(currentPN*10+1)*hlego, y*tailleChunk+j)
 					block.set_visible(true)
-			add_child(block)
+				add_child(block)
 
 func getCoordChunk():
 	return coordChunk

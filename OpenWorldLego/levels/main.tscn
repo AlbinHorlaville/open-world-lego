@@ -21,11 +21,7 @@ perlin_noise = SubResource("FastNoiseLite_sievh")
 transform = Transform3D(1, -6.50845e-16, 1.74393e-16, 1.74393e-16, 0.5, 0.866025, -6.50845e-16, -0.866025, 0.5, 2.08165e-12, 10, 2.08165e-12)
 
 [node name="Player" parent="." instance=ExtResource("1_hphc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5, 2.08165e-12)
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
-fov = 104.062
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0

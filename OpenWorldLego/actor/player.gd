@@ -11,7 +11,10 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 #variable mouse
 
 # var pour bloquer la caméra (ne pas pouvoir regarder en arrière)
-var lookAngle = 60.0
+var lookAngleHaut = 60.0
+var lookAngleBas = -90.0
+
+
 var mouseSensitivity = 0.4
 # mouvement de la souris
 var mouseDelta : Vector2
@@ -26,6 +29,8 @@ var limit_view:int = 2
 func _ready():
 	# On récup le neoud camera
 	camera = get_node("Camera3D")
+	# Permet d'enlever la souris et pouvoir tourner sur les cotés indéfiniement
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	
 func _input(event):
@@ -38,7 +43,7 @@ func _process(delta):
 	# On applique la rotation sur la caméra (axe y)
 	camera.rotation_degrees -= Vector3(rad_to_deg(mouseDelta.y),0,0) * mouseSensitivity * delta
 	
-	camera.rotation_degrees =  Vector3(clamp(camera.rotation_degrees.x,-lookAngle,lookAngle),camera.rotation_degrees.y, camera.rotation_degrees.z)
+	camera.rotation_degrees =  Vector3(clamp(camera.rotation_degrees.x,lookAngleBas,lookAngleHaut),camera.rotation_degrees.y, camera.rotation_degrees.z)
 	
 	# rotation sur le perso
 	rotation_degrees -= Vector3(0,rad_to_deg(mouseDelta.x),0) * mouseSensitivity * delta

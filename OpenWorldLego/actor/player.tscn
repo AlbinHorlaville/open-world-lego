@@ -13,7 +13,7 @@ transform = Transform3D(-0.8, 0, 0, 0, -0.8, 0, 0, 0, -0.8, 0, 0.605389, 0)
 shape = SubResource("CapsuleShape3D_vi5df")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 1.86265e-09, -1.49012e-08, -1.86265e-09, 1, 1.49012e-08, 1.49012e-08, -1.49012e-08, 1, 0, 0.915062, -0.199273)
+transform = Transform3D(1, 1.86265e-09, -1.49012e-08, -1.86265e-09, 1, 1.49012e-08, 1.49012e-08, -1.49012e-08, 1, 0, 0.915062, -0.1444)
 current = true
 
 [node name="basic_skin" parent="." instance=ExtResource("2_wkixd")]

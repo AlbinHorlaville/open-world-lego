@@ -20,7 +20,15 @@ shape = SubResource("BoxShape3D_6vu28")
 [node name="brick_2x2" parent="." instance=ExtResource("2_x8420")]
 transform = Transform3D(62.5, 0, 0, 0, 62.5, 0, 0, 0, 62.5, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
-[node name="_NODEID_1059234381" parent="brick_2x2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+[node name="_NODEID_2981996756" parent="brick_2x2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="brick_2x3" parent="." instance=ExtResource("2_x8420")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="brick_2x4" parent="." instance=ExtResource("2_x8420")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.774912, 0, -8.24015)
 
 [editable path="brick_2x2"]
+[editable path="brick_2x3"]
+[editable path="brick_2x4"]

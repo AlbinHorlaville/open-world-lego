@@ -61,6 +61,7 @@ A quelle condition un objet in game doit-il être soumis à la gravité ?
 <br>
 Comment faire de l'eau ? (interaction eau/personnage)
 Comment faire des biomes ? (avec du bruit de Perlin)
+Résoudre problème d'import fichier dae sur godot
 <br>
 
 

@@ -66,3 +66,25 @@ Résoudre problème d'import fichier dae sur godot
 
 
 
+# 11 Mars
+
+## Tache réalisé du jour :
+- Louane : 
+- Romain : 
+- Albin : 
+- Greg : Fix des bugs de la souris + masquage de la souris (pour tourner indéfiniment) + affichage viseur
+- Romain + Greg : Ajout du skin du player
+<br>
+<br>
+
+
+## Questions du jour : 
+<br>
+Résoudre un bug quand on se deplace et qu'on bouge la caméra de haut en bas ??
+<br>
+
+
+
+
+
+

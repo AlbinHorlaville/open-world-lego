@@ -34,3 +34,5 @@ label_settings = SubResource("LabelSettings_rilnt")
 script = ExtResource("5_hl650")
 
 [node name="World" type="Node" parent="."]
+
+[editable path="Player"]

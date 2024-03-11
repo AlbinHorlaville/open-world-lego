@@ -17,7 +17,7 @@ func _ready() -> void:
 	DictChunk_OFF = {}
 	ChunksToBuild = []
 	# The player has to be on positives coordinates
-	$Player.position = Vector3(500, 10, 500)
+	$Player.position = Vector3(500, 50, 500)
 	count = 0
 	# Choose the seed for Perlin Noise
 	perlin_noise.set_seed(randi_range(0, 100000))

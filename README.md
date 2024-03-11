@@ -11,7 +11,6 @@ This project is a motor game development based on [Godot engine](https://godoten
 - [Fiche de Suivi](./Document%20de%20Gestion/Fiche%20de%20suivi.md)
 
 - [Planning](gantt.md)
-- 
 ## Diagram of branches
 ```mermaid
 %%{init: { 'logLevel': 'debug', 'theme': 'base', 'gitGraph': {'showBranches': true}} }%%

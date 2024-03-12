@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://cxmwft04sfqvj"]
+[gd_scene load_steps=3 format=3 uid="uid://cxmwft04sfqvj"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="Script" path="res://blocks/cloud.gd" id="1_rh7l1"]
+[ext_resource type="PackedScene" uid="uid://bvmuo36w4fkcu" path="res://assets/cloud_big.dae" id="2_ibs3g"]
+
+[node name="Cloud" type="Node3D"]
+script = ExtResource("1_rh7l1")
+
+[node name="cloud_big" parent="." instance=ExtResource("2_ibs3g")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)

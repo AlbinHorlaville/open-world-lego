@@ -4,6 +4,8 @@ extends Node
 
 @export var Chunk: PackedScene
 
+@export var Cloud: PackedScene
+
 @export var perlin_noise: Noise
 
 var DictChunk_ON:Dictionary # Dictionnary of chunks charged
@@ -21,6 +23,8 @@ func _ready() -> void:
 	count = 0
 	# Choose the seed for Perlin Noise
 	perlin_noise.set_seed(randi_range(0, 100000))
+	# Build some clouds
+	GenerateCloud()
 
 func _process(_delta: float) -> void:
 	# Create 1 chunk as maximum per frame
@@ -67,6 +71,26 @@ func ChunkInit():
 		DictChunk_ON[pos_chunk] = chunk
 		$World.add_child(chunk)
 		return
+		
+func GenerateCloud():
+	var nb_clouds = randi_range(5,10)
+	var Player = $Player
+	var distance = (1 + Player.limit_view)*16
+	var posx_player = Player.position.x
+	var posz_player = Player.position.z
+	# Boucle de création d'un nuage, on instancie son x,y,z en fonction du joueur et sa vitesse (en fonction de sa hauteur)
+	for i in range (1,nb_clouds):
+		var cloud = Cloud.instantiate()
+		var posx = randi_range(posx_player-distance,posx_player+distance)
+		var posz = randi_range (posz_player-distance,posz_player+distance)
+		var posy = randi_range(1,4)*10+20
+		cloud.position = Vector3(posx, posy, posz)
+		
+		cloud.Player = Player
+		cloud.vitesse = 1 - float(posy-20)/50
+		print(cloud.vitesse)
+		
+		$Sky.add_child(cloud)
 
 func distance(p1, p2):
 	return sqrt(pow(p1.x-p2.x,2)+pow(p1.y-p2.y,2)+pow(p1.z-p2.z,2))

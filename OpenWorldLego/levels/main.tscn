@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfhcgfhwneaq4"]
+[gd_scene load_steps=7 format=3 uid="uid://dfhcgfhwneaq4"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_1c0l0"]
 [ext_resource type="PackedScene" uid="uid://bcrxb66y5ubhl" path="res://actor/player.tscn" id="1_hphc1"]
 [ext_resource type="PackedScene" uid="uid://b41qnafv5nqn0" path="res://levels/chunk.tscn" id="2_8ee1a"]
-[ext_resource type="PackedScene" path="res://menu/gui.tscn" id="4_pppl4"]
+[ext_resource type="PackedScene" uid="uid://cxmwft04sfqvj" path="res://blocks/cloud.tscn" id="3_08fmb"]
+[ext_resource type="PackedScene" uid="uid://bdeonnga82vnp" path="res://menu/gui.tscn" id="4_pppl4"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sievh"]
 frequency = 0.007
@@ -12,6 +13,7 @@ frequency = 0.007
 script = ExtResource("1_1c0l0")
 limit_map = Vector3(1000, 100, 1000)
 Chunk = ExtResource("2_8ee1a")
+Cloud = ExtResource("3_08fmb")
 perlin_noise = SubResource("FastNoiseLite_sievh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -23,5 +25,7 @@ transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 [node name="World" type="Node" parent="."]
 
 [node name="GUI" parent="." instance=ExtResource("4_pppl4")]
+
+[node name="Sky" type="Node" parent="."]
 
 [editable path="Player"]

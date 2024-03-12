@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	# Handle BackTomenu
 	if Input.is_action_just_pressed("BackToMenu"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_tree().change_scene_to_file("res://menu/main_menu.tscn")
+		get_tree().change_scene_to_file("res://menu/FirstMenu/main_menu.tscn")
 
 	# Handle ShowDebug.
 	if Input.is_action_just_pressed("ShowDebug") and is_on_floor():

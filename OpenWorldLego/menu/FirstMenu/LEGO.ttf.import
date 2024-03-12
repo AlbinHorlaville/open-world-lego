@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b0u4kp2p4chpc"
-path="res://.godot/imported/LEGO.ttf-39c15cd1eaa6f5f8135b00007336e608.fontdata"
+path="res://.godot/imported/LEGO.ttf-eeddcff570cbea5b0386b4fb0762e416.fontdata"
 
 [deps]
 
-source_file="res://menu/LEGO.ttf"
-dest_files=["res://.godot/imported/LEGO.ttf-39c15cd1eaa6f5f8135b00007336e608.fontdata"]
+source_file="res://menu/FirstMenu/LEGO.ttf"
+dest_files=["res://.godot/imported/LEGO.ttf-eeddcff570cbea5b0386b4fb0762e416.fontdata"]
 
 [params]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://levels/main.gd" id="1_1c0l0"]
 [ext_resource type="PackedScene" uid="uid://bcrxb66y5ubhl" path="res://actor/player.tscn" id="1_hphc1"]
 [ext_resource type="PackedScene" uid="uid://b41qnafv5nqn0" path="res://levels/chunk.tscn" id="2_8ee1a"]
-[ext_resource type="PackedScene" path="res://menu/gui.tscn" id="4_pppl4"]
+[ext_resource type="PackedScene" uid="uid://bdeonnga82vnp" path="res://menu/GUI/gui.tscn" id="4_pppl4"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sievh"]
 frequency = 0.007

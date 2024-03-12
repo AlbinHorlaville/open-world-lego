@@ -71,7 +71,7 @@ Résoudre problème d'import fichier dae sur godot
 ## Tache réalisé du jour :
 - Louane : Problème conversion sur godot résolu + Création assets (ennemis, objets,...)
 - Romain : Fix du soucis de collision + Formation Godot + Début de la création de l'interface utilisateur
-- Albin : 
+- Albin : Animation des vagues et concept de montagnes avec une gaussienne en 3 dimensions pour les futures biomes. Fix d'un bug dù au nom aléatoire que donne Godot à une brique de LEGO importée.
 - Greg : Fix des bugs de la souris + masquage de la souris (pour tourner indéfiniment) + affichage viseur
 - Romain + Greg : Ajout du skin du player
 <br>
@@ -88,7 +88,7 @@ Résoudre un bug quand on se deplace et qu'on bouge la caméra de haut en bas ??
 ## Tache réalisé du jour :
 - Louane : 
 - Romain : Création d'un main menu avec une interface responsive + Création de la vue Option. Création du début de l'interface utilisateur en jeu 
-- Albin : 
+- Albin : Aide au développement des nuages de Louane. Ajout d'un environnement pour gérer la lumière dans le monde, créer un effet brillant aux LEGO et afficher un ciel bleu.
 - Greg :
 <br>
 <br>

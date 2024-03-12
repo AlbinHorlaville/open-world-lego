@@ -93,6 +93,8 @@ Résoudre un bug quand on se deplace et qu'on bouge la caméra de haut en bas ??
 <br>
 <br>
 
+## A faire
+- Albin : Physique de l'eau (inverser la gravité quand le personnage est dans l'eau pour simuler la pousser d'archimède). Biome montagne, désert, plaine, forêt. Refactoring main avec Romain.
 
 ## Questions du jour : 
 <br>

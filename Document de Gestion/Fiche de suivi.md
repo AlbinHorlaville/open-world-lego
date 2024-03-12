@@ -83,7 +83,21 @@ Résoudre problème d'import fichier dae sur godot
 Résoudre un bug quand on se deplace et qu'on bouge la caméra de haut en bas ??
 <br>
 
+# 12 Mars
 
+## Tache réalisé du jour :
+- Louane : 
+- Romain : Création d'un main menu avec une interface responsive + Création de la vue Option. Création du début de l'interface utilisateur en jeu 
+- Albin : 
+- Greg :
+<br>
+<br>
+
+
+## Questions du jour : 
+<br>
+Refactoring de la main instance du jeu pour avoir les menus sans recréer des scénes
+<br>
 
 
 

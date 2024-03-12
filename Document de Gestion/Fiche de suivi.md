@@ -86,7 +86,7 @@ Résoudre un bug quand on se deplace et qu'on bouge la caméra de haut en bas ??
 # 12 Mars
 
 ## Tache réalisé du jour :
-- Louane : 
+- Louane : Ajout d'assets + Formation godot + Generation des nuages
 - Romain : Création d'un main menu avec une interface responsive + Création de la vue Option. Création du début de l'interface utilisateur en jeu 
 - Albin : Aide au développement des nuages de Louane. Ajout d'un environnement pour gérer la lumière dans le monde, créer un effet brillant aux LEGO et afficher un ciel bleu.
 - Greg :
@@ -95,6 +95,7 @@ Résoudre un bug quand on se deplace et qu'on bouge la caméra de haut en bas ??
 
 ## A faire
 - Albin : Physique de l'eau (inverser la gravité quand le personnage est dans l'eau pour simuler la pousser d'archimède). Biome montagne, désert, plaine, forêt. Refactoring main avec Romain.
+- Louane : Creer different modeles d'arbres et de nuages pour avoir de l'aléatoire
 
 ## Questions du jour : 
 <br>

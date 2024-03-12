@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://2m3fklj7ghvw"]
 
-[ext_resource type="Script" path="res://menu/option_menu.gd" id="1_1d1l2"]
-[ext_resource type="Theme" uid="uid://bbwkjvh6fjmcw" path="res://menu/defaultTheme.tres" id="2_hga0n"]
-[ext_resource type="Texture2D" uid="uid://bxd3tk2tkf6l2" path="res://menu/background_menu.jpg" id="2_vl50f"]
-[ext_resource type="PackedScene" uid="uid://bkrvga6uhpxxu" path="res://menu/setting_tab.tscn" id="3_dxiny"]
+[ext_resource type="Script" path="res://menu/FirstMenu/option_menu.gd" id="1_1d1l2"]
+[ext_resource type="Theme" uid="uid://bbwkjvh6fjmcw" path="res://menu/FirstMenu/defaultTheme.tres" id="2_hga0n"]
+[ext_resource type="Texture2D" uid="uid://bxd3tk2tkf6l2" path="res://menu/FirstMenu/background_menu.jpg" id="2_vl50f"]
+[ext_resource type="PackedScene" uid="uid://bkrvga6uhpxxu" path="res://menu/FirstMenu/setting_tab.tscn" id="3_dxiny"]
 
 [node name="OptionMenu" type="Control"]
 layout_mode = 3
@@ -61,7 +61,7 @@ size_flags_vertical = 3
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 theme = ExtResource("2_hga0n")
 text = "Go back to menu"
 text_direction = 1

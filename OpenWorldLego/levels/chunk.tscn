@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b41qnafv5nqn0"]
+[gd_scene load_steps=8 format=3 uid="uid://b41qnafv5nqn0"]
 
 [ext_resource type="Script" path="res://levels/chunk.gd" id="1_e3x7a"]
 [ext_resource type="PackedScene" uid="uid://dkm25wxado0qi" path="res://blocks/dirt.tscn" id="2_se7qp"]
 [ext_resource type="PackedScene" uid="uid://ccchkqqsmlq6h" path="res://blocks/tree.tscn" id="3_3ntne"]
+[ext_resource type="PackedScene" uid="uid://dcs4b3k4vj2hd" path="res://blocks/water.tscn" id="3_m2678"]
 [ext_resource type="Material" uid="uid://pygg26tm1qwr" path="res://materials/Grass.tres" id="4_oetqn"]
 [ext_resource type="Material" uid="uid://bbdimn0hbr55g" path="res://materials/Water.tres" id="5_oniqs"]
 [ext_resource type="Material" uid="uid://bvlh5xukgd2ik" path="res://materials/Sand.tres" id="6_v8esd"]
@@ -10,7 +11,10 @@
 [node name="Chunk" type="Node3D"]
 script = ExtResource("1_e3x7a")
 dirt_scene = ExtResource("2_se7qp")
+water_scene = ExtResource("3_m2678")
 tree_scene = ExtResource("3_3ntne")
 color_dirt = ExtResource("4_oetqn")
 color_water = ExtResource("5_oniqs")
 color_sand = ExtResource("6_v8esd")
+
+[node name="Water" type="Node" parent="."]

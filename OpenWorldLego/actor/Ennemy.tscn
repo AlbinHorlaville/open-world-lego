@@ -5,8 +5,8 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tjw1k"]
 custom_solver_bias = 1.0
-radius = 0.874934
-height = 3.43447
+radius = 0.554569
+height = 2.48013
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0ali7"]
 

@@ -8,7 +8,7 @@ func _ready():
 	
 	add_child(cyclop)	
 	
-	cyclop.position = Vector3(510,10,510)
+	cyclop.position = Vector3(520,50,520)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

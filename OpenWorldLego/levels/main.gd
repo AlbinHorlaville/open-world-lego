@@ -88,7 +88,6 @@ func GenerateCloud():
 		
 		cloud.Player = Player
 		cloud.vitesse = 1 - float(posy-20)/50
-		print(cloud.vitesse)
 		
 		$Sky.add_child(cloud)
 

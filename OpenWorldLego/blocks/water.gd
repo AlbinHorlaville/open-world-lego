@@ -13,3 +13,6 @@ func _process(delta: float) -> void:
 		t=0
 	t+=delta
 	position.y = 0.5*(sin((position.x+t)/2)*sin((t-position.z))/2)
+	
+func getMesh():
+	return $brick2x2.get_children()[0]

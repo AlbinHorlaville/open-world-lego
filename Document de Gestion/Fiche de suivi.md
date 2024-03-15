@@ -8,7 +8,6 @@
 - Romain-Louane : Formation LDraw
 - Albin : Création du projet Godot et du README
 <br>
-<br>
 
 ## Questions du jour : 
 <br>
@@ -24,7 +23,6 @@
 - Romain : Création de la première version du Gantt + Document de gestion
 - Romain-Louane : Réflexion sur les formats d'échange entre Ldraw et GODOT
 <br>
-<br>
 
 ## Questions du jour : 
 <br>
@@ -38,13 +36,13 @@
 - Albin : Ajout du nombre de FPS pour mesurer les performances. Recherche d'optimisation quant au nombre d'objet gérer en simultané par Godot. 
 - Greg : Début de la spécification des interactions du player + début d'implem des mouvements
 <br>
-<br>
 
 ## Questions du jour : 
-<br>
+
 Comment changer le material d'un fichier.glb importé ?
 Comment optimiser le nombre d'objet calculer chaque frame ?
 A quelle condition un objet in game doit-il être soumis à la gravité ?
+<br>
 <br>
 
 # 4 Mars
@@ -55,13 +53,13 @@ A quelle condition un objet in game doit-il être soumis à la gravité ?
 - Albin : Adaptation de la génération du monde aux LEGO. Chaque pièce LEGO doit être scale de 62.5 pour matcher qu'une largeur de pièce 2x2 fasse 1 mêtre.
 - Greg : Fin des 1ères implémentation pour le mouvement du joueur + début de recherche pour une vue fps
 <br>
-<br>
 
 ## Questions du jour : 
-<br>
+
 Comment faire de l'eau ? (interaction eau/personnage)
 Comment faire des biomes ? (avec du bruit de Perlin)
 Résoudre problème d'import fichier dae sur godot
+<br>
 <br>
 
 
@@ -75,12 +73,12 @@ Résoudre problème d'import fichier dae sur godot
 - Greg : Fix des bugs de la souris + masquage de la souris (pour tourner indéfiniment) + affichage viseur
 - Romain + Greg : Ajout du skin du player
 <br>
-<br>
 
 
 ## Questions du jour : 
+
+- Résoudre un bug quand on se deplace et qu'on bouge la caméra de haut en bas ??
 <br>
-Résoudre un bug quand on se deplace et qu'on bouge la caméra de haut en bas ??
 <br>
 
 # 12 Mars
@@ -91,15 +89,34 @@ Résoudre un bug quand on se deplace et qu'on bouge la caméra de haut en bas ??
 - Albin : Aide au développement des nuages de Louane. Ajout d'un environnement pour gérer la lumière dans le monde, créer un effet brillant aux LEGO et afficher un ciel bleu.
 - Greg :
 <br>
-<br>
 
 ## A faire
 - Albin : Physique de l'eau (inverser la gravité quand le personnage est dans l'eau pour simuler la pousser d'archimède). Biome montagne, désert, plaine, forêt. Refactoring main avec Romain.
 - Louane : Creer different modeles d'arbres et de nuages pour avoir de l'aléatoire
+<br>
 
 ## Questions du jour : 
+
+- Refactoring de la main instance du jeu pour avoir les menus sans recréer des scénes
 <br>
-Refactoring de la main instance du jeu pour avoir les menus sans recréer des scénes
+<br>
+
+# 12 Mars
+
+## Tache réalisé du jour :
+- Louane : 
+- Romain : Spéfication des menus et création des maquette
+- Albin : 
+- Greg :
+<br>
+
+## A faire
+- Romain : Implémentation des maquettes de GUI
+<br>
+
+## Questions du jour : 
+
+<br>
 <br>
 
 

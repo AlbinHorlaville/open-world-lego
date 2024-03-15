@@ -9,3 +9,5 @@ Welcome to the project for designing the foundations of an OpenWorld engine, har
 - [LDraw format to Godot](./specification/LDrawToGodot.md)
 
 - [Game Specification](./specification/GameSpecification.md)
+
+- [Interface Specification](./specification/InterfaceSpecification.md)

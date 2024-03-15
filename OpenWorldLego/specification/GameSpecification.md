@@ -1,23 +1,29 @@
-
-# 1 - Interaction Specification
+# Interaction Specification
 
 ## Mouse
 
-* Left clic -> destroy blocks (maintain) ; attack (one clic)
-* Mouse wheel -> navigate the toolbar
-* Middle clic -> ?
-* Right clic -> Place blocks; use an object; swinging levers or doors; shoot arrows; interact with certain blocks (chests,      workbenches, furnaces, etc.); push buttons (one click)
-*  
+- Left Click:
+  - Hold: Destroy blocks
+  - Click: Attack
+- Mouse Wheel: Navigate the toolbar
+- Middle Click: *Needs Specification*
+- Right Click:
+  - Place blocks
+  - Use objects
+  - Swing levers or doors
+  - Shoot arrows
+  - Interact with certain blocks (chests, workbenches, furnaces, etc.)
+  - Push buttons
 
 ## Keyboard
 
-* Z -> Go forward (in the direction of vision). Double-clicking allows you to run.
-* Q -> Take a step to the left.
-* S -> Go backwards (in the opposite direction of vision).
-* D -> Take a step to the right.
-* Esc -> Jump
-* 1 to 9 -> Choose a item    from the toolbar
-* E -> Open the inventory
-* A -> Release the current item.
-* Echap -> Open the game menu
-  
+- Z: Move forward
+- Q: Move left
+- S: Move backward
+- D: Move right
+- Space: Jump
+- 1 to 9: Select item from toolbar
+- I: Open inventory
+- E: Release current item
+- Shift: Run
+- Esc: Open game menu

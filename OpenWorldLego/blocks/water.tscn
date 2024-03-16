@@ -14,4 +14,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.286416, 0)
 shape = SubResource("BoxShape3D_ae78a")
 
 [node name="brick2x2" parent="." instance=ExtResource("1_uowm5")]
-transform = Transform3D(62.5, 0, 0, 0, 62.5, 0, 0, 0, 62.5, 0, 0, 0)
+transform = Transform3D(63, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0)

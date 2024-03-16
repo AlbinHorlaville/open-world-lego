@@ -38,13 +38,19 @@ func CreateChunk(x, y, perlin_noise):
 			var currentPN = 0.3+perlin_noise.get_noise_2d(x*tailleChunk+i, y*tailleChunk+j)
 			
 			# WATER
+			if currentPN > -0.05 and currentPN < -0.03 : # Water that shows up on the sand
+				block = water_scene.instantiate()
+				block.changeMaterial()
+				block.position = Vector3(x*tailleChunk+i, block.position.y, y*tailleChunk+j)
+				block.changeTransparency() # Set the transparency to 0.5 to see the sand below the water
+				$Water.add_child(block)
 			if currentPN < -0.05: # 0.5 permit to have few blocks of sand between dirt and water
 				block = water_scene.instantiate()
 				block.changeMaterial()
 				block.position = Vector3(x*tailleChunk+i, block.position.y, y*tailleChunk+j)
 				$Water.add_child(block)
-			# SAND
 			else:
+				# SAND
 				block = dirt_scene.instantiate()
 				if currentPN < 0:
 					block.changeMaterial(color_sand)

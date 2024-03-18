@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cq7dxfqowanpv" path="res://actor/basic_skin.dae" id="2_wkixd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vi5df"]
+radius = 0.268249
+height = 1.61009
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_8xc8y")

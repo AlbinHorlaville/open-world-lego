@@ -119,6 +119,24 @@ Résoudre problème d'import fichier dae sur godot
 <br>
 <br>
 
+# 18 Mars
+
+## Tache réalisé du jour :
+- Louane : 
+- Romain : Création d'un script d'automatisation de convertion de LDraw en DAE 
+- Albin : 
+- Greg :
+<br>
+
+## A faire
+- Romain : Améliorer le script de convertion en taguant les piéces afin de rajouter les comportements différents
+
+<br>
+
+## Questions du jour : 
+
+<br>
+<br>
 
 
 

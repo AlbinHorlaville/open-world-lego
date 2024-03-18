@@ -9,6 +9,8 @@ radius = 0.554569
 height = 2.48013
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0ali7"]
+radius = 0.787526
+height = 3.28294
 
 [node name="Ennemy" type="CharacterBody3D"]
 script = ExtResource("1_t1n7r")
@@ -20,7 +22,11 @@ shape = SubResource("CapsuleShape3D_tjw1k")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.328335, 0)
 shape = SubResource("CapsuleShape3D_0ali7")
 
 [node name="cyclop" parent="." instance=ExtResource("2_pacmf")]
 transform = Transform3D(62.5, 0, 0, 0, 62.5, 0, 0, 0, 62.5, 0, 0, 0)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

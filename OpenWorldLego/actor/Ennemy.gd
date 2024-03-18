@@ -3,10 +3,12 @@ extends CharacterBody3D
 
 var player : CharacterBody3D
 
+const JUMP_VELOCITY = 4.5
+
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-var speed = 1
+var speed = 2
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,8 +21,12 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		
+	# Gestion du saut automatique des obstacles
+	if is_on_wall() and is_on_floor():
+		velocity.y = JUMP_VELOCITY
 		
-	
+		
+	# IA de déplacement de l'ennemi
 	var dir = (player.position - position).normalized()*speed
 	dir.y = 0;
 	velocity += dir*delta
@@ -33,4 +39,8 @@ func _physics_process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+
+
+
 

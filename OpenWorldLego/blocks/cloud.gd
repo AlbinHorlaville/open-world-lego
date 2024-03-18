@@ -2,6 +2,7 @@ extends Node3D
 
 var Player
 var vitesse
+var distance
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,7 +12,6 @@ func _ready():
 func _process(delta):
 	var posx_player = Player.position.x
 	var posz_player = Player.position.z
-	var distance = (1 + Player.limit_view)*16
 	
 	# Verification si nuage sort de la limite range of view en x
 	if position.x > posx_player + distance:

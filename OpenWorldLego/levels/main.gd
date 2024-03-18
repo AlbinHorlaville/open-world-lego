@@ -73,9 +73,9 @@ func ChunkInit():
 		return
 		
 func GenerateCloud():
-	var nb_clouds = randi_range(5,10)
+	var nb_clouds = randi_range(20,50)
 	var Player = $Player
-	var distance = (1 + Player.limit_view)*16
+	var distance = (1 + Player.limit_view)*16*6
 	var posx_player = Player.position.x
 	var posz_player = Player.position.z
 	# Boucle de création d'un nuage, on instancie son x,y,z en fonction du joueur et sa vitesse (en fonction de sa hauteur)
@@ -83,11 +83,13 @@ func GenerateCloud():
 		var cloud = Cloud.instantiate()
 		var posx = randi_range(posx_player-distance,posx_player+distance)
 		var posz = randi_range (posz_player-distance,posz_player+distance)
-		var posy = randi_range(1,4)*10+20
+		var hauteur_min = 25
+		var posy = randi_range(1,4)*10+hauteur_min
 		cloud.position = Vector3(posx, posy, posz)
+		cloud.distance = distance
 		
 		cloud.Player = Player
-		cloud.vitesse = 1 - float(posy-20)/50
+		cloud.vitesse = 1 - float(posy-hauteur_min)/50
 		
 		$Sky.add_child(cloud)
 

@@ -104,7 +104,7 @@ Résoudre problème d'import fichier dae sur godot
 # 12 Mars
 
 ## Tache réalisé du jour :
-- Louane : 
+- Louane : Fix bug génération nuage + ajout assets
 - Romain : Spéfication des menus et création des maquette
 - Albin : 
 - Greg :
@@ -122,7 +122,7 @@ Résoudre problème d'import fichier dae sur godot
 # 18 Mars
 
 ## Tache réalisé du jour :
-- Louane : 
+- Louane : Création de plusieurs modèles d'arbres et de nuages + Evolution génération nuage(compréhension godot)
 - Romain : Création d'un script d'automatisation de convertion de LDraw en DAE 
 - Albin : 
 - Greg :

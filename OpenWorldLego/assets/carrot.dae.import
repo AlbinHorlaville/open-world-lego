@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://chbxuqffc74ud"
-path="res://.godot/imported/brick2x2.dae-612bfbb3c346fc2a95385c6891476999.scn"
+uid="uid://wnswvasvs2nc"
+path="res://.godot/imported/carrot.dae-c1159ea362d214019080c514a13afe5e.scn"
 
 [deps]
 
-source_file="res://assets/brick2x2.dae"
-dest_files=["res://.godot/imported/brick2x2.dae-612bfbb3c346fc2a95385c6891476999.scn"]
+source_file="res://assets/carrot.dae"
+dest_files=["res://.godot/imported/carrot.dae-c1159ea362d214019080c514a13afe5e.scn"]
 
 [params]
 

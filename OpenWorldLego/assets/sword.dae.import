@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://chbxuqffc74ud"
-path="res://.godot/imported/brick2x2.dae-612bfbb3c346fc2a95385c6891476999.scn"
+uid="uid://3u5nmo21dbcv"
+path="res://.godot/imported/sword.dae-1c5fc162921d081e34d7dfb724794bbd.scn"
 
 [deps]
 
-source_file="res://assets/brick2x2.dae"
-dest_files=["res://.godot/imported/brick2x2.dae-612bfbb3c346fc2a95385c6891476999.scn"]
+source_file="res://assets/sword.dae"
+dest_files=["res://.godot/imported/sword.dae-1c5fc162921d081e34d7dfb724794bbd.scn"]
 
 [params]
 

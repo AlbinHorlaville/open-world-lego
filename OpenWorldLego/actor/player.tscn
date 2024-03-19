@@ -1,17 +1,50 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcrxb66y5ubhl"]
 
 [ext_resource type="Script" path="res://actor/player.gd" id="1_8xc8y"]
+[ext_resource type="PackedScene" uid="uid://cq7dxfqowanpv" path="res://actor/basic_skin.dae" id="2_wkixd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vi5df"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ut3w3"]
+radius = 0.268249
+height = 1.61009
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_8xc8y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.8, 0, 0, 0, -0.8, 0, 0, 0, -0.8, 0, 0.605389, 0)
 shape = SubResource("CapsuleShape3D_vi5df")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_ut3w3")
-skeleton = NodePath("../CollisionShape3D")
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 1.86265e-09, -1.49012e-08, -1.86265e-09, 1, 1.49012e-08, 1.49012e-08, -1.49012e-08, 1, 0, 0.915062, -0.1444)
+current = true
+
+[node name="basic_skin" parent="." instance=ExtResource("2_wkixd")]
+transform = Transform3D(-27, 0, -2.36042e-06, 0, 27, 0, 2.36042e-06, 0, -27, 0, 0, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1

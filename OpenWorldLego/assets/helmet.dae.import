@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://chbxuqffc74ud"
-path="res://.godot/imported/brick2x2.dae-612bfbb3c346fc2a95385c6891476999.scn"
+uid="uid://cemsg3hf2dj2n"
+path="res://.godot/imported/helmet.dae-b1375a83391b957e72e7ab684589b7f4.scn"
 
 [deps]
 
-source_file="res://assets/brick2x2.dae"
-dest_files=["res://.godot/imported/brick2x2.dae-612bfbb3c346fc2a95385c6891476999.scn"]
+source_file="res://assets/helmet.dae"
+dest_files=["res://.godot/imported/helmet.dae-b1375a83391b957e72e7ab684589b7f4.scn"]
 
 [params]
 

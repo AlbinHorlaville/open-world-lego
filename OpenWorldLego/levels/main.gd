@@ -106,3 +106,11 @@ func GenerateCloud():
 func distance(p1, p2):
 	return sqrt(pow(p1.x-p2.x,2)+pow(p1.y-p2.y,2)+pow(p1.z-p2.z,2))
 	
+func importCustomerDae(file_path):
+	# Créer une node3D à partir d'un fichier .dae
+	print(file_path)
+	var scene = load(file_path)
+	var instance = scene.instantiate()
+	instance.set_scale(Vector3(62.5, 62.5, 62.5))
+	instance.position = $Player.position
+	get_tree().get_root().add_child(instance)

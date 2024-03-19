@@ -138,5 +138,24 @@ Résoudre problème d'import fichier dae sur godot
 <br>
 <br>
 
+# 19 Mars
+
+## Tache réalisé du jour :
+- Louane :
+- Romain : Intégration du script de convertion dans godot + Création d'une interface permettant la génération des modéles convertit dans le monde
+- Albin : 
+- Greg :
+<br>
+
+## A faire
+
+<br>
+
+## Questions du jour : 
+
+<br>
+<br>
+
+
 
 

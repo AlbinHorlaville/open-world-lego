@@ -25,6 +25,8 @@ func _ready() -> void:
 	perlin_noise.set_seed(randi_range(0, 100000))
 	# Build some clouds
 	GenerateCloud()
+	# Appel à la fonction convertissor de fichier
+	
 
 func _process(_delta: float) -> void:
 	# Create 1 chunk as maximum per frame

@@ -4,7 +4,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$PanelContainer/MarginContainer/VBoxContainer/StartButton.grab_focus()
-
+	$Convertissor.convertAll()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

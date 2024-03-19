@@ -33,4 +33,5 @@ offset_bottom = 23.0
 theme = ExtResource("1_ohw4u")
 
 [node name="Convertissor" parent="." instance=ExtResource("3_ehr5e")]
+visible = false
 layout_mode = 1

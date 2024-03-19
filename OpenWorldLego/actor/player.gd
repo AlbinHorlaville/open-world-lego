@@ -8,6 +8,8 @@ const JUMP_VELOCITY = 4.5
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
+var isFirstPerson = true
+
 #variable mouse
 
 # var pour bloquer la caméra (ne pas pouvoir regarder en arrière)
@@ -40,6 +42,18 @@ func _input(event):
 
 
 func _process(delta):
+	
+	# Passage de la vue 1ère personne à la vue 3ème personne
+	if Input.is_action_just_pressed("toggle_view") and isFirstPerson:
+		isFirstPerson = false
+		camera.position.y = 3.897
+		camera.position.z = 5.607
+	elif Input.is_action_just_pressed("toggle_view") and !isFirstPerson:
+		isFirstPerson = true
+		camera.position.y = 0.915
+		camera.position.z = -0.199
+		
+	
 	# On applique la rotation sur la caméra (axe y)
 	camera.rotation_degrees -= Vector3(rad_to_deg(mouseDelta.y),0,0) * mouseSensitivity * delta
 	

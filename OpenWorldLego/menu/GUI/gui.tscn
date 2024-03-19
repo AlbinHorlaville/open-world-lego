@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdeonnga82vnp"]
+[gd_scene load_steps=4 format=3 uid="uid://bdeonnga82vnp"]
 
 [ext_resource type="Script" path="res://menu/GUI/gui.gd" id="1_iddta"]
 [ext_resource type="Theme" uid="uid://bbwkjvh6fjmcw" path="res://menu/FirstMenu/defaultTheme.tres" id="1_ohw4u"]
+[ext_resource type="PackedScene" uid="uid://vk07yrts6y4m" path="res://menu/ConvertissorInterface/convertissor.tscn" id="3_ehr5e"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -30,3 +31,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme = ExtResource("1_ohw4u")
+
+[node name="Convertissor" parent="." instance=ExtResource("3_ehr5e")]
+layout_mode = 1

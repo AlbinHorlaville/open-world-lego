@@ -64,10 +64,6 @@ func _physics_process(delta: float) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene_to_file("res://menu/FirstMenu/main_menu.tscn")
 
-	# Handle ShowDebug.
-	if Input.is_action_just_pressed("ShowDebug") and is_on_floor():
-		$"../GUI/FPS".visible = !$"../GUI/FPS".visible
-
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()

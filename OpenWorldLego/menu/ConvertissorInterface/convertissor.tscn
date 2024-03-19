@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://vk07yrts6y4m"]
+
+[ext_resource type="Script" path="res://externConvertissor/convertissor.gd" id="1_esybc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlpw2"]
+bg_color = Color(0.462745, 0.588235, 0.898039, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.260841, 0.391093, 0.743649, 1)
+border_blend = true
+
+[node name="Convertissor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 36
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dlpw2")
+
+[node name="ConvertissorUtility" type="Node" parent="."]
+script = ExtResource("1_esybc")

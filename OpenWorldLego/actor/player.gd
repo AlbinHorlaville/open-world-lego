@@ -46,12 +46,12 @@ func _process(delta):
 	# Passage de la vue 1ère personne à la vue 3ème personne
 	if Input.is_action_just_pressed("toggle_view") and isFirstPerson:
 		isFirstPerson = false
-		camera.position.y = 1.700
-		camera.position.z = 1.700
+		head.position.y = 1.700
+		head.position.z = 1.700
 	elif Input.is_action_just_pressed("toggle_view") and !isFirstPerson:
 		isFirstPerson = true
-		camera.position.y = 0.915
-		camera.position.z = -0.199
+		head.position.y = 0.915
+		head.position.z = -0.199
 		
 	
 	# On applique la rotation sur la caméra (axe y)

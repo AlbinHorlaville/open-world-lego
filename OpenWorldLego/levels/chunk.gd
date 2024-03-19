@@ -27,7 +27,7 @@ func BuildRandTab() -> void:
 			TabRandom.append(randi_range(0, 200))
 		is_Build = true
 
-func CreateChunk(x, y, perlin_noise):
+func CreateChunk(x, y, perlin_noise_height, perlin_noise_tree):
 	BuildRandTab()
 	coordChunk = Vector2(x, y)
 	for i in range(tailleChunk):
@@ -38,7 +38,7 @@ func CreateChunk(x, y, perlin_noise):
 			var block
 			
 			# Add 0.3 because we want more dirt than water on our map
-			var currentPN = 0.3+perlin_noise.get_noise_2d(X, Y)
+			var currentPN = 0.3+perlin_noise_height.get_noise_2d(X, Y)
 			
 			# WATER
 			if currentPN > -0.05 and currentPN < -0.03 : # Water that shows up on the sand
@@ -77,17 +77,28 @@ func CreateChunk(x, y, perlin_noise):
 						add_child(block)
 						
 					# TREE
-					k_TabRandom+=1
-					if k_TabRandom==100:
-						k_TabRandom = 0
-					# Plant a tree (1 chance per 100)
-					if TabRandom[k_TabRandom]==TabRandom[0]:
-						var tree = tree_scene.instantiate()
-						tree.position = Vector3(X, high_block+hlego, Y)
-						add_child(tree)
+					PlantTree(perlin_noise_tree,X,Y,high_block,hlego)
 				
 func gradient(x,y):
 	return 10*exp(-(((x-500)**2)+((y-500)**2))/1000)
 
 func getCoordChunk():
 	return coordChunk
+
+func PlantTree(perlin_noise_tree,x,y,high_block,hlego):
+	var v_noise_tree = perlin_noise_tree.get_noise_2d(x, y)
+	# On est dans une forêt
+	if v_noise_tree>0.20:
+		var rand = randi_range(1,35)
+		if rand == 1:
+			var tree = tree_scene.instantiate()
+			tree.position = Vector3(x, high_block+hlego, y)
+			add_child(tree)
+	# On n'est pas dans une forêt
+	else:
+		var rand = randi_range(1,400)
+		if rand == 1:
+			var tree = tree_scene.instantiate()
+			tree.position = Vector3(x, high_block+hlego, y)
+			add_child(tree)
+	return

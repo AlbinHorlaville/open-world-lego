@@ -106,7 +106,7 @@ Résoudre problème d'import fichier dae sur godot
 ## Tache réalisé du jour :
 - Louane : Fix bug génération nuage + ajout assets
 - Romain : Spéfication des menus et création des maquette
-- Albin : 
+- Albin : Animation d'eau plus satsfaisante. Désormais, l'eau monte sur la plage. Le joueur s'enfonce aussi dans l'eau. Travail sur comment intégrer des montagnes au monde.
 - Greg :
 <br>
 
@@ -124,12 +124,13 @@ Résoudre problème d'import fichier dae sur godot
 ## Tache réalisé du jour :
 - Louane : Création de plusieurs modèles d'arbres et de nuages + Evolution génération nuage(compréhension godot)
 - Romain : Création d'un script d'automatisation de convertion de LDraw en DAE 
-- Albin : 
+- Albin : Intéraction joueur / monde. Le joueur peut désormais détruire un block déstructible (les blocks sont désignés comme tel s'ils possèdent la méthode "is_destructible()") visant le block en question et en maintenant click gauche pendant 1 seconde.
 - Greg :
 <br>
 
 ## A faire
 - Romain : Améliorer le script de convertion en taguant les piéces afin de rajouter les comportements différents
+- Albin : Interaction poser un block, Animation destruction block.
 
 <br>
 

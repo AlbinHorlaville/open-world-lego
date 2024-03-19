@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfhcgfhwneaq4"]
+[gd_scene load_steps=11 format=3 uid="uid://dfhcgfhwneaq4"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_1c0l0"]
 [ext_resource type="PackedScene" uid="uid://bcrxb66y5ubhl" path="res://actor/player.tscn" id="1_hphc1"]
@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cxmwft04sfqvj" path="res://blocks/cloud.tscn" id="3_08fmb"]
 [ext_resource type="PackedScene" uid="uid://bdeonnga82vnp" path="res://menu/GUI/gui.tscn" id="4_pppl4"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_sievh"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uegrl"]
 frequency = 0.007
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_as2fr"]
+frequency = 0.006
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0np51"]
 sky_top_color = Color(0, 0.486275, 0.878431, 1)
@@ -36,7 +39,8 @@ script = ExtResource("1_1c0l0")
 limit_map = Vector3(1000, 100, 1000)
 Chunk = ExtResource("2_8ee1a")
 Cloud = ExtResource("3_08fmb")
-perlin_noise = SubResource("FastNoiseLite_sievh")
+perlin_noise_height = SubResource("FastNoiseLite_uegrl")
+perlin_noise_tree = SubResource("FastNoiseLite_as2fr")
 
 [node name="Player" parent="." instance=ExtResource("1_hphc1")]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)

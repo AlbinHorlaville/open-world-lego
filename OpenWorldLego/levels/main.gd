@@ -6,7 +6,8 @@ extends Node
 
 @export var Cloud: PackedScene
 
-@export var perlin_noise: Noise
+@export var perlin_noise_height: Noise
+@export var perlin_noise_tree: Noise
 
 var DictChunk_ON:Dictionary # Dictionnary of chunks charged
 var DictChunk_OFF:Dictionary # Dictionnary of chunks uncharged
@@ -22,7 +23,8 @@ func _ready() -> void:
 	# The player has to be on positives coordinates
 	$Player.position = Vector3(500, 50, 500)
 	# Choose the seed for Perlin Noise
-	perlin_noise.set_seed(randi_range(0, 100000))
+	perlin_noise_height.set_seed(randi_range(0, 100000))
+	perlin_noise_tree.set_seed(randi_range(0, 100000))
 	# Build some clouds
 	GenerateCloud()
 
@@ -39,7 +41,7 @@ func ChunkInit():
 	if len(ChunksToBuild)>0:
 		var pos_chunk = ChunksToBuild.pop_front()
 		var chunk = Chunk.instantiate()
-		chunk.CreateChunk(pos_chunk.x, pos_chunk.y, perlin_noise)
+		chunk.CreateChunk(pos_chunk.x, pos_chunk.y, perlin_noise_height, perlin_noise_tree)
 		DictChunk_ON[pos_chunk] = chunk
 		$World.add_child(chunk)
 		return

@@ -63,7 +63,7 @@ func CreateChunk(x, y, perlin_noise):
 				else:
 					# Block at the surface
 					block.changeMaterial(color_dirt)
-					block.position = Vector3(X, int(currentPN*10+gradient(X, Y))*hlego, Y)
+					block.position = Vector3(X, int(currentPN*10)*hlego, Y)
 					add_child(block)
 					
 					var high_block = block.position.y
@@ -73,6 +73,7 @@ func CreateChunk(x, y, perlin_noise):
 						block = dirt_scene.instantiate()
 						block.changeMaterial(color_dirt)
 						block.position = Vector3(X, k*hlego, Y)
+						block.set_visible(false)
 						add_child(block)
 						
 					# TREE

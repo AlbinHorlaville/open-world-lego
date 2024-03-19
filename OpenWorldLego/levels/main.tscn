@@ -1,34 +1,57 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfhcgfhwneaq4"]
+[gd_scene load_steps=10 format=3 uid="uid://dfhcgfhwneaq4"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_1c0l0"]
 [ext_resource type="PackedScene" uid="uid://bcrxb66y5ubhl" path="res://actor/player.tscn" id="1_hphc1"]
 [ext_resource type="PackedScene" uid="uid://b41qnafv5nqn0" path="res://levels/chunk.tscn" id="2_8ee1a"]
-[ext_resource type="Script" path="res://levels/Label.gd" id="5_hl650"]
+[ext_resource type="PackedScene" uid="uid://cxmwft04sfqvj" path="res://blocks/cloud.tscn" id="3_08fmb"]
+[ext_resource type="PackedScene" uid="uid://bdeonnga82vnp" path="res://menu/GUI/gui.tscn" id="4_pppl4"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sievh"]
 frequency = 0.007
 
-[sub_resource type="LabelSettings" id="LabelSettings_rilnt"]
-font_size = 50
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0np51"]
+sky_top_color = Color(0, 0.486275, 0.878431, 1)
+sky_horizon_color = Color(0.55, 0.663819, 0.752858, 1)
+ground_horizon_color = Color(0.55, 0.663819, 0.752858, 1)
+
+[sub_resource type="Sky" id="Sky_auwfa"]
+sky_material = SubResource("ProceduralSkyMaterial_0np51")
+
+[sub_resource type="Environment" id="Environment_uehlp"]
+background_mode = 2
+sky = SubResource("Sky_auwfa")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 2
+tonemap_exposure = 0.89
+glow_enabled = true
+glow_intensity = 0.1
+glow_bloom = 0.1
+adjustment_brightness = 1.1
+adjustment_contrast = 1.1
+adjustment_saturation = 1.1
 
 [node name="Main" type="Node"]
 script = ExtResource("1_1c0l0")
 limit_map = Vector3(1000, 100, 1000)
 Chunk = ExtResource("2_8ee1a")
+Cloud = ExtResource("3_08fmb")
 perlin_noise = SubResource("FastNoiseLite_sievh")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, -6.50845e-16, 1.74393e-16, 1.74393e-16, 0.5, 0.866025, -6.50845e-16, -0.866025, 0.5, 2.08165e-12, 10, 2.08165e-12)
 
 [node name="Player" parent="." instance=ExtResource("1_hphc1")]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-label_settings = SubResource("LabelSettings_rilnt")
-script = ExtResource("5_hl650")
-
 [node name="World" type="Node" parent="."]
+
+[node name="GUI" parent="." instance=ExtResource("4_pppl4")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uehlp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Sky" type="Node" parent="."]
 
 [editable path="Player"]

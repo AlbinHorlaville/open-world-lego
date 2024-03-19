@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cq7dxfqowanpv" path="res://actor/basic_skin.dae" id="2_wkixd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vi5df"]
+radius = 0.268249
+height = 1.61009
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_8xc8y")
@@ -13,7 +15,7 @@ transform = Transform3D(-0.8, 0, 0, 0, -0.8, 0, 0, 0, -0.8, 0, 0.605389, 0)
 shape = SubResource("CapsuleShape3D_vi5df")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 1.86265e-09, -1.49012e-08, -1.86265e-09, 1, 1.49012e-08, 1.49012e-08, -1.49012e-08, 1, 0, 0.915062, -0.199273)
+transform = Transform3D(1, 1.86265e-09, -1.49012e-08, -1.86265e-09, 1, 1.49012e-08, 1.49012e-08, -1.49012e-08, 1, 0, 0.915062, -0.1444)
 current = true
 
 [node name="basic_skin" parent="." instance=ExtResource("2_wkixd")]

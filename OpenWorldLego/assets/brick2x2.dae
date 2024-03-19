@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
 <asset>
-	<created>2024-03-04T14:46:12</created>
-	<modified>2024-03-04T14:46:12</modified>
+	<created>2024-03-11T16:08:52</created>
+	<modified>2024-03-11T16:08:52</modified>
 <unit name="LeoCAD" meter="0.0004" />
 	<up_axis>Z_UP</up_axis>
 </asset>
@@ -5981,7 +5981,7 @@
 			</technique>
 		</profile_COMMON>
 	</effect>
-	<effect id="Color_63564B-phong">
+	<effect id="Color_6A7081-phong">
 		<profile_COMMON>
 			<technique sid="phong1">
 				<phong>
@@ -5989,10 +5989,10 @@
 						<color>0.0 0.0 0.0 0.0</color>
 					</emission>
 					<ambient>
-						<color>0.388235 0.337255 0.294118 1.0</color>
+						<color>0.415686 0.439216 0.505882 1.0</color>
 					</ambient>
 					<diffuse>
-						<color>0.388235 0.337255 0.294118 1.0</color>
+						<color>0.415686 0.439216 0.505882 1.0</color>
 					</diffuse>
 					<specular>
 						<color>0.9 0.9 0.9 1.0</color>
@@ -6001,7 +6001,7 @@
 						<float>20.0</float>
 					</shininess>
 					<transparent>
-						<color>0.388235 0.337255 0.294118 1</color>
+						<color>0.415686 0.439216 0.505882 1</color>
 					</transparent>
 					<transparency>
 						<float>1.0</float>
@@ -6010,7 +6010,7 @@
 			</technique>
 		</profile_COMMON>
 	</effect>
-	<effect id="Color_927E62-phong">
+	<effect id="Color_96CA3C-phong">
 		<profile_COMMON>
 			<technique sid="phong1">
 				<phong>
@@ -6018,10 +6018,10 @@
 						<color>0.0 0.0 0.0 0.0</color>
 					</emission>
 					<ambient>
-						<color>0.572549 0.494118 0.384314 1.0</color>
+						<color>0.588235 0.792157 0.235294 1.0</color>
 					</ambient>
 					<diffuse>
-						<color>0.572549 0.494118 0.384314 1.0</color>
+						<color>0.588235 0.792157 0.235294 1.0</color>
 					</diffuse>
 					<specular>
 						<color>0.9 0.9 0.9 1.0</color>
@@ -6030,7 +6030,7 @@
 						<float>20.0</float>
 					</shininess>
 					<transparent>
-						<color>0.572549 0.494118 0.384314 1</color>
+						<color>0.588235 0.792157 0.235294 1</color>
 					</transparent>
 					<transparency>
 						<float>1.0</float>
@@ -6039,7 +6039,7 @@
 			</technique>
 		</profile_COMMON>
 	</effect>
-	<effect id="Color_9D8563-phong">
+	<effect id="Color_1EBCD2-phong">
 		<profile_COMMON>
 			<technique sid="phong1">
 				<phong>
@@ -6047,10 +6047,10 @@
 						<color>0.0 0.0 0.0 0.0</color>
 					</emission>
 					<ambient>
-						<color>0.615686 0.521569 0.388235 1.0</color>
+						<color>0.117647 0.737255 0.823529 1.0</color>
 					</ambient>
 					<diffuse>
-						<color>0.615686 0.521569 0.388235 1.0</color>
+						<color>0.117647 0.737255 0.823529 1.0</color>
 					</diffuse>
 					<specular>
 						<color>0.9 0.9 0.9 1.0</color>
@@ -6059,7 +6059,7 @@
 						<float>20.0</float>
 					</shininess>
 					<transparent>
-						<color>0.615686 0.521569 0.388235 1</color>
+						<color>0.117647 0.737255 0.823529 1</color>
 					</transparent>
 					<transparency>
 						<float>1.0</float>
@@ -6068,7 +6068,7 @@
 			</technique>
 		</profile_COMMON>
 	</effect>
-	<effect id="Color_B0A7D4-phong">
+	<effect id="Color_71957B-phong">
 		<profile_COMMON>
 			<technique sid="phong1">
 				<phong>
@@ -6076,10 +6076,10 @@
 						<color>0.0 0.0 0.0 0.0</color>
 					</emission>
 					<ambient>
-						<color>0.690196 0.654902 0.831373 1.0</color>
+						<color>0.443137 0.584314 0.482353 1.0</color>
 					</ambient>
 					<diffuse>
-						<color>0.690196 0.654902 0.831373 1.0</color>
+						<color>0.443137 0.584314 0.482353 1.0</color>
 					</diffuse>
 					<specular>
 						<color>0.9 0.9 0.9 1.0</color>
@@ -6088,7 +6088,181 @@
 						<float>20.0</float>
 					</shininess>
 					<transparent>
-						<color>0.690196 0.654902 0.831373 1</color>
+						<color>0.443137 0.584314 0.482353 1</color>
+					</transparent>
+					<transparency>
+						<float>1.0</float>
+					</transparency>
+				</phong>
+			</technique>
+		</profile_COMMON>
+	</effect>
+	<effect id="Color_D45C13-phong">
+		<profile_COMMON>
+			<technique sid="phong1">
+				<phong>
+					<emission>
+						<color>0.0 0.0 0.0 0.0</color>
+					</emission>
+					<ambient>
+						<color>0.831373 0.360784 0.0745098 1.0</color>
+					</ambient>
+					<diffuse>
+						<color>0.831373 0.360784 0.0745098 1.0</color>
+					</diffuse>
+					<specular>
+						<color>0.9 0.9 0.9 1.0</color>
+					</specular>
+					<shininess>
+						<float>20.0</float>
+					</shininess>
+					<transparent>
+						<color>0.831373 0.360784 0.0745098 1</color>
+					</transparent>
+					<transparency>
+						<float>1.0</float>
+					</transparency>
+				</phong>
+			</technique>
+		</profile_COMMON>
+	</effect>
+	<effect id="Color_FECD07-phong">
+		<profile_COMMON>
+			<technique sid="phong1">
+				<phong>
+					<emission>
+						<color>0.0 0.0 0.0 0.0</color>
+					</emission>
+					<ambient>
+						<color>0.996078 0.803922 0.027451 1.0</color>
+					</ambient>
+					<diffuse>
+						<color>0.996078 0.803922 0.027451 1.0</color>
+					</diffuse>
+					<specular>
+						<color>0.9 0.9 0.9 1.0</color>
+					</specular>
+					<shininess>
+						<float>20.0</float>
+					</shininess>
+					<transparent>
+						<color>0.996078 0.803922 0.027451 1</color>
+					</transparent>
+					<transparency>
+						<float>1.0</float>
+					</transparency>
+				</phong>
+			</technique>
+		</profile_COMMON>
+	</effect>
+	<effect id="Color_68829B-phong">
+		<profile_COMMON>
+			<technique sid="phong1">
+				<phong>
+					<emission>
+						<color>0.0 0.0 0.0 0.0</color>
+					</emission>
+					<ambient>
+						<color>0.407843 0.509804 0.607843 1.0</color>
+					</ambient>
+					<diffuse>
+						<color>0.407843 0.509804 0.607843 1.0</color>
+					</diffuse>
+					<specular>
+						<color>0.9 0.9 0.9 1.0</color>
+					</specular>
+					<shininess>
+						<float>20.0</float>
+					</shininess>
+					<transparent>
+						<color>0.407843 0.509804 0.607843 1</color>
+					</transparent>
+					<transparency>
+						<float>1.0</float>
+					</transparency>
+				</phong>
+			</technique>
+		</profile_COMMON>
+	</effect>
+	<effect id="Color_718471-phong">
+		<profile_COMMON>
+			<technique sid="phong1">
+				<phong>
+					<emission>
+						<color>0.0 0.0 0.0 0.0</color>
+					</emission>
+					<ambient>
+						<color>0.443137 0.517647 0.443137 1.0</color>
+					</ambient>
+					<diffuse>
+						<color>0.443137 0.517647 0.443137 1.0</color>
+					</diffuse>
+					<specular>
+						<color>0.9 0.9 0.9 1.0</color>
+					</specular>
+					<shininess>
+						<float>20.0</float>
+					</shininess>
+					<transparent>
+						<color>0.443137 0.517647 0.443137 1</color>
+					</transparent>
+					<transparency>
+						<float>1.0</float>
+					</transparency>
+				</phong>
+			</technique>
+		</profile_COMMON>
+	</effect>
+	<effect id="Color_516F51-phong">
+		<profile_COMMON>
+			<technique sid="phong1">
+				<phong>
+					<emission>
+						<color>0.0 0.0 0.0 0.0</color>
+					</emission>
+					<ambient>
+						<color>0.317647 0.435294 0.317647 1.0</color>
+					</ambient>
+					<diffuse>
+						<color>0.317647 0.435294 0.317647 1.0</color>
+					</diffuse>
+					<specular>
+						<color>0.9 0.9 0.9 1.0</color>
+					</specular>
+					<shininess>
+						<float>20.0</float>
+					</shininess>
+					<transparent>
+						<color>0.317647 0.435294 0.317647 1</color>
+					</transparent>
+					<transparency>
+						<float>1.0</float>
+					</transparency>
+				</phong>
+			</technique>
+		</profile_COMMON>
+	</effect>
+	<effect id="Color_385038-phong">
+		<profile_COMMON>
+			<technique sid="phong1">
+				<phong>
+					<emission>
+						<color>0.0 0.0 0.0 0.0</color>
+					</emission>
+					<ambient>
+						<color>0.219608 0.313726 0.219608 1.0</color>
+					</ambient>
+					<diffuse>
+						<color>0.219608 0.313726 0.219608 1.0</color>
+					</diffuse>
+					<specular>
+						<color>0.9 0.9 0.9 1.0</color>
+					</specular>
+					<shininess>
+						<float>20.0</float>
+					</shininess>
+					<transparent>
+						<color>0.219608 0.313726 0.219608 1</color>
 					</transparent>
 					<transparency>
 						<float>1.0</float>
@@ -6717,17 +6891,35 @@
 	<material id="No_Color-material">
 		<instance_effect url="#No_Color-phong" />
 	</material>
-	<material id="Color_63564B-material">
-		<instance_effect url="#Color_63564B-phong" />
+	<material id="Color_6A7081-material">
+		<instance_effect url="#Color_6A7081-phong" />
 	</material>
-	<material id="Color_927E62-material">
-		<instance_effect url="#Color_927E62-phong" />
+	<material id="Color_96CA3C-material">
+		<instance_effect url="#Color_96CA3C-phong" />
 	</material>
-	<material id="Color_9D8563-material">
-		<instance_effect url="#Color_9D8563-phong" />
+	<material id="Color_1EBCD2-material">
+		<instance_effect url="#Color_1EBCD2-phong" />
 	</material>
-	<material id="Color_B0A7D4-material">
-		<instance_effect url="#Color_B0A7D4-phong" />
+	<material id="Color_71957B-material">
+		<instance_effect url="#Color_71957B-phong" />
+	</material>
+	<material id="Color_D45C13-material">
+		<instance_effect url="#Color_D45C13-phong" />
+	</material>
+	<material id="Color_FECD07-material">
+		<instance_effect url="#Color_FECD07-phong" />
+	</material>
+	<material id="Color_68829B-material">
+		<instance_effect url="#Color_68829B-phong" />
+	</material>
+	<material id="Color_718471-material">
+		<instance_effect url="#Color_718471-phong" />
+	</material>
+	<material id="Color_516F51-material">
+		<instance_effect url="#Color_516F51-phong" />
+	</material>
+	<material id="Color_385038-material">
+		<instance_effect url="#Color_385038-phong" />
 	</material>
 </library_materials>
 <library_geometries>
@@ -8321,9 +8513,9 @@
 	<visual_scene id="DefaultScene">
 		<node>
 			<matrix>
-				1 0 0 20
-				0 1 0 -80
-				0 0 1 24
+				1 0 0 0
+				0 1 0 0
+				0 0 1 0
 				0 0 0 1
 			</matrix>
 			<instance_geometry url="#u8101_dat">

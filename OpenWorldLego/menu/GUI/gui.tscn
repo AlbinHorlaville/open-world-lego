@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdeonnga82vnp"]
+
+[ext_resource type="Script" path="res://menu/GUI/gui.gd" id="1_iddta"]
+[ext_resource type="Theme" uid="uid://bbwkjvh6fjmcw" path="res://menu/FirstMenu/defaultTheme.tres" id="1_ohw4u"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iddta")
+
+[node name="Project Name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -192.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme = ExtResource("1_ohw4u")
+text = "Project Lego Open World  "
+horizontal_alignment = 2
+
+[node name="FPS" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("1_ohw4u")

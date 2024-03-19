@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpgr24bj8541x"]
+
+[ext_resource type="Script" path="res://blocks/water.gd" id="1_kbj6e"]
+[ext_resource type="PackedScene" uid="uid://7hv8ur6n3qes" path="res://blocks/brick2x2.dae" id="1_uowm5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ae78a"]
+size = Vector3(1, 0.628967, 1)
+
+[node name="Water" type="StaticBody3D"]
+script = ExtResource("1_kbj6e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.918114, 0)
+shape = SubResource("BoxShape3D_ae78a")
+
+[node name="brick2x2" parent="." instance=ExtResource("1_uowm5")]
+transform = Transform3D(63, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0)

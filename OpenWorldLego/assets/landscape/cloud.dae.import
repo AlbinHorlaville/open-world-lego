@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cs8h5mvrffj1w"
-path="res://.godot/imported/brick_2x2.dae-56d5e8714cf0e5583947b3aba4d481c6.scn"
+uid="uid://bfgf1i1yxui7b"
+path="res://.godot/imported/cloud.dae-8c2e19321a4b8f0332a008482cc27a7a.scn"
 
 [deps]
 
-source_file="res://assets/brick_2x2.dae"
-dest_files=["res://.godot/imported/brick_2x2.dae-56d5e8714cf0e5583947b3aba4d481c6.scn"]
+source_file="res://assets/landscape/cloud.dae"
+dest_files=["res://.godot/imported/cloud.dae-8c2e19321a4b8f0332a008482cc27a7a.scn"]
 
 [params]
 

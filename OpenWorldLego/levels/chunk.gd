@@ -56,13 +56,13 @@ func CreateChunk(x, y, perlin_noise):
 				# SAND
 				block = dirt_scene.instantiate()
 				if currentPN < 0:
-					block.changeMaterial(color_sand)
+					block.initMaterial(color_sand)
 					block.position = Vector3(X, int(currentPN*10*hlego), Y)
 					add_child(block)
 				# DIRT
 				else:
 					# Block at the surface
-					block.changeMaterial(color_dirt)
+					block.initMaterial(color_dirt)
 					block.position = Vector3(X, int(currentPN*10)*hlego, Y)
 					add_child(block)
 					
@@ -71,7 +71,7 @@ func CreateChunk(x, y, perlin_noise):
 					# fill the ground of dirt to dig into it
 					for k in range(0, int(high_block/hlego+1)):
 						block = dirt_scene.instantiate()
-						block.changeMaterial(color_dirt)
+						block.initMaterial(color_dirt)
 						block.position = Vector3(X, k*hlego, Y)
 						block.set_visible(false)
 						add_child(block)

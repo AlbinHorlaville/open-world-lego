@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcrxb66y5ubhl"]
+[gd_scene load_steps=5 format=3 uid="uid://bcrxb66y5ubhl"]
 
 [ext_resource type="Script" path="res://actor/player.gd" id="1_8xc8y"]
+[ext_resource type="Script" path="res://actor/interactRay.gd" id="2_5bxt4"]
 [ext_resource type="PackedScene" uid="uid://cq7dxfqowanpv" path="res://actor/basic_skin.dae" id="2_wkixd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vi5df"]
@@ -14,9 +15,19 @@ script = ExtResource("1_8xc8y")
 transform = Transform3D(-0.8, 0, 0, 0, -0.8, 0, 0, 0, -0.8, 0, 0.605389, 0)
 shape = SubResource("CapsuleShape3D_vi5df")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 1.86265e-09, -1.49012e-08, -1.86265e-09, 1, 1.49012e-08, 1.49012e-08, -1.49012e-08, 1, 0, 0.915062, -0.1444)
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.9, -0.137466)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 1.86265e-09, -1.49012e-08, -1.86265e-09, 1, 1.49012e-08, 1.49012e-08, -1.49012e-08, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 current = true
+
+[node name="InteractRay" type="RayCast3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0)
+target_position = Vector3(2.08165e-12, 2.08165e-12, -1)
+script = ExtResource("2_5bxt4")
+
+[node name="Timer" type="Timer" parent="Head/InteractRay"]
 
 [node name="basic_skin" parent="." instance=ExtResource("2_wkixd")]
 transform = Transform3D(-27, 0, -2.36042e-06, 0, 27, 0, 2.36042e-06, 0, -27, 0, 0, 0)
@@ -48,3 +59,5 @@ grow_vertical = 2
 text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="timeout" from="Head/InteractRay/Timer" to="Head/InteractRay" method="_on_timer_timeout"]

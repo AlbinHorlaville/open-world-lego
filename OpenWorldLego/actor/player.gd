@@ -19,7 +19,7 @@ var mouseSensitivity = 0.4
 var mouseDelta : Vector2
 
 
-var camera : Camera3D 
+var head : Node3D 
 
 # limit of the viewing range of the player (in chunks)
 var limit_view:int = 2
@@ -27,7 +27,7 @@ var limit_view:int = 2
 
 func _ready():
 	# On récup le neoud camera
-	camera = get_node("Camera3D")
+	head = get_node("Head")
 	# Permet d'enlever la souris et pouvoir tourner sur les cotés indéfiniement
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -40,15 +40,15 @@ func _input(event):
 
 func _process(delta):
 	# On applique la rotation sur la caméra (axe y)
-	camera.rotation_degrees -= Vector3(rad_to_deg(mouseDelta.y),0,0) * mouseSensitivity * delta
+	head.rotation_degrees -= Vector3(rad_to_deg(mouseDelta.y),0,0) * mouseSensitivity * delta
 	
-	camera.rotation_degrees =  Vector3(clamp(camera.rotation_degrees.x,lookAngleBas,lookAngleHaut),camera.rotation_degrees.y, camera.rotation_degrees.z)
+	head.rotation_degrees =  Vector3(clamp(head.rotation_degrees.x,lookAngleBas,lookAngleHaut),head.rotation_degrees.y, head.rotation_degrees.z)
 	
 	# rotation sur le perso
 	rotation_degrees -= Vector3(0,rad_to_deg(mouseDelta.x),0) * mouseSensitivity * delta
 	# reinit 
 	mouseDelta = Vector2()
-	
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity

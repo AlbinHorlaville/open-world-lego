@@ -12,14 +12,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("Hit") and is_colliding():
 		if current_block != get_collider():
-			if current_block!=null:
+			if current_block!=null and current_block.has_method("is_destroyable"):
 				current_block.resetMaterial()
 			current_block = get_collider()
 			if current_block.has_method("is_destroyable"):
 				destroyTimer.start(1)
 				current_block.changeMaterial(load("res://materials/Destroying.tres"))
 	else:
-		if current_block!=null:
+		if current_block!=null and current_block.has_method("is_destroyable"):
 			current_block.resetMaterial()
 		current_block = null
 		destroyTimer.stop()

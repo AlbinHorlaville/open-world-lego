@@ -6,7 +6,8 @@ extends Node
 
 @export var Cloud: PackedScene
 
-@export var perlin_noise: Noise
+@export var perlin_noise_height: Noise
+@export var perlin_noise_tree: Noise
 
 var DictChunk_ON:Dictionary # Dictionnary of chunks charged
 var DictChunk_OFF:Dictionary # Dictionnary of chunks uncharged
@@ -22,9 +23,12 @@ func _ready() -> void:
 	# The player has to be on positives coordinates
 	$Player.position = Vector3(500, 50, 500)
 	# Choose the seed for Perlin Noise
-	perlin_noise.set_seed(randi_range(0, 100000))
+	perlin_noise_height.set_seed(randi_range(0, 100000))
+	perlin_noise_tree.set_seed(randi_range(0, 100000))
 	# Build some clouds
 	GenerateCloud()
+	# Appel à la fonction convertissor de fichier
+	
 
 func _process(_delta: float) -> void:
 	# Create 1 chunk as maximum per frame
@@ -39,7 +43,7 @@ func ChunkInit():
 	if len(ChunksToBuild)>0:
 		var pos_chunk = ChunksToBuild.pop_front()
 		var chunk = Chunk.instantiate()
-		chunk.CreateChunk(pos_chunk.x, pos_chunk.y, perlin_noise)
+		chunk.CreateChunk(pos_chunk.x, pos_chunk.y, perlin_noise_height, perlin_noise_tree)
 		DictChunk_ON[pos_chunk] = chunk
 		$World.add_child(chunk)
 		return
@@ -77,21 +81,24 @@ func updateChunkToCharge():
 
 # Create some clouds in the sky
 func GenerateCloud():
-	var nb_clouds = randi_range(5,10)
+	var nb_clouds = randi_range(20,40)
 	var Player = $Player
-	var distance = (1 + Player.limit_view)*16
+	var distance = (1 + Player.limit_view)*16*15
 	var posx_player = Player.position.x
 	var posz_player = Player.position.z
 	# Boucle de création d'un nuage, on instancie son x,y,z en fonction du joueur et sa vitesse (en fonction de sa hauteur)
-	for i in range (1,nb_clouds):
+	for i in range (nb_clouds):
 		var cloud = Cloud.instantiate()
 		var posx = randi_range(posx_player-distance,posx_player+distance)
 		var posz = randi_range (posz_player-distance,posz_player+distance)
-		var posy = randi_range(1,4)*10+20
+		var hauteur_min = 200
+		var coeff_hauteur = 4
+		var posy = randi_range(1,4)*10*coeff_hauteur+hauteur_min
 		cloud.position = Vector3(posx, posy, posz)
+		cloud.distance = distance
 		
 		cloud.Player = Player
-		cloud.vitesse = 1 - float(posy-20)/50
+		cloud.vitesse = 1 - float(posy-hauteur_min)/(50*coeff_hauteur)
 		
 		$Sky.add_child(cloud)
 

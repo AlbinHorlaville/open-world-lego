@@ -11,3 +11,5 @@ Welcome to the project for designing the foundations of an OpenWorld engine, har
 - [Game Specification](./specification/GameSpecification.md)
 
 - [Interface Specification](./specification/InterfaceSpecification.md)
+
+- [LDraw Convertissor] (./specification/LDrawConvertissor.md)

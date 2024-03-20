@@ -24,6 +24,7 @@
 - Space: Jump
 - 1 to 9: Select item from toolbar
 - I: Open inventory
+- L: Open Import Menu
 - E: Release current item
 - Shift: Run
 - Esc: Open game menu

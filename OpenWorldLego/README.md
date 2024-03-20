@@ -12,4 +12,4 @@ Welcome to the project for designing the foundations of an OpenWorld engine, har
 
 - [Interface Specification](./specification/InterfaceSpecification.md)
 
-- [LDraw Convertissor] (./specification/LDrawConvertissor.md)
+- [LDraw Convertissor](./specification/LDrawConvertissor.md)

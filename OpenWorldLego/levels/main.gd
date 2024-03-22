@@ -38,6 +38,7 @@ func _process(_delta: float) -> void:
 		count=0
 	
 	updateChunkToCharge()
+	addNewBrick()
 
 func ChunkInit():
 	if len(ChunksToBuild)>0:
@@ -114,3 +115,10 @@ func importCustomerDae(file_path):
 	instance.set_scale(Vector3(62.5, 62.5, 62.5))
 	instance.position = $Player.position
 	get_tree().get_root().add_child(instance)
+
+# take the new brick that the player created and had it to the game tree, in the correct chunk
+func addNewBrick():
+	var brick = $Player.addNewBrick()
+	if (brick!=null):
+		var pos_chunk = Vector2(int(brick.position.x/16), int(brick.position.z/16))
+		DictChunk_ON[pos_chunk].addNewBrick(brick)

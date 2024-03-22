@@ -91,6 +91,19 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func addNewBrick():
+	var brick = $Head/InteractRay.addNewBrick()
+	if brick!=null:
+		var vect = position - brick.position
+		brick.position+=vect/10
+		brick.position.x = int(brick.position.x)
+		brick.position.z = int(brick.position.z)
+		if vect.y<e0:
+			brick.position.y+=9.5/16
+		else:
+			brick.position.y-=9.5/16
+	return brick
+
 func getCoordChunk():
 	return Vector2(int(position.x/16), int(position.z/16))
 

@@ -12,6 +12,7 @@ config_version=5
 
 config/name="OpenWorldLego"
 run/main_scene="res://menu/FirstMenu/main_menu.tscn"
+config/use_custom_user_dir=true
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -11,6 +11,17 @@ func _ready():
 		print("Le dossier d'entrée n'existe pas.")
 		DirAccess.open("user://").make_dir("importedFiles")
 		return
+	# Should check if the output folder exists
+	var outputDir = DirAccess.open(output_folder)
+	if outputDir == null:
+		print("Le dossier de sortie n'existe pas.")
+		DirAccess.open("res://externConvertissor").make_dir("convertedFiles")
+		return
+	else:
+		# Flush the output folder
+		var listeOfFiles = DirAccess.open(output_folder).get_files()
+		for file in listeOfFiles:
+			DirAccess.open(output_folder).remove(file)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

@@ -87,7 +87,7 @@ Résoudre problème d'import fichier dae sur godot
 - Louane : Ajout d'assets + Formation godot + Generation des nuages
 - Romain : Création d'un main menu avec une interface responsive + Création de la vue Option. Création du début de l'interface utilisateur en jeu 
 - Albin : Aide au développement des nuages de Louane. Ajout d'un environnement pour gérer la lumière dans le monde, créer un effet brillant aux LEGO et afficher un ciel bleu.
-- Greg :
+- Greg : Implémentation d'un ennemi (Scènes + IA)
 <br>
 
 ## A faire
@@ -101,13 +101,13 @@ Résoudre problème d'import fichier dae sur godot
 <br>
 <br>
 
-# 13 Mars
+# 15 Mars
 
 ## Tache réalisé du jour :
 - Louane : Fix bug génération nuage + ajout assets
 - Romain : Spéfication des menus et création des maquette
 - Albin : Animation d'eau plus satsfaisante. Désormais, l'eau monte sur la plage. Le joueur s'enfonce aussi dans l'eau. Travail sur comment intégrer des montagnes au monde.
-- Greg :
+- Greg : IA ennemi
 <br>
 
 ## A faire
@@ -125,7 +125,7 @@ Résoudre problème d'import fichier dae sur godot
 - Louane : Création de plusieurs modèles d'arbres et de nuages + Evolution génération nuage(compréhension godot)
 - Romain : Création d'un script d'automatisation de convertion de LDraw en DAE 
 - Albin : Simplification de code dans les scripts Main et Chunk. Essai montagne.
-- Greg :
+- Greg : Finalisation de l'IA de l'ennemi (saut automatique des blocks)
 <br>
 
 ## A faire
@@ -145,7 +145,7 @@ Résoudre problème d'import fichier dae sur godot
 - Louane : Génération des arbres avec bruits de perlin pour faire des forêts
 - Romain : Intégration du script de convertion dans godot + Création d'une interface permettant la génération des modéles convertit dans le monde
 - Albin : Intéraction joueur / monde. Le joueur peut désormais détruire un block déstructible (les blocks sont désignés comme tel s'ils possèdent la méthode "is_destructible()") visant le block en question et en maintenant click gauche pendant 1 seconde.
-- Greg :
+- Greg : Implementation de la vue 3ème personne + recherche poour faire un inventaire
 <br>
 
 ## A faire

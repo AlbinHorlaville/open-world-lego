@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+class_name dirt
+
 var material:Material
 
 func initMaterial(mat:Material)->void:

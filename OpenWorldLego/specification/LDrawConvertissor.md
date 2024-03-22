@@ -21,9 +21,9 @@ The conversion process involves several steps:
 
 To add new LDraw models into the game, customers need to place LDraw files into a specific directory on their computer. The directory path varies depending on the operating system:
 
-- **Windows**: %APPDATA%\Godot\app_userdata\OpenWorldLego\ImportedFiles\
-- **macOS**: ~/Library/Application Support/Godot/app_userdata/OpenWorldLego/ImportedFiles/
-- **Linux**: ~/.local/share/godot/app_userdata/OpenWorldLego/ImportedFiles/
+- **Windows**: %APPDATA%\[project_name]\OpenWorldLego\ImportedFiles\
+- **macOS**: ~/Library/Application Support/OpenWorldLego/ImportedFiles/
+- **Linux**: ~/.local/share/OpenWorldLego/ImportedFiles/
 
 ## Areas for Improvement
 

@@ -142,7 +142,7 @@ Résoudre problème d'import fichier dae sur godot
 # 19 Mars
 
 ## Tache réalisé du jour :
-- Louane :
+- Louane : Génération des arbres avec bruits de perlin pour faire des forêts
 - Romain : Intégration du script de convertion dans godot + Création d'une interface permettant la génération des modéles convertit dans le monde
 - Albin : Intéraction joueur / monde. Le joueur peut désormais détruire un block déstructible (les blocks sont désignés comme tel s'ils possèdent la méthode "is_destructible()") visant le block en question et en maintenant click gauche pendant 1 seconde.
 - Greg :

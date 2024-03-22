@@ -157,6 +157,24 @@ Résoudre problème d'import fichier dae sur godot
 <br>
 <br>
 
+# 22 Mars
+
+## Tache réalisé du jour :
+- Louane : Generation aleatoire de skin d'arbre 
+- Romain : 
+- Albin : 
+- Greg :
+<br>
+
+## A faire
+- Louane : finir génération arbre et ajouter colision aux arbres
+<br>
+
+## Questions du jour : 
+
+<br>
+<br>
+
 
 
 

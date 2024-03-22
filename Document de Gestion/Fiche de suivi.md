@@ -161,7 +161,7 @@ Résoudre problème d'import fichier dae sur godot
 
 ## Tache réalisé du jour :
 - Louane : Generation aleatoire de skin d'arbre 
-- Romain : 
+- Romain : Interface import de LDR dans Godot + création de la différentiation de type d'import de node ( Voir les specifications pour plus de précision) 
 - Albin : 
 - Greg :
 <br>

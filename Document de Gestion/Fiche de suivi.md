@@ -101,7 +101,7 @@ Résoudre problème d'import fichier dae sur godot
 <br>
 <br>
 
-# 12 Mars
+# 13 Mars
 
 ## Tache réalisé du jour :
 - Louane : Fix bug génération nuage + ajout assets
@@ -124,7 +124,7 @@ Résoudre problème d'import fichier dae sur godot
 ## Tache réalisé du jour :
 - Louane : Création de plusieurs modèles d'arbres et de nuages + Evolution génération nuage(compréhension godot)
 - Romain : Création d'un script d'automatisation de convertion de LDraw en DAE 
-- Albin : Intéraction joueur / monde. Le joueur peut désormais détruire un block déstructible (les blocks sont désignés comme tel s'ils possèdent la méthode "is_destructible()") visant le block en question et en maintenant click gauche pendant 1 seconde.
+- Albin : Simplification de code dans les scripts Main et Chunk. Essai montagne.
 - Greg :
 <br>
 
@@ -144,7 +144,7 @@ Résoudre problème d'import fichier dae sur godot
 ## Tache réalisé du jour :
 - Louane :
 - Romain : Intégration du script de convertion dans godot + Création d'une interface permettant la génération des modéles convertit dans le monde
-- Albin : 
+- Albin : Intéraction joueur / monde. Le joueur peut désormais détruire un block déstructible (les blocks sont désignés comme tel s'ils possèdent la méthode "is_destructible()") visant le block en question et en maintenant click gauche pendant 1 seconde.
 - Greg :
 <br>
 

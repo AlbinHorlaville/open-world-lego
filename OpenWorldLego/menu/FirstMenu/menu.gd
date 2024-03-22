@@ -1,10 +1,11 @@
 extends Control
 
+const Convertissor = preload("res://externConvertissor/convertissor.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$PanelContainer/MarginContainer/VBoxContainer/StartButton.grab_focus()
-	$Convertissor.convertAll()
+	Convertissor.convertAll()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

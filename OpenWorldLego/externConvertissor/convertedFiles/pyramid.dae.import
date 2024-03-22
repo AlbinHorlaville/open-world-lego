@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cruuxvafowjev"
-path="res://.godot/imported/car.dae-209f274e3625bf450d1683e5e7313aa7.scn"
+uid="uid://dntxuu645xa3a"
+path="res://.godot/imported/pyramid.dae-929d9f8a4417b5105b4176bf8e8c5d1c.scn"
 
 [deps]
 
-source_file="res://externConvertissor/convertedFiles/car.dae"
-dest_files=["res://.godot/imported/car.dae-209f274e3625bf450d1683e5e7313aa7.scn"]
+source_file="res://externConvertissor/convertedFiles/pyramid.dae"
+dest_files=["res://.godot/imported/pyramid.dae-929d9f8a4417b5105b4176bf8e8c5d1c.scn"]
 
 [params]
 

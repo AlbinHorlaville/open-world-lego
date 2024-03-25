@@ -108,12 +108,16 @@ func GenerateCloud():
 func distance(p1, p2):
 	return sqrt(pow(p1.x-p2.x,2)+pow(p1.y-p2.y,2)+pow(p1.z-p2.z,2))
 	
-func importCustomerDae(file_path,typeOfImport):
+func importCustomerDae(file_path , typeOfImport):
 	# Créer une node3D à partir d'un fichier .dae
 	print("Importing file: ",file_path)
 	print("Type of import: ",typeOfImport)
+	var instance = null
 	match typeOfImport:
-		nodeType.type.Gravity:
-			nodeCreator.createGravityNodeOnPlayer(file_path,$Player.position)
-		nodeType.type.Basic:
-			nodeCreator.createBasicNodeOnPlayer(file_path,$Player.position)
+		"Gravity":
+			instance = nodeCreator.createGravityNodeOnPlayer(file_path,$Player.position)
+		"Basic":
+			instance = nodeCreator.createBasicNodeOnPlayer(file_path,$Player.position)
+			
+	if (instance != null):
+		get_tree().get_root().add_child(instance)

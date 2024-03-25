@@ -50,7 +50,6 @@ func _process(delta):
 
 func _on_import_pressed():
 	# index du fichier à importer
-	print(fileToImport.get_selected_id())
 	var index = fileToImport.get_selected_id()
 	var listeOfFiles = DirAccess.open(output_folder).get_files()
 	
@@ -116,7 +115,7 @@ func _on_import_file_pressed():
 
 	# Restrict the file type to .ldr
 	dialog.clear_filters()
-	dialog.add_filter("LDraw File", "*.ldr")
+	dialog.add_filter("*.ldr", "LDraw File")
 
 	dialog.connect("file_selected", _on_file_dialog_file_selected)
 	# Add to tree

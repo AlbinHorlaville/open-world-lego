@@ -84,7 +84,7 @@ func CreateChunk(x, y, perlin_noise_height, perlin_noise_tree):
 						DictBlocks[block.position] = block
 						
 					# TREE
-					PlantTree(perlin_noise_tree,X,Y,high_block,hlego)
+					PlantTree(perlin_noise_tree,X,Y,high_block)
 				
 func gradient(x,y):
 	return 10*exp(-(((x-500)**2)+((y-500)**2))/1000)
@@ -92,7 +92,7 @@ func gradient(x,y):
 func getCoordChunk():
 	return coordChunk
 
-func PlantTree(perlin_noise_tree,x,y,high_block,hlego):
+func PlantTree(perlin_noise_tree,x,y,high_block):
 	var v_noise_tree = perlin_noise_tree.get_noise_2d(x, y)
 	# On est dans une forêt
 	if v_noise_tree>0.20:

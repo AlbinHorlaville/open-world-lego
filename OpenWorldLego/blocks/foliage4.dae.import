@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cihn8u6gurk10"
-path="res://.godot/imported/car.dae-209f274e3625bf450d1683e5e7313aa7.scn"
+uid="uid://tlrm0qlaq6eu"
+path="res://.godot/imported/foliage4.dae-0078237628796278ef572291721d5045.scn"
 
 [deps]
 
-source_file="res://externConvertissor/convertedFiles/car.dae"
-dest_files=["res://.godot/imported/car.dae-209f274e3625bf450d1683e5e7313aa7.scn"]
+source_file="res://blocks/foliage4.dae"
+dest_files=["res://.godot/imported/foliage4.dae-0078237628796278ef572291721d5045.scn"]
 
 [params]
 

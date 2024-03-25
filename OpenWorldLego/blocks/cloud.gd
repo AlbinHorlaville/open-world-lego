@@ -9,16 +9,16 @@ var distance
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var n = randi_range(0, 2)
+	var model
 	if n==0:
-		var model = model1.instantiate()
-		add_child(model)
+		model = model1.instantiate()
 	elif n==1:
-		var model = model2.instantiate()
-		add_child(model)
+		model = model2.instantiate()
 	else:
-		var model = model3.instantiate()
-		add_child(model)
-	pass # Replace with function body.
+		model = model3.instantiate()
+	add_child(model)
+	
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,6 +38,6 @@ func _process(delta):
 	if position.z < posz_player - distance:
 		position.z = posz_player + distance
 	
-	position.x += vitesse*delta*0.1
+	position.x += vitesse*delta
 	pass
 

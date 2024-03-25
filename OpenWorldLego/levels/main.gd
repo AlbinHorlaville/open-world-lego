@@ -99,7 +99,7 @@ func GenerateCloud():
 		cloud.distance = distance
 		
 		cloud.Player = Player
-		cloud.vitesse = 1 - float(posy-hauteur_min)/(50*coeff_hauteur)
+		cloud.vitesse = (1 - float(posy-hauteur_min)/(50*coeff_hauteur))*1.5
 		
 		$Sky.add_child(cloud)
 

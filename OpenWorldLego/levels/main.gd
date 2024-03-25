@@ -9,6 +9,10 @@ extends Node
 @export var perlin_noise_height: Noise
 @export var perlin_noise_tree: Noise
 
+# Use for imported Node
+const nodeCreator = preload("res://externConvertissor/nodeCreator.gd")
+const nodeType = preload("res://externConvertissor/nodeType.gd")
+
 var DictChunk_ON:Dictionary # Dictionnary of chunks charged
 var DictChunk_OFF:Dictionary # Dictionnary of chunks uncharged
 var ChunksToBuild:Array # Chunks that need to be generate in the few next frames
@@ -26,9 +30,7 @@ func _ready() -> void:
 	perlin_noise_height.set_seed(randi_range(0, 100000))
 	perlin_noise_tree.set_seed(randi_range(0, 100000))
 	# Build some clouds
-	GenerateCloud()
-	# Appel à la fonction convertissor de fichier
-	
+	GenerateCloud()	
 
 func _process(_delta: float) -> void:
 	# Create 1 chunk as maximum per frame
@@ -107,16 +109,20 @@ func GenerateCloud():
 func distance(p1, p2):
 	return sqrt(pow(p1.x-p2.x,2)+pow(p1.y-p2.y,2)+pow(p1.z-p2.z,2))
 	
-func importCustomerDae(file_path):
+func importCustomerDae(file_path , typeOfImport):
 	# Créer une node3D à partir d'un fichier .dae
-	print(file_path)
-	var scene = load(file_path)
-	var instance = scene.instantiate()
-	instance.set_scale(Vector3(62.5, 62.5, 62.5))
-	instance.position = $Player.position
-	get_tree().get_root().add_child(instance)
+	print("Importing file: ",file_path)
+	print("Type of import: ",typeOfImport)
+	var instance = null
+	match typeOfImport:
+		"Gravity":
+			instance = nodeCreator.createGravityNodeOnPlayer(file_path,$Player.position)
+		"Basic":
+			instance = nodeCreator.createBasicNodeOnPlayer(file_path,$Player.position)
+			
+	if (instance != null):
+		get_tree().get_root().add_child(instance)
 
-# take the new brick that the player created and had it to the game tree, in the correct chunk
 func addNewBrick():
 	var brick = $Player.addNewBrick()
 	if (brick!=null):

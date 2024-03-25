@@ -27,7 +27,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0)
 target_position = Vector3(2.08165e-12, 2.08165e-12, -1)
 script = ExtResource("2_5bxt4")
 
-[node name="Timer" type="Timer" parent="Head/InteractRay"]
+[node name="Destroy" type="Timer" parent="Head/InteractRay"]
+
+[node name="Create" type="Timer" parent="Head/InteractRay"]
 
 [node name="basic_skin" parent="." instance=ExtResource("2_wkixd")]
 transform = Transform3D(-27, 0, -2.36042e-06, 0, 27, 0, 2.36042e-06, 0, -27, 0, 0, 0)
@@ -60,4 +62,4 @@ text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="timeout" from="Head/InteractRay/Timer" to="Head/InteractRay" method="_on_timer_timeout"]
+[connection signal="timeout" from="Head/InteractRay/Destroy" to="Head/InteractRay" method="_on_timer_timeout"]

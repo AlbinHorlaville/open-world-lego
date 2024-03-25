@@ -1,8 +1,11 @@
-extends StaticBody3D
+extends Ground
 
 var material:Material
 
 @onready var collision = $CollisionShape3D
+
+func on_ready() -> void:
+	pass
 
 func initMaterial(mat:Material)->void:
 	# get the instance

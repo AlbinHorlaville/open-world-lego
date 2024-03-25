@@ -11,6 +11,8 @@ extends Node
 
 var coordChunk:Vector2
 
+var DictBlocks:Dictionary = {}
+
 # Dimension Lego piece 2x2 = 16x16x9,6
 var hlego:float = 9.6/16
 
@@ -47,11 +49,13 @@ func CreateChunk(x, y, perlin_noise_height, perlin_noise_tree):
 				block.position = Vector3(X, 0, Y)
 				block.changeTransparency() # Set the transparency to 0.5 to see the sand below the water
 				$Water.add_child(block)
+				DictBlocks[block.position] = block
 			if currentPN < -0.05: # 0.5 permit to have few blocks of sand between dirt and water
 				block = water_scene.instantiate()
 				block.changeMaterial()
 				block.position = Vector3(X, 0, Y)
 				$Water.add_child(block)
+				DictBlocks[block.position] = block
 			else:
 				# SAND
 				block = dirt_scene.instantiate()
@@ -59,12 +63,14 @@ func CreateChunk(x, y, perlin_noise_height, perlin_noise_tree):
 					block.initMaterial(color_sand)
 					block.position = Vector3(X, int(currentPN*10*hlego), Y)
 					add_child(block)
+					DictBlocks[block.position] = block
 				# DIRT
 				else:
 					# Block at the surface
 					block.initMaterial(color_dirt)
 					block.position = Vector3(X, int(currentPN*10)*hlego, Y)
 					add_child(block)
+					DictBlocks[block.position] = block
 					
 					var high_block = block.position.y
 					
@@ -75,9 +81,10 @@ func CreateChunk(x, y, perlin_noise_height, perlin_noise_tree):
 						block.position = Vector3(X, k*hlego, Y)
 						block.set_visible(false)
 						add_child(block)
+						DictBlocks[block.position] = block
 						
 					# TREE
-					PlantTree(perlin_noise_tree,X,Y,high_block,hlego)
+					PlantTree(perlin_noise_tree,X,Y,high_block)
 				
 func gradient(x,y):
 	return 10*exp(-(((x-500)**2)+((y-500)**2))/1000)
@@ -85,7 +92,7 @@ func gradient(x,y):
 func getCoordChunk():
 	return coordChunk
 
-func PlantTree(perlin_noise_tree,x,y,high_block,hlego):
+func PlantTree(perlin_noise_tree,x,y,high_block):
 	var v_noise_tree = perlin_noise_tree.get_noise_2d(x, y)
 	# On est dans une forêt
 	if v_noise_tree>0.20:
@@ -102,3 +109,9 @@ func PlantTree(perlin_noise_tree,x,y,high_block,hlego):
 			tree.position = Vector3(x, high_block+hlego, y)
 			add_child(tree)
 	return
+
+# Add the new block to the tree and to DictBlocks
+func addNewBrick(brick):
+	if DictBlocks.find_key(brick.position)==null:
+		DictBlocks[brick.position] = brick
+		add_child(brick)

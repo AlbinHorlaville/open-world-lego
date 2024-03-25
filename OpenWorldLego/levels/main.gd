@@ -40,6 +40,7 @@ func _process(_delta: float) -> void:
 		count=0
 	
 	updateChunkToCharge()
+	addNewBrick()
 
 func ChunkInit():
 	if len(ChunksToBuild)>0:
@@ -100,7 +101,7 @@ func GenerateCloud():
 		cloud.distance = distance
 		
 		cloud.Player = Player
-		cloud.vitesse = 1 - float(posy-hauteur_min)/(50*coeff_hauteur)
+		cloud.vitesse = (1 - float(posy-hauteur_min)/(50*coeff_hauteur))*1.5
 		
 		$Sky.add_child(cloud)
 
@@ -121,3 +122,9 @@ func importCustomerDae(file_path , typeOfImport):
 			
 	if (instance != null):
 		get_tree().get_root().add_child(instance)
+
+func addNewBrick():
+	var brick = $Player.addNewBrick()
+	if (brick!=null):
+		var pos_chunk = Vector2(int(brick.position.x/16), int(brick.position.z/16))
+		DictChunk_ON[pos_chunk].addNewBrick(brick)

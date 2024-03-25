@@ -2,6 +2,8 @@ extends StaticBody3D
 
 var material:Material
 
+@onready var collision = $CollisionShape3D
+
 func initMaterial(mat:Material)->void:
 	# get the instance
 	var mesh_inst = $brick2x2.get_child(0)

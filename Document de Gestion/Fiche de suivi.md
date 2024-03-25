@@ -179,13 +179,15 @@ Résoudre problème d'import fichier dae sur godot
 
 ## Tache réalisé du jour :
 - Louane : Génération aléatoire de skins d'arbres fini + Documentation pour faire une aide sur les commandes du jeu
-- Romain :
+- Romain : Implémentation du type de Noeud Gravity permettant d'importer un noeud avec des collisions.
++ Refactoring des types de noeuds.
 - Albin : Finition du clic droit. (Problème résolu grâce à la fonction get_collision_point()) Je commence à refactor l'organisation des briques LEGO pour en faire un arbre de classes avec de l'héritage, pour mieux développer la génération du terrain, et rendre le jeu plus facilement extensible.
 - Greg :
 <br>
 
 ## A faire :
 <br>
+Romain : Fix Bug lors de l'importation direct de fichier puis de l'upload dans le monde + ajouter de la gravité au noeud avec collision
 
 ## Questions du jour : 
 

@@ -160,7 +160,7 @@ Résoudre problème d'import fichier dae sur godot
 # 22 Mars
 
 ## Tache réalisé du jour :
-- Louane : Generation aleatoire de skin d'arbre 
+- Louane : Generation aleatoire de skins d'arbre 
 - Romain : Interface import de LDR dans Godot + création de la différentiation de type d'import de node ( Voir les specifications pour plus de précision) 
 - Albin : 
 - Greg :
@@ -168,6 +168,23 @@ Résoudre problème d'import fichier dae sur godot
 
 ## A faire
 - Louane : finir génération arbre et ajouter colision aux arbres
+<br>
+
+## Questions du jour : 
+
+<br>
+<br>
+
+# 25 Mars
+
+## Tache réalisé du jour :
+- Louane : Génération aléatoire de skins d'arbres fini + Documentation pour faire une aide sur les commandes du jeu
+- Romain :
+- Albin : 
+- Greg :
+<br>
+
+## A faire :
 <br>
 
 ## Questions du jour : 

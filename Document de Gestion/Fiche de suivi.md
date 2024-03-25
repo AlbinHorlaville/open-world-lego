@@ -144,7 +144,7 @@ Résoudre problème d'import fichier dae sur godot
 ## Tache réalisé du jour :
 - Louane : Génération des arbres avec bruits de perlin pour faire des forêts
 - Romain : Intégration du script de convertion dans godot + Création d'une interface permettant la génération des modéles convertit dans le monde
-- Albin : Intéraction joueur / monde. Le joueur peut désormais détruire un block déstructible (les blocks sont désignés comme tel s'ils possèdent la méthode "is_destructible()") visant le block en question et en maintenant click gauche pendant 1 seconde.
+- Albin : Intéraction joueur / monde. Le joueur peut désormais détruire un block déstructible (les blocks sont désignés comme tel s'ils possèdent la méthode "is_destructible()") visant le block en question et en maintenant clic gauche pendant 1 seconde.
 - Greg : Implementation de la vue 3ème personne + recherche poour faire un inventaire
 <br>
 
@@ -162,7 +162,7 @@ Résoudre problème d'import fichier dae sur godot
 ## Tache réalisé du jour :
 - Louane : Generation aleatoire de skins d'arbre 
 - Romain : Interface import de LDR dans Godot + création de la différentiation de type d'import de node ( Voir les specifications pour plus de précision) 
-- Albin : 
+- Albin : Interaction joueur / monde. Début d'implémentation du clique droit, pour poser des bloques. Problème : détecter la face sur laquelle on clique pour déterminer la position du bloque créé.
 - Greg :
 <br>
 
@@ -180,7 +180,7 @@ Résoudre problème d'import fichier dae sur godot
 ## Tache réalisé du jour :
 - Louane : Génération aléatoire de skins d'arbres fini + Documentation pour faire une aide sur les commandes du jeu
 - Romain :
-- Albin : 
+- Albin : Finition du clic droit. (Problème résolu grâce à la fonction get_collision_point()) Je commence à refactor l'organisation des briques LEGO pour en faire un arbre de classes avec de l'héritage, pour mieux développer la génération du terrain, et rendre le jeu plus facilement extensible.
 - Greg :
 <br>
 

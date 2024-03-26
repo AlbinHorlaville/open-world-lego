@@ -29,4 +29,4 @@ Welcome to the project for designing the foundations of an OpenWorld engine, har
 
 - [World Generation](./specification/WorldGeneration.md)
 
-- [UnResolved Bug Founded](./specification/BugFounded.md)
+- [Unresolved Bug Founded](./specification/BugFounded.md)

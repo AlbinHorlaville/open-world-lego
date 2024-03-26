@@ -8,10 +8,14 @@ Welcome to the project for designing the foundations of an OpenWorld engine, har
 
 1. Install [Leocad]([./specification/LDrawToGodot.md](https://www.leocad.org/download.html)) - Use to the conversion process
 2. Clone our repository
+3. Build using Godot
 
 ## Supported Version
 
-**Windows** : Supported
+- **Windows** : Supported
+- **Linux** : Supported
+- **MacOS** : Supported except for importing new content
+
 
 ## Table of contents
 

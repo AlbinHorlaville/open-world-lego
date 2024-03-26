@@ -116,10 +116,6 @@ func _on_import_file_pressed():
 	# Restrict the file type to .ldr
 	dialog.clear_filters()
 	dialog.add_filter("*.ldr", "LDraw File")
-
 	dialog.connect("file_selected", _on_file_dialog_file_selected)
-	# Add to tree
-
-	
 
 

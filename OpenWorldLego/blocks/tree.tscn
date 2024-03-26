@@ -1,110 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccchkqqsmlq6h"]
+[gd_scene load_steps=11 format=3 uid="uid://ccchkqqsmlq6h"]
 
-[ext_resource type="PackedScene" uid="uid://dkm25wxado0qi" path="res://blocks/dirt.tscn" id="1_nybd8"]
 [ext_resource type="Script" path="res://blocks/tree.gd" id="1_xlkee"]
 [ext_resource type="Material" uid="uid://bat5ftja3r7db" path="res://materials/Leaf.tres" id="2_r6u78"]
 [ext_resource type="Material" uid="uid://dqsrw7u44jy2e" path="res://materials/Wood.tres" id="2_sv346"]
+[ext_resource type="PackedScene" uid="uid://bx3yclu5m48hc" path="res://blocks/trunk2.dae" id="4_46dlu"]
+[ext_resource type="PackedScene" uid="uid://h2yflo3myiam" path="res://blocks/foliage1.dae" id="4_ab050"]
+[ext_resource type="PackedScene" uid="uid://cd32loxr1hcnw" path="res://blocks/foliage2.dae" id="5_3wgmd"]
+[ext_resource type="PackedScene" uid="uid://bkc1bexxcutyy" path="res://blocks/trunk3.dae" id="5_sobuo"]
+[ext_resource type="PackedScene" uid="uid://ckdrgud2g085f" path="res://blocks/foliage3.dae" id="6_i6dc8"]
+[ext_resource type="PackedScene" uid="uid://tlrm0qlaq6eu" path="res://blocks/foliage4.dae" id="7_spcla"]
+[ext_resource type="PackedScene" uid="uid://cvkum0s04arbf" path="res://blocks/trunk1.dae" id="8_dixll"]
 
 [node name="Tree" type="Node3D"]
+transform = Transform3D(62.5, 0, 0, 0, 62.5, 0, 0, 0, 62.5, 0, 0, 0)
 script = ExtResource("1_xlkee")
 color_leaf = ExtResource("2_r6u78")
 color_wood = ExtResource("2_sv346")
-
-[node name="Tronc" type="Node3D" parent="."]
-
-[node name="tronc" parent="Tronc" instance=ExtResource("1_nybd8")]
-
-[node name="tronc2" parent="Tronc" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
-
-[node name="tronc3" parent="Tronc" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, 2.08165e-12)
-
-[node name="tronc4" parent="Tronc" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 3, 2.08165e-12)
-
-[node name="Leaf" type="Node3D" parent="."]
-
-[node name="leaf" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 2.08165e-12)
-
-[node name="leaf3" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 4, 1)
-
-[node name="leaf4" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 4, -1)
-
-[node name="leaf2" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 2.08165e-12)
-
-[node name="leaf5" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 5, 2.08165e-12)
-
-[node name="leaf6" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 1)
-
-[node name="leaf7" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5, 1)
-
-[node name="leaf8" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 1)
-
-[node name="leaf9" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 2.08165e-12)
-
-[node name="leaf10" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, -1)
-
-[node name="leaf11" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5, -1)
-
-[node name="leaf12" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, -1)
-
-[node name="leaf13" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, 2.08165e-12)
-
-[node name="leaf14" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6, 1)
-
-[node name="leaf15" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, 1)
-
-[node name="leaf16" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6, 1)
-
-[node name="leaf17" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6, 2.08165e-12)
-
-[node name="leaf28" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6, 2.08165e-12)
-
-[node name="leaf18" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6, -1)
-
-[node name="leaf19" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, -1)
-
-[node name="leaf20" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6, -1)
-
-[node name="leaf21" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, -2)
-
-[node name="leaf22" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, 2)
-
-[node name="leaf23" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 7, 2.08165e-12)
-
-[node name="leaf26" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 7, 2.08165e-12)
-
-[node name="leaf24" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 7, 1)
-
-[node name="leaf27" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 7, -1)
-
-[node name="leaf25" parent="Leaf" instance=ExtResource("1_nybd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 7, 2.08165e-12)
+foliage1 = ExtResource("4_ab050")
+foliage2 = ExtResource("5_3wgmd")
+foliage3 = ExtResource("6_i6dc8")
+foliage4 = ExtResource("7_spcla")
+trunk1 = ExtResource("8_dixll")
+trunk2 = ExtResource("4_46dlu")
+trunk3 = ExtResource("5_sobuo")

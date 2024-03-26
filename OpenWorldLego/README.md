@@ -28,3 +28,5 @@ Welcome to the project for designing the foundations of an OpenWorld engine, har
 - [LDraw Convertissor](./specification/LDrawConvertissor.md)
 
 - [World Generation](./specification/WorldGeneration.md)
+
+- [UnResolved Bug Founded](./specification/BugFounded.md)

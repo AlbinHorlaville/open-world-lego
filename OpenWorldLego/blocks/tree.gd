@@ -17,7 +17,7 @@ var hlego:float = 9.6/16
 # Readjust the color to paint a tree
 func recAdjutsColor(node, material):
 	for n in node.get_children():
-		if n is StaticBody3D:
+		if n is Brick:
 			n.changeMaterial(material)
 			# Readjust the y position because a lego bric is not 1 by 1 by 1
 			n.position.y = n.position.y * hlego

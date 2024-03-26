@@ -25,6 +25,8 @@ func handleRightClick():
 	if createTimer.is_stopped() and Input.is_action_pressed("Action") and is_colliding():
 		var collided = get_collider()
 		var brick = dirt.instantiate()
+		brick.material = load("res://materials/Water.tres")
+		brick.changeMaterial(brick.material)
 		
 		# In function of wich face we clicked on, we determine the position of the new object
 		
@@ -35,7 +37,7 @@ func handleRightClick():
 
 # Return the position of the new object in function of the collision point
 func get_pos_object(pos_brick):
-	var size_col = get_collider().collision.shape.size
+	var size_col = get_collider().get_collision().shape.size
 	var pos_collision = get_collision_point()
 	# UP FACE
 	if pos_collision.y>=pos_brick.y-0.1 and pos_collision.y<=pos_brick.y+0.1:

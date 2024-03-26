@@ -1,15 +1,11 @@
-extends StaticBody3D
+extends Brick
 
-func changeMaterial() -> void:
-	# get the instance
-	var mesh_inst = $brick2x2.get_child(0)
-	# Assign the material
-	mesh_inst.set_surface_override_material(0, load("res://materials/Water.tres"))
+@export var material_water_trans:Material
 
 # Set the transparency of the block of water
 func changeTransparency():
 	var mesh_inst = $brick2x2.get_child(0)
-	mesh_inst.set_surface_override_material(0, load("res://materials/WaterTrans.tres"))
+	mesh_inst.set_surface_override_material(0, material_water_trans)
 
 # Movement of the sea waves
 var t:float=0

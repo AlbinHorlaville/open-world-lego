@@ -198,7 +198,7 @@ Romain : Fix Bug lors de l'importation direct de fichier puis de l'upload dans l
 ## Tache réalisé du jour :
 - Louane : 
 - Romain : Bugtracking de l'importation - Ajout du type d'importation MDP - Gestion de L'importation sous MacOS et Linux
-- Albin : 
+- Albin : Refactor des briques avec les classes. Résolution de bugs et tentatives d'ajout de suppression des arbres par le joueur.
 - Greg :
 <br>
 

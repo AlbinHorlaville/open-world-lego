@@ -77,7 +77,6 @@ func _on_import_pressed():
 				get_tree().get_root().get_node("Main").importCustomerDae(output_folder + fileToImport, type)
 				break
 			i += 1
-		
 	goBackToGame()
 	
 func goBackToGame():
@@ -92,7 +91,7 @@ func _on_cancel_pressed():
 
 func _on_file_dialog_file_selected(path):
 	# Check if the file is a .dae file
-	if path.ends_with(".ldr"):
+	if path.ends_with(".ldr") || path.ends_with(".mpd"):
 		var process = convertissor.importNewLDR(path)
 		if process == 1:
 			#Flush the list
@@ -116,6 +115,7 @@ func _on_import_file_pressed():
 	# Restrict the file type to .ldr
 	dialog.clear_filters()
 	dialog.add_filter("*.ldr", "LDraw File")
+	dialog.add_filter("*.mpd*", "LDraw Multi-Part File")
 	dialog.connect("file_selected", _on_file_dialog_file_selected)
 
 

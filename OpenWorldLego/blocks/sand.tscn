@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://7hv8ur6n3qes" path="res://blocks/brick2x2.dae" id="2_2yr6f"]
 [ext_resource type="Material" uid="uid://bvlh5xukgd2ik" path="res://materials/Sand.tres" id="2_wrvep"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ilgif"]
-size = Vector3(1, 0.628967, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_osgo0"]
+size = Vector3(1, 0.600226, 1)
 
 [node name="Sand" type="StaticBody3D"]
 script = ExtResource("1_wex1p")
@@ -15,8 +15,8 @@ weight = 5
 density = 99
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.918114, 0)
-shape = SubResource("BoxShape3D_ilgif")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.299887, 2.08165e-12)
+shape = SubResource("BoxShape3D_osgo0")
 
 [node name="brick2x2" parent="." instance=ExtResource("2_2yr6f")]
 transform = Transform3D(62.5, 0, 0, 0, 62.5, 0, 0, 0, 62.5, 0, 0, 0)

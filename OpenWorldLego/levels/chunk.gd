@@ -1,11 +1,9 @@
 extends Node
 
 @export var dirt_scene: PackedScene
+@export var sand_scene: PackedScene
 @export var water_scene: PackedScene
 @export var tree_scene: PackedScene
-@export var color_dirt: Material
-@export var color_water: Material
-@export var color_sand: Material
 
 @export var tailleChunk:int = 16
 
@@ -45,29 +43,26 @@ func CreateChunk(x, y, perlin_noise_height, perlin_noise_tree):
 			# WATER
 			if currentPN > -0.05 and currentPN < -0.03 : # Water that shows up on the sand
 				block = water_scene.instantiate()
-				block.changeMaterial()
 				block.position = Vector3(X, 0, Y)
 				block.changeTransparency() # Set the transparency to 0.5 to see the sand below the water
 				$Water.add_child(block)
 				DictBlocks[block.position] = block
 			if currentPN < -0.05: # 0.5 permit to have few blocks of sand between dirt and water
 				block = water_scene.instantiate()
-				block.changeMaterial()
 				block.position = Vector3(X, 0, Y)
 				$Water.add_child(block)
 				DictBlocks[block.position] = block
 			else:
 				# SAND
-				block = dirt_scene.instantiate()
+				block = sand_scene.instantiate()
 				if currentPN < 0:
-					block.initMaterial(color_sand)
 					block.position = Vector3(X, int(currentPN*10*hlego), Y)
 					add_child(block)
 					DictBlocks[block.position] = block
 				# DIRT
 				else:
+					block = dirt_scene.instantiate()
 					# Block at the surface
-					block.initMaterial(color_dirt)
 					block.position = Vector3(X, int(currentPN*10)*hlego, Y)
 					add_child(block)
 					DictBlocks[block.position] = block
@@ -77,7 +72,6 @@ func CreateChunk(x, y, perlin_noise_height, perlin_noise_tree):
 					# fill the ground of dirt to dig into it
 					for k in range(0, int(high_block/hlego+1)):
 						block = dirt_scene.instantiate()
-						block.initMaterial(color_dirt)
 						block.position = Vector3(X, k*hlego, Y)
 						block.set_visible(false)
 						add_child(block)

@@ -1,11 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccchkqqsmlq6h"]
+[gd_scene load_steps=5 format=3 uid="uid://ccchkqqsmlq6h"]
 
 [ext_resource type="PackedScene" uid="uid://dkm25wxado0qi" path="res://blocks/dirt.tscn" id="1_nybd8"]
 [ext_resource type="Script" path="res://blocks/tree.gd" id="1_xlkee"]
 [ext_resource type="Material" uid="uid://bat5ftja3r7db" path="res://materials/Leaf.tres" id="2_r6u78"]
 [ext_resource type="Material" uid="uid://dqsrw7u44jy2e" path="res://materials/Wood.tres" id="2_sv346"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8nxx8"]
 
 [node name="Tree" type="Node3D"]
 script = ExtResource("1_xlkee")
@@ -15,130 +13,98 @@ color_wood = ExtResource("2_sv346")
 [node name="Tronc" type="Node3D" parent="."]
 
 [node name="tronc" parent="Tronc" instance=ExtResource("1_nybd8")]
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="tronc2" parent="Tronc" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="tronc3" parent="Tronc" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, 2.08165e-12)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="tronc4" parent="Tronc" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 3, 2.08165e-12)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="Leaf" type="Node3D" parent="."]
 
 [node name="leaf" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 2.08165e-12)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf3" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 4, 1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf4" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 4, -1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf2" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 2.08165e-12)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf5" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 5, 2.08165e-12)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf6" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf7" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5, 1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf8" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf9" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 2.08165e-12)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf10" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, -1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf11" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5, -1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf12" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, -1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf13" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, 2.08165e-12)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf14" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6, 1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf15" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, 1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf16" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6, 1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf17" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6, 2.08165e-12)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf28" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6, 2.08165e-12)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf18" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6, -1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf19" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, -1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf20" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6, -1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf21" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, -2)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf22" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 6, 2)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf23" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 7, 2.08165e-12)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf26" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 7, 2.08165e-12)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf24" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 7, 1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf27" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 7, -1)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")
 
 [node name="leaf25" parent="Leaf" instance=ExtResource("1_nybd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 7, 2.08165e-12)
-physics_material_override = SubResource("PhysicsMaterial_8nxx8")

@@ -28,7 +28,7 @@ static func convert_ldr_to_dae(file: String):
 		print("Conversion du fichier " + file + " terminée.")
 
 static func convertAll():
-	# Parcourir les fichiers LDraw dans le dossier d'entrée
+	# Parcourir les fichiers LDraw dans le dossier d'entrée et convertir chacun d'eux en DAE si pas déjà fait
 	
 	# Should check if the input folder exists
 	var inputDir = DirAccess.open(input_folder)
@@ -45,7 +45,11 @@ static func convertAll():
 	print("Conversion en cours...")
 	for file in listeOfFiles:
 		if file.ends_with(".ldr"):
-			convert_ldr_to_dae(file)
+			# si le fichier n'a pas déjà été converti
+			if !DirAccess.open(output_folder).file_exists(file.get_basename().split(".")[0] + ".dae"):
+				convert_ldr_to_dae(file)
+			else:
+				print("Le fichier " + file + " a déjà été converti.")
 	print("Conversion All terminée.")
 
 static func importNewLDR(filePath : String):
@@ -57,13 +61,13 @@ static func importNewLDR(filePath : String):
 	var fileBasename = filePath.get_file()
 	var from = filePath
 	var to = ProjectSettings.globalize_path(input_folder) + fileBasename
-	print("from: " + from)
-	print("to: " + to)
 	var process = DirAccess.copy_absolute(from, to, true)
 	if process != OK:
 		print("Erreur lors de la copie du fichier " + fileBasename + " dans le dossier d'entrée.")
 		return -1
-	else:
+	else:		
 		print("Fichier " + fileBasename + " copié dans le dossier d'entrée.")
 		convert_ldr_to_dae(fileBasename)
+		# Refresh the list of files in the output folder
+		DirAccess.open(output_folder).list_dir_begin()
 		return 1

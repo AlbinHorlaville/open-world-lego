@@ -15,10 +15,10 @@ static func convert_ldr_to_dae(file: String):
 		"Windows":
 			var process = OS.execute(leocad_path, [input_file, "-dae", output_file],[],true,true)
 		"OSX":
-			print("MacOS not supported yet.")
+			var process = OS.execute("leocad", [input_file, "-dae", output_file],[],true,true)
 			return
 		"X11":
-			print("Linux not supported yet.")
+			var process = OS.execute("leocad", [input_file, "-dae", output_file],[],true,true)
 			return
 
 	var process = OS.execute(leocad_path, [input_file, "-dae", output_file])

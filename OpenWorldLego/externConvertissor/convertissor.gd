@@ -44,7 +44,7 @@ static func convertAll():
 		
 	print("Conversion en cours...")
 	for file in listeOfFiles:
-		if file.ends_with(".ldr"):
+		if file.ends_with(".ldr") || file.ends_with(".mpd"):
 			# si le fichier n'a pas déjà été converti
 			if !DirAccess.open(output_folder).file_exists(file.get_basename().split(".")[0] + ".dae"):
 				convert_ldr_to_dae(file)

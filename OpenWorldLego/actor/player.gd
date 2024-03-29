@@ -7,6 +7,7 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var anim = $AnimationPlayer
+@onready var sound = $AudioStreamPlayer3D
 
 var isFirstPerson = true
 
@@ -93,8 +94,15 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity.x ==0 && velocity.z ==0:
 		anim.stop()
+		sound.stop()
 	else:
 		anim.play("Marche")
+		if is_on_floor():
+			if !sound.playing:
+				sound.stream = load("res://assets/sound/se/footstep.ogg")
+				sound.play()
+		else:
+			sound.stop() 
 	
 
 func addNewBrick():

@@ -6,7 +6,7 @@ const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
-
+@onready var anim = $AnimationPlayer
 
 var isFirstPerson = true
 
@@ -90,6 +90,12 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+	if velocity.x ==0 && velocity.z ==0:
+		anim.stop()
+	else:
+		anim.play("Marche")
+	
 
 func addNewBrick():
 	var brick = $Head/InteractRay.addNewBrick()

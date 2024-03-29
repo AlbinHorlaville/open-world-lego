@@ -35,7 +35,8 @@ theme_override_constants/margin_bottom = 80
 
 [node name="MainTitle" type="Label" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 1
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme = ExtResource("2_x8riu")
 theme_override_colors/font_color = Color(1, 0, 0.00392157, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

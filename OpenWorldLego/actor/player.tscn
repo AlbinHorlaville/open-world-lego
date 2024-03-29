@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcrxb66y5ubhl"]
+[gd_scene load_steps=7 format=3 uid="uid://bcrxb66y5ubhl"]
 
 [ext_resource type="Script" path="res://actor/player.gd" id="1_8xc8y"]
 [ext_resource type="Script" path="res://actor/interactRay.gd" id="2_5bxt4"]
@@ -26,19 +26,8 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0.0001, 1, 0, 0, 0, 1, 0.3, 1, 0.35216, 0, 0, 0.93594, 0.7, 1, -0.34202, 0, 0, 0.939693, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="Animation" id="Animation_g164h"]
-resource_name = "IDLE"
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("basic_skin")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 0, 0, 0)
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_crnhk"]
 _data = {
-"IDLE": SubResource("Animation_g164h"),
 "Marche": SubResource("Animation_coudt")
 }
 
@@ -69,10 +58,7 @@ script = ExtResource("2_5bxt4")
 transform = Transform3D(-27, 0, 2.36042e-06, 0, 27, 0, -2.36042e-06, 0, -27, 0, 0, 0)
 
 [node name="_NODEID_3249336880" parent="basic_skin" index="9"]
-transform = Transform3D(1, 0, 0, 0, 0.98654, -0.163517, 0, 0.163517, 0.98654, 0, 0.0112, 0)
-
-[node name="_NODEID_66154081" parent="basic_skin" index="10"]
-transform = Transform3D(1, 0, 0, 0, 0.914782, 0.403948, 0, -0.403948, 0.914782, 0, 0.0112, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0112, 0)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -106,6 +92,8 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_crnhk")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [connection signal="timeout" from="Head/InteractRay/Destroy" to="Head/InteractRay" method="_on_timer_timeout"]
 

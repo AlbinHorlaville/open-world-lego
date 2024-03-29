@@ -59,3 +59,4 @@ shadow_enabled = true
 [node name="Sky" type="Node" parent="."]
 
 [editable path="Player"]
+[editable path="Player/basic_skin"]

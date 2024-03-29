@@ -210,4 +210,21 @@ Romain : Fix Bug lors de l'importation direct de fichier puis de l'upload dans l
 <br>
 <br>
 
+# 29 Mars
+
+## Tache réalisé du jour :
+- Louane : 
+- Romain : Animation de Marche + Ajout de son
+- Albin : 
+- Greg :
+<br>
+
+## A faire :
+<br>
+
+## Questions du jour : 
+
+<br>
+<br>
+
 

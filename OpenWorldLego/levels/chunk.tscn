@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b41qnafv5nqn0"]
+[gd_scene load_steps=7 format=3 uid="uid://b41qnafv5nqn0"]
 
 [ext_resource type="Script" path="res://levels/chunk.gd" id="1_e3x7a"]
+[ext_resource type="PackedScene" uid="uid://2ptq25u18dix" path="res://blocks/grass.tscn" id="2_ke2bo"]
 [ext_resource type="PackedScene" uid="uid://dkm25wxado0qi" path="res://blocks/dirt.tscn" id="2_se7qp"]
 [ext_resource type="PackedScene" uid="uid://4k1hkqah8gp7" path="res://blocks/sand.tscn" id="3_0x0uf"]
 [ext_resource type="PackedScene" uid="uid://ccchkqqsmlq6h" path="res://blocks/tree.tscn" id="3_3ntne"]
@@ -8,6 +9,7 @@
 
 [node name="Chunk" type="Node3D"]
 script = ExtResource("1_e3x7a")
+grass_scene = ExtResource("2_ke2bo")
 dirt_scene = ExtResource("2_se7qp")
 sand_scene = ExtResource("3_0x0uf")
 water_scene = ExtResource("3_m2678")

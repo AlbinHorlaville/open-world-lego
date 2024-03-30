@@ -1,5 +1,6 @@
 extends Node
 
+@export var grass_scene: PackedScene
 @export var dirt_scene: PackedScene
 @export var sand_scene: PackedScene
 @export var water_scene: PackedScene
@@ -61,21 +62,23 @@ func CreateChunk(x, y, perlin_noise_height, perlin_noise_tree):
 					DictBlocks[block.position] = block
 				# DIRT
 				else:
-					block = dirt_scene.instantiate()
+					block = grass_scene.instantiate()
 					# Block at the surface
-					block.position = Vector3(X, int(currentPN*20)*hlego, Y)
+					block.position = Vector3(X, int(currentPN*30)*hlego, Y)
 					add_child(block)
 					DictBlocks[block.position] = block
 					
 					var high_block = block.position.y
 					
 					# fill the ground of dirt to dig into it
-					for k in range(0, int(high_block/hlego+1)):
+					var k = 0
+					while k+hlego/2<high_block:
 						block = dirt_scene.instantiate()
-						block.position = Vector3(X, k*hlego, Y)
+						block.position = Vector3(X, k, Y)
 						#block.set_visible(false)
 						add_child(block)
 						DictBlocks[block.position] = block
+						k+=hlego
 						
 					# TREE
 					PlantTree(perlin_noise_tree,X,Y,high_block)

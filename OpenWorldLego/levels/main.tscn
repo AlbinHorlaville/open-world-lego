@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bdeonnga82vnp" path="res://menu/GUI/gui.tscn" id="4_pppl4"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_uegrl"]
-frequency = 0.007
+frequency = 0.0273
+fractal_gain = 0.7
+fractal_weighted_strength = 0.5
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_as2fr"]
 frequency = 0.006

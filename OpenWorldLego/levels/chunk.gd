@@ -63,7 +63,7 @@ func CreateChunk(x, y, perlin_noise_height, perlin_noise_tree):
 				else:
 					block = dirt_scene.instantiate()
 					# Block at the surface
-					block.position = Vector3(X, int(currentPN*10)*hlego, Y)
+					block.position = Vector3(X, int(currentPN*20)*hlego, Y)
 					add_child(block)
 					DictBlocks[block.position] = block
 					
@@ -73,7 +73,7 @@ func CreateChunk(x, y, perlin_noise_height, perlin_noise_tree):
 					for k in range(0, int(high_block/hlego+1)):
 						block = dirt_scene.instantiate()
 						block.position = Vector3(X, k*hlego, Y)
-						block.set_visible(false)
+						#block.set_visible(false)
 						add_child(block)
 						DictBlocks[block.position] = block
 						

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b41qnafv5nqn0"]
+[gd_scene load_steps=14 format=3 uid="uid://b41qnafv5nqn0"]
 
 [ext_resource type="Script" path="res://levels/chunk.gd" id="1_e3x7a"]
 [ext_resource type="PackedScene" uid="uid://2ptq25u18dix" path="res://blocks/grass.tscn" id="2_ke2bo"]
@@ -6,6 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://4k1hkqah8gp7" path="res://blocks/sand.tscn" id="3_0x0uf"]
 [ext_resource type="PackedScene" uid="uid://ccchkqqsmlq6h" path="res://blocks/tree.tscn" id="3_3ntne"]
 [ext_resource type="PackedScene" uid="uid://dpgr24bj8541x" path="res://blocks/water.tscn" id="3_m2678"]
+[ext_resource type="PackedScene" uid="uid://duthvht6bey25" path="res://blocks/snow.tscn" id="6_1eb5u"]
+[ext_resource type="FastNoiseLite" uid="uid://bj6i5mhmrynty" path="res://levels/Noise_biome_montagne.tres" id="7_fbxcv"]
+[ext_resource type="FastNoiseLite" uid="uid://bogsanvfsi7qb" path="res://levels/noise_biome_ocean.tres" id="7_pe4e3"]
+[ext_resource type="FastNoiseLite" uid="uid://eg0fnnpplbxv" path="res://levels/noise_humidity.tres" id="7_tu8fe"]
+[ext_resource type="FastNoiseLite" uid="uid://dtfc05ejxqu03" path="res://levels/noise_biome_plaine.tres" id="8_hdaya"]
+[ext_resource type="FastNoiseLite" uid="uid://cqebk0ln0itnt" path="res://levels/noise_temperature.tres" id="8_qrrbp"]
+[ext_resource type="FastNoiseLite" uid="uid://gjefmxf8vuid" path="res://levels/noise_biome_forest.tres" id="10_khs2s"]
 
 [node name="Chunk" type="Node3D"]
 script = ExtResource("1_e3x7a")
@@ -13,6 +20,13 @@ grass_scene = ExtResource("2_ke2bo")
 dirt_scene = ExtResource("2_se7qp")
 sand_scene = ExtResource("3_0x0uf")
 water_scene = ExtResource("3_m2678")
+snow_scene = ExtResource("6_1eb5u")
 tree_scene = ExtResource("3_3ntne")
+noise_humidity = ExtResource("7_tu8fe")
+noise_temperature = ExtResource("8_qrrbp")
+noise_biome_ocean = ExtResource("7_pe4e3")
+noise_biome_plaine = ExtResource("8_hdaya")
+noise_biome_montagne = ExtResource("7_fbxcv")
+noise_biome_foret = ExtResource("10_khs2s")
 
 [node name="Water" type="Node" parent="."]

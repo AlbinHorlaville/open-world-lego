@@ -6,7 +6,7 @@ extends Node
 
 @export var Cloud: PackedScene
 
-@export var perlin_noise_height: Noise
+@export var seed:int
 @export var perlin_noise_tree: Noise
 
 # Use for imported Node
@@ -27,7 +27,7 @@ func _ready() -> void:
 	# The player has to be on positives coordinates
 	$Player.position = Vector3(500, 20, 500)
 	# Choose the seed for Perlin Noise
-	perlin_noise_height.set_seed(randi_range(0, 100000))
+	seed = randi_range(0, 100000)
 	perlin_noise_tree.set_seed(randi_range(0, 100000))
 	# Build some clouds
 	GenerateCloud()	
@@ -46,7 +46,7 @@ func ChunkInit():
 	if len(ChunksToBuild)>0:
 		var pos_chunk = ChunksToBuild.pop_front()
 		var chunk = Chunk.instantiate()
-		chunk.CreateChunk(pos_chunk.x, pos_chunk.y, pos_chunk.z, perlin_noise_height, perlin_noise_tree)
+		chunk.CreateChunk(pos_chunk.x, pos_chunk.y, pos_chunk.z, seed, perlin_noise_tree)
 		DictChunk_ON[pos_chunk] = chunk
 		$World.add_child(chunk)
 		return

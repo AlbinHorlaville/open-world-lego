@@ -31,7 +31,7 @@ func resetMaterial():
 
 # -1 and 10 are used for blocks that should be never destroy, like water or bedrock
 func is_destroyable():
-	return self.solidity > 0 and self.solidy < 10
+	return self.solidity > 0 and self.solidity < 10
 
 func get_collision():
 	return $CollisionShape3D

@@ -25,7 +25,7 @@ func _ready() -> void:
 	DictChunk_OFF = {}
 	ChunksToBuild = []
 	# The player has to be on positives coordinates
-	$Player.position = Vector3(500, 50, 500)
+	$Player.position = Vector3(500, 20, 500)
 	# Choose the seed for Perlin Noise
 	perlin_noise_height.set_seed(randi_range(0, 100000))
 	perlin_noise_tree.set_seed(randi_range(0, 100000))
@@ -46,7 +46,7 @@ func ChunkInit():
 	if len(ChunksToBuild)>0:
 		var pos_chunk = ChunksToBuild.pop_front()
 		var chunk = Chunk.instantiate()
-		chunk.CreateChunk(pos_chunk.x, pos_chunk.y, perlin_noise_height, perlin_noise_tree)
+		chunk.CreateChunk(pos_chunk.x, pos_chunk.y, pos_chunk.z, perlin_noise_height, perlin_noise_tree)
 		DictChunk_ON[pos_chunk] = chunk
 		$World.add_child(chunk)
 		return
@@ -126,5 +126,5 @@ func importCustomerDae(file_path , typeOfImport):
 func addNewBrick():
 	var brick = $Player.addNewBrick()
 	if (brick!=null):
-		var pos_chunk = Vector2(int(brick.position.x/16), int(brick.position.z/16))
+		var pos_chunk = Vector3(int(brick.position.x/16), int(brick.position.y/16), int(brick.position.z/16))
 		DictChunk_ON[pos_chunk].addNewBrick(brick)

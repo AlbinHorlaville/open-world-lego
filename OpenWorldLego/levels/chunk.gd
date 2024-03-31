@@ -8,80 +8,69 @@ extends Node
 
 @export var tailleChunk:int = 16
 
-var coordChunk:Vector2
+var coordChunk:Vector3
 
+# save all the bricks in it so we can find them easily for add a new brick to the chunk for example
 var DictBlocks:Dictionary = {}
 
 # Dimension Lego piece 2x2 = 16x16x9,6
 var hlego:float = 9.6/16
 
-# To avoid to call an random generator each time we create a chunk,
-# We prebuild a random tab and iterate on it to decide if we build a tree on the current block
-var TabRandom:Array
-var k_TabRandom:int
-var is_Build:bool=false
-func BuildRandTab() -> void:
-	if not is_Build:
-		k_TabRandom = 0
-		TabRandom = []
-		for i in range(100):
-			TabRandom.append(randi_range(0, 200))
-		is_Build = true
-
-func CreateChunk(x, y, perlin_noise_height, perlin_noise_tree):
-	BuildRandTab()
-	coordChunk = Vector2(x, y)
+func CreateChunk(x, y, z, perlin_noise_height, perlin_noise_tree):
+	coordChunk = Vector3(x, y, z)
 	for i in range(tailleChunk):
 		for j in range(tailleChunk):
 			
 			var X = x*tailleChunk+i
-			var Y = y*tailleChunk+j
+			var Z = z*tailleChunk+j
 			var block
 			
 			# Add 0.3 because we want more dirt than water on our map
-			var currentPN = 0.3+perlin_noise_height.get_noise_2d(X, Y)
+			var currentPN = perlin_noise_height.get_noise_2d(X, Z)
 			
-			# WATER
-			if currentPN > -0.05 and currentPN < -0.03 : # Water that shows up on the sand
-				block = water_scene.instantiate()
-				block.position = Vector3(X, 0, Y)
-				block.changeTransparency() # Set the transparency to 0.5 to see the sand below the water
-				$Water.add_child(block)
-				DictBlocks[block.position] = block
-			if currentPN < -0.05: # 0.5 permit to have few blocks of sand between dirt and water
-				block = water_scene.instantiate()
-				block.position = Vector3(X, 0, Y)
-				$Water.add_child(block)
-				DictBlocks[block.position] = block
-			else:
-				# SAND
-				block = sand_scene.instantiate()
-				if currentPN < 0:
-					block.position = Vector3(X, int(currentPN*10*hlego), Y)
-					add_child(block)
+			# Si la hauteur du block se trouve dans la zone du chunk 16x16x16, alors on le construit
+			if (int(currentPN*30)*hlego >=y*tailleChunk and int(currentPN*30)*hlego < (y+1)*tailleChunk) or y<1:
+				# WATER
+				if currentPN > -0.05 and currentPN < -0.03 : # Water that shows up on the sand
+					block = water_scene.instantiate()
+					block.position = Vector3(X, 0, Z)
+					block.changeTransparency() # Set the transparency to 0.5 to see the sand below the water
+					$Water.add_child(block)
 					DictBlocks[block.position] = block
-				# DIRT
+				if currentPN < -0.05: # 0.5 permit to have few blocks of sand between dirt and water
+					block = water_scene.instantiate()
+					block.position = Vector3(X, 0, Z)
+					$Water.add_child(block)
+					DictBlocks[block.position] = block
 				else:
-					block = grass_scene.instantiate()
-					# Block at the surface
-					block.position = Vector3(X, int(currentPN*30)*hlego, Y)
-					add_child(block)
-					DictBlocks[block.position] = block
-					
-					var high_block = block.position.y
-					
-					# fill the ground of dirt to dig into it
-					var k = 0
-					while k+hlego/2<high_block:
-						block = dirt_scene.instantiate()
-						block.position = Vector3(X, k, Y)
-						#block.set_visible(false)
+					# SAND
+					block = sand_scene.instantiate()
+					if currentPN < 0:
+						block.position = Vector3(X, int(currentPN*10*hlego), Z)
 						add_child(block)
 						DictBlocks[block.position] = block
-						k+=hlego
+					# DIRT
+					else:
+						block = grass_scene.instantiate()
+						# Block at the surface
+						block.position = Vector3(X, int(currentPN*30)*hlego, Z)
+						add_child(block)
+						DictBlocks[block.position] = block
 						
-					# TREE
-					PlantTree(perlin_noise_tree,X,Y,high_block)
+						var high_block = block.position.y
+						
+						# fill the ground of dirt to dig into it
+						var k = y
+						while k+hlego/2<high_block:
+							block = dirt_scene.instantiate()
+							block.position = Vector3(X, k, Z)
+							#block.set_visible(false)
+							add_child(block)
+							DictBlocks[block.position] = block
+							k+=hlego
+							
+						# TREE
+						PlantTree(perlin_noise_tree, X, high_block, Z)
 				
 func gradient(x,y):
 	return 10*exp(-(((x-500)**2)+((y-500)**2))/1000)
@@ -89,21 +78,21 @@ func gradient(x,y):
 func getCoordChunk():
 	return coordChunk
 
-func PlantTree(perlin_noise_tree,x,y,high_block):
-	var v_noise_tree = perlin_noise_tree.get_noise_2d(x, y)
+func PlantTree(perlin_noise_tree, x, high_block, z):
+	var v_noise_tree = perlin_noise_tree.get_noise_2d(x, z)
 	# On est dans une forêt
 	if v_noise_tree>0.20:
 		var rand = randi_range(1,35)
 		if rand == 1:
 			var tree = tree_scene.instantiate()
-			tree.position = Vector3(x, high_block+hlego, y)
+			tree.position = Vector3(x, high_block+hlego, z)
 			add_child(tree)
 	# On n'est pas dans une forêt
 	else:
 		var rand = randi_range(1,400)
 		if rand == 1:
 			var tree = tree_scene.instantiate()
-			tree.position = Vector3(x, high_block+hlego, y)
+			tree.position = Vector3(x, high_block+hlego, z)
 			add_child(tree)
 	return
 

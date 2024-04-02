@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-@export var inventory_data : InventoryData
+@export var inventory_data : InventoryData # Declares an exported variable to store inventory data
 
-signal toggle_inventory()
+signal toggle_inventory() # Declares a signal which can be emitted to toggle the inventory
 
 # variable keyboard
 const SPEED = 5.0
@@ -10,14 +10,16 @@ const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
-@onready var anim = $AnimationPlayer
+@onready var anim = $AnimationPlayer # Reference to the AnimationPlayer node
 @onready var sound = $AudioStreamPlayer3D
 
+
+# Indicates if the camera is currently in first-person mode
 var isFirstPerson = true
 
 #variable mouse
 
-# var pour bloquer la caméra (ne pas pouvoir regarder en arrière)
+# variables to lock the camera (not be able to look back)
 var lookAngleHaut = 60.0
 var lookAngleBas = -90.0
 
@@ -34,22 +36,22 @@ var limit_view:int = 2
 
 
 func _ready():
-	# On récup le neoud camera
+	# Get the camera node
 	head = get_node("Head")
-	# Permet d'enlever la souris et pouvoir tourner sur les cotés indéfiniement
+	# Remove the mouse and be able to turn indefinitely on the sides
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	set_physics_process(false)
 	
 	
 func _input(event):
 	if event is InputEventMouseMotion :
-		# On récup le mouvement de la souris
+		# Get the mouse movement
 		mouseDelta = event.relative
 
 
 func _process(delta):
 	
-	# Passage de la vue 1ère personne à la vue 3ème personne
+	# Switching between first-person and third-person view
 	if Input.is_action_just_pressed("toggle_view") and isFirstPerson:
 		isFirstPerson = false
 		head.position.y = 1.700
@@ -59,14 +61,14 @@ func _process(delta):
 		head.position.y = 0.915
 		head.position.z = -0.199
 		
-		# On applique la rotation sur la caméra (axe y)
+	# Apply rotation to the camera (y-axis)
 	head.rotation_degrees -= Vector3(rad_to_deg(mouseDelta.y),0,0) * mouseSensitivity * delta
 	
 	head.rotation_degrees =  Vector3(clamp(head.rotation_degrees.x,lookAngleBas,lookAngleHaut),head.rotation_degrees.y, head.rotation_degrees.z)
 	
-	# rotation sur le perso
+	# Rotation on the character
 	rotation_degrees -= Vector3(0,rad_to_deg(mouseDelta.x),0) * mouseSensitivity * delta
-	# reinit 
+	# Reset 
 	mouseDelta = Vector2()
 	
 	

@@ -30,3 +30,5 @@ Welcome to the project for designing the foundations of an OpenWorld engine, har
 - [World Generation](./specification/WorldGeneration.md)
 
 - [Unresolved Bug Founded](./specification/BugFounded.md)
+
+- [Tasks to add to the game](./specification/TasksToAdd.md)

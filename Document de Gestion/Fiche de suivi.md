@@ -163,7 +163,7 @@ Résoudre problème d'import fichier dae sur godot
 - Louane : Generation aleatoire de skins d'arbre 
 - Romain : Interface import de LDR dans Godot + création de la différentiation de type d'import de node ( Voir les specifications pour plus de précision) 
 - Albin : Interaction joueur / monde. Début d'implémentation du clique droit, pour poser des bloques. Problème : détecter la face sur laquelle on clique pour déterminer la position du bloque créé.
-- Greg :
+- Greg : Recherche sur inventaire
 <br>
 
 ## A faire
@@ -181,7 +181,7 @@ Résoudre problème d'import fichier dae sur godot
 - Louane : Génération aléatoire de skins d'arbres fini + Documentation pour faire une aide sur les commandes du jeu
 - Romain : Implémentation du type de Noeud Gravity permettant d'importer un noeud avec des collisions + Refactoring des types de noeuds.
 - Albin : Finition du clic droit. (Problème résolu grâce à la fonction get_collision_point()) Je commence à refactor l'organisation des briques LEGO pour en faire un arbre de classes avec de l'héritage, pour mieux développer la génération du terrain, et rendre le jeu plus facilement extensible.
-- Greg :
+- Greg : Début implem inventaire
 <br>
 
 ## A faire :
@@ -199,7 +199,7 @@ Romain : Fix Bug lors de l'importation direct de fichier puis de l'upload dans l
 - Louane : Ajout d'une aide avec la liste des commandes disponible + Documentation animation
 - Romain : Bugtracking de l'importation - Ajout du type d'importation MDP - Gestion de L'importation sous MacOS et Linux
 - Albin : Refactor des briques avec les classes. Résolution de bugs et tentatives d'ajout de suppression des arbres par le joueur.
-- Greg :
+- Greg : Interface de l'inventaire ok
 <br>
 
 ## A faire :

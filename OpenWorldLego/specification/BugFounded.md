@@ -9,6 +9,6 @@
 - Idea of issues It's fix while restarting the world, so it's can be linked to the file system.
 
 ### Auto Import des assets 
-- Description : Assets are reupload with different ID, this is annoying when we have to take a specific node like in the animation.
+- Description : Assets are reupload with different ID, this is annoying when we have to take a specific node like in the animation. This causes animation to be not working !
 - Step to reproduce :
 1. Refresh the projet

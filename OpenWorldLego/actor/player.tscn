@@ -1,9 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcrxb66y5ubhl"]
+[gd_scene load_steps=7 format=3 uid="uid://bcrxb66y5ubhl"]
 
 [ext_resource type="Script" path="res://actor/player.gd" id="1_8xc8y"]
+[ext_resource type="Script" path="res://actor/interactRay.gd" id="2_5bxt4"]
 [ext_resource type="PackedScene" uid="uid://cq7dxfqowanpv" path="res://actor/basic_skin.dae" id="2_wkixd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vi5df"]
+radius = 0.268249
+height = 1.61009
+
+[sub_resource type="Animation" id="Animation_coudt"]
+resource_name = "Marche"
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("basic_skin/_NODEID_66154081")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.3, 1, -0.536843, 0, 0, 0.843682, 0.7, 1, 0.34202, 0, 0, 0.939693, 1, 1, 0, 0, 0, 1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("basic_skin/_NODEID_3249336880")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.0001, 1, 0, 0, 0, 1, 0.3, 1, 0.35216, 0, 0, 0.93594, 0.7, 1, -0.34202, 0, 0, 0.939693, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_crnhk"]
+_data = {
+"Marche": SubResource("Animation_coudt")
+}
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_8xc8y")
@@ -12,12 +38,24 @@ script = ExtResource("1_8xc8y")
 transform = Transform3D(-0.8, 0, 0, 0, -0.8, 0, 0, 0, -0.8, 0, 0.605389, 0)
 shape = SubResource("CapsuleShape3D_vi5df")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 1.86265e-09, -1.49012e-08, -1.86265e-09, 1, 1.49012e-08, 1.49012e-08, -1.49012e-08, 1, 0, 0.915062, -0.1444)
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.9, -0.137466)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 1.86265e-09, -1.49012e-08, -1.86265e-09, 1, 1.49012e-08, 1.49012e-08, -1.49012e-08, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 current = true
 
+[node name="InteractRay" type="RayCast3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0)
+target_position = Vector3(2.08165e-12, 2.08165e-12, -1)
+script = ExtResource("2_5bxt4")
+
+[node name="Destroy" type="Timer" parent="Head/InteractRay"]
+
+[node name="Create" type="Timer" parent="Head/InteractRay"]
+
 [node name="basic_skin" parent="." instance=ExtResource("2_wkixd")]
-transform = Transform3D(-27, 0, -2.36042e-06, 0, 27, 0, 2.36042e-06, 0, -27, 0, 0, 0)
+transform = Transform3D(-27, 0, 2.36042e-06, 0, 27, 0, -2.36042e-06, 0, -27, 0, 0, 0)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -46,3 +84,20 @@ grow_vertical = 2
 text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_crnhk")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Head/InteractRay/Destroy" to="Head/InteractRay" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="basic_skin"]

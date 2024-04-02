@@ -25,6 +25,8 @@ To add new LDraw models into the game, customers need to place LDraw files into 
 - **macOS**: ~/Library/Application Support/OpenWorldLego/ImportedFiles/
 - **Linux**: ~/.local/share/OpenWorldLego/ImportedFiles/
 
+For more details, you can refer to this [godot documentation](https://docs.godotengine.org/fr/4.x/tutorials/io/data_paths.html)
+
 ## Process of conversion
 
 ### Converting all at once
@@ -44,6 +46,14 @@ This is how the process goes :
 ![Sequence Diagramme of the conversion of a Ldraw file by Interface](./Sequence/convertLdrawToDaeByInterface.png)
 
 *NB : the menu also provide a way of uploading the converted file into the world in different way of uploading.*
+## Converted Folder
+
+All the converted file will be added to the folder **res://externConvertissor/convertedFiles/**
+
+Where **res://** folder is the main folder of the project. 
+
+For more details, you can refer to this [godot documentation](https://docs.godotengine.org/fr/4.x/tutorials/io/data_paths.html)
+
 ## Areas for Improvement
 
 One area for improvement is to make the LeoCAD conversion process headless, allowing customers to convert files without needing to install LeoCAD. This enhancement would increase accessibility and convenience for users.

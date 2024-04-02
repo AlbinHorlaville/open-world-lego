@@ -49,6 +49,7 @@ transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 [node name="GUI" parent="." instance=ExtResource("4_pppl4")]
 
 [node name="InventoryInterface" type="Control" parent="GUI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

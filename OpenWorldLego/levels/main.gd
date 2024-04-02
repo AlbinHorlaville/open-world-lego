@@ -35,9 +35,7 @@ func _ready() -> void:
 	seed = randi_range(0, 100000)
 	perlin_noise_tree.set_seed(randi_range(0, 100000))
 	# Build some clouds
-	GenerateCloud()
-	# Appel à la fonction convertissor de fichier
-	
+	GenerateCloud()	
 	
 	# Initiate inventory
 	inventory_interface.set_player_inventory_data(player.inventory_data)

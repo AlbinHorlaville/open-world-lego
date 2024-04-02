@@ -74,7 +74,7 @@ func handleLeftClick():
 			if b_destroying!=null and b_destroying.has_method("is_destroyable"):
 				b_destroying.resetMaterial()
 			b_destroying = get_collider()
-			if b_destroying.has_method("is_destroyable"):
+			if b_destroying.has_method("is_destroyable") and b_destroying.is_destroyable():
 				destroyTimer.start(1)
 				b_destroying.changeMaterial(load("res://materials/Destroying.tres"))
 	else:

@@ -10,7 +10,6 @@ size = Vector3(1, 0.628967, 1)
 [node name="Water" type="StaticBody3D"]
 script = ExtResource("1_kbj6e")
 material = ExtResource("2_3d5x7")
-solidity = 100
 weight = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

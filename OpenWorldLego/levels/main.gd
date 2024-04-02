@@ -2,7 +2,7 @@ extends Node
 
 
 @onready var player : CharacterBody3D = $Player
-@onready var inventory_interface : Control = $GUI/InventoryInterface
+@onready var inventory_interface : Control = $GUI/InventoryInterface # References the Control node representing the inventory interface
 
 
 @export var limit_map: Vector3
@@ -37,13 +37,14 @@ func _ready() -> void:
 	# Build some clouds
 	GenerateCloud()	
 	
-	# Initiate inventory
+	# Initiates inventory
 	inventory_interface.set_player_inventory_data(player.inventory_data)
+	# Connects the toggle_inventory signal of the player node to the toggle_inventory_interface function
 	player.toggle_inventory.connect(toggle_inventory_interface)
 	
 	
 
-
+# Toggles the visibility of the inventory interface and mouse mode
 func toggle_inventory_interface() -> void :
 	inventory_interface.visible = not inventory_interface.visible 
 	

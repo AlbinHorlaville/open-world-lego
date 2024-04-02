@@ -14,6 +14,7 @@ var speed = 2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_root().get_node("Main/Player")
+	set_physics_process(false)
 	
 	
 func _physics_process(delta):
@@ -44,3 +45,7 @@ func _process(delta):
 
 
 
+
+
+func _on_timer_timeout():
+	set_physics_process(true)

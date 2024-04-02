@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfhcgfhwneaq4"]
+[gd_scene load_steps=11 format=3 uid="uid://dfhcgfhwneaq4"]
 
 [ext_resource type="Script" path="res://levels/main.gd" id="1_1c0l0"]
 [ext_resource type="PackedScene" uid="uid://bcrxb66y5ubhl" path="res://actor/player.tscn" id="1_hphc1"]
 [ext_resource type="PackedScene" uid="uid://b41qnafv5nqn0" path="res://levels/chunk.tscn" id="2_8ee1a"]
 [ext_resource type="PackedScene" uid="uid://cxmwft04sfqvj" path="res://blocks/cloud.tscn" id="3_08fmb"]
 [ext_resource type="PackedScene" uid="uid://bdeonnga82vnp" path="res://menu/GUI/gui.tscn" id="4_pppl4"]
+[ext_resource type="Script" path="res://actor/Ennemies.gd" id="6_hact3"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_as2fr"]
 frequency = 0.006
@@ -53,6 +54,9 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Sky" type="Node" parent="."]
+
+[node name="Ennemies" type="Node" parent="."]
+script = ExtResource("6_hact3")
 
 [editable path="Player"]
 [editable path="Player/basic_skin"]

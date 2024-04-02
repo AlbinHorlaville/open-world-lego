@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dygh53v6gg0uf"]
 
 [ext_resource type="Script" path="res://actor/Ennemy.gd" id="1_t1n7r"]
-[ext_resource type="PackedScene" uid="uid://cu7gi7ttchrac" path="res://actor/cyclop.dae" id="2_pacmf"]
+[ext_resource type="PackedScene" uid="uid://bx6f6v8s58v14" path="res://actor/cyclop.dae" id="2_pacmf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tjw1k"]
 custom_solver_bias = 1.0
@@ -29,4 +29,8 @@ shape = SubResource("CapsuleShape3D_0ali7")
 transform = Transform3D(62.5, 0, 0, 0, 62.5, 0, 0, 0, 62.5, 0, 0, 0)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
 autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

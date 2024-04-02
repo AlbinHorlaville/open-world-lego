@@ -10,7 +10,6 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var speed = 2
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_root().get_node("Main/Player")

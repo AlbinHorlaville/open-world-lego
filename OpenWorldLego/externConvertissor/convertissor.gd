@@ -26,32 +26,29 @@ static func convert_ldr_to_dae(file: String):
 		print("Erreur lors de la conversion du fichier " + file)
 	else:
 		print("Conversion du fichier " + file + " terminée.")
-
-static func convertAll():
-	# Parcourir les fichiers LDraw dans le dossier d'entrée et convertir chacun d'eux en DAE si pas déjà fait
-	
+		
+# Convert of LDraw if not all ready done
+static func convertAll():	
 	# Should check if the input folder exists
 	var inputDir = DirAccess.open(input_folder)
 	if inputDir == null:
-		print("Le dossier d'entrée n'existe pas.")
+		# Create Dir file is not created et
 		DirAccess.open("user://").make_dir("importedFiles")
 		return
 	
 	var listeOfFiles = DirAccess.open(input_folder).get_files()
 	if listeOfFiles.size() == 0:
-		print("Aucun fichier LDraw trouvé dans le dossier d'entrée.")
 		return
 		
-	print("Conversion en cours...")
 	for file in listeOfFiles:
 		if file.ends_with(".ldr") || file.ends_with(".mpd"):
 			# si le fichier n'a pas déjà été converti
 			if !DirAccess.open(output_folder).file_exists(file.get_basename().split(".")[0] + ".dae"):
 				convert_ldr_to_dae(file)
 			else:
-				print("Le fichier " + file + " a déjà été converti.")
-	print("Conversion All terminée.")
+				print("File " + file + " is already converted")
 
+# Import new Ldraw file into the input folder
 static func importNewLDR(filePath : String):
 	var outputDir = DirAccess.open(input_folder)
 	if outputDir == null:
@@ -63,10 +60,9 @@ static func importNewLDR(filePath : String):
 	var to = ProjectSettings.globalize_path(input_folder) + fileBasename
 	var process = DirAccess.copy_absolute(from, to, true)
 	if process != OK:
-		print("Erreur lors de la copie du fichier " + fileBasename + " dans le dossier d'entrée.")
+		printerr("Error on the copy of the file " + fileBasename + " in the input folder.")
 		return -1
 	else:		
-		print("Fichier " + fileBasename + " copié dans le dossier d'entrée.")
 		convert_ldr_to_dae(fileBasename)
 		# Refresh the list of files in the output folder
 		DirAccess.open(output_folder).list_dir_begin()

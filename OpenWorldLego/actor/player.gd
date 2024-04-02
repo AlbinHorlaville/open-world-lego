@@ -34,6 +34,7 @@ func _ready():
 	head = get_node("Head")
 	# Permet d'enlever la souris et pouvoir tourner sur les cotés indéfiniement
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	set_physics_process(false)
 	
 	
 func _input(event):
@@ -103,7 +104,7 @@ func _physics_process(delta: float) -> void:
 				sound.play()
 		else:
 			sound.stop() 
-	
+
 
 func addNewBrick():
 	var brick = $Head/InteractRay.addNewBrick()
@@ -116,13 +117,18 @@ func addNewBrick():
 	return brick
 
 func getCoordChunk():
-	return Vector2(int(position.x/16), int(position.z/16))
+	return Vector3(int(position.x/16), int(position.y/16), int(position.z/16))
 
 # Return the position of all neighbors of a chunk in it range vision.
 func getBehaviorsChunks():
 	var cur_pos =  getCoordChunk()
 	var neighbor = []
 	for x in range(cur_pos.x-limit_view, cur_pos.x+limit_view+1):
-		for y in range(cur_pos.y-limit_view, cur_pos.y+limit_view+1):
-			neighbor.append(Vector2(x, y))
+		for y in range(cur_pos.y-1, cur_pos.y+1):
+			for z in range(cur_pos.z-limit_view, cur_pos.z+limit_view):
+				neighbor.append(Vector3(x, y, z))
 	return neighbor
+
+
+func _on_timer_timeout():
+	set_physics_process(true)

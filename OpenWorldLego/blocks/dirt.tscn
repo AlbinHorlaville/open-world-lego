@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://blocks/brick.gd" id="1_gk247"]
 [ext_resource type="PackedScene" uid="uid://7hv8ur6n3qes" path="res://blocks/brick2x2.dae" id="2_ft7ma"]
-[ext_resource type="Material" uid="uid://pygg26tm1qwr" path="res://materials/Grass.tres" id="2_vvtva"]
+[ext_resource type="Material" uid="uid://bfrjuejpqhkgd" path="res://materials/dirt.tres" id="2_y16ip"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6vu28"]
 size = Vector3(1, 0.600226, 1)
 
 [node name="Dirt" type="StaticBody3D"]
 script = ExtResource("1_gk247")
-material = ExtResource("2_vvtva")
+material = ExtResource("2_y16ip")
 solidity = 4
 weight = 4
 density = 100

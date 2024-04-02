@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcrxb66y5ubhl"]
+[gd_scene load_steps=6 format=3 uid="uid://bcrxb66y5ubhl"]
 
 [ext_resource type="Script" path="res://actor/player.gd" id="1_8xc8y"]
 [ext_resource type="Script" path="res://actor/interactRay.gd" id="2_5bxt4"]
+[ext_resource type="Resource" uid="uid://bl6qvmpd5y2s4" path="res://test_inventory.tres" id="2_alodu"]
 [ext_resource type="PackedScene" uid="uid://cq7dxfqowanpv" path="res://actor/basic_skin.dae" id="2_wkixd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vi5df"]
@@ -10,6 +11,7 @@ height = 1.61009
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_8xc8y")
+inventory_data = ExtResource("2_alodu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.8, 0, 0, 0, -0.8, 0, 0, 0, -0.8, 0, 0.605389, 0)

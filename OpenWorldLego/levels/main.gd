@@ -1,5 +1,10 @@
 extends Node
 
+
+@onready var player : CharacterBody3D = $Player
+@onready var inventory_interface : Control = $GUI/InventoryInterface
+
+
 @export var limit_map: Vector3
 
 @export var Chunk: PackedScene
@@ -28,6 +33,23 @@ func _ready() -> void:
 	# Build some clouds
 	GenerateCloud()
 	# Appel à la fonction convertissor de fichier
+	
+	
+	# Initiate inventory
+	inventory_interface.set_player_inventory_data(player.inventory_data)
+	player.toggle_inventory.connect(toggle_inventory_interface)
+	
+	
+
+
+func toggle_inventory_interface() -> void :
+	inventory_interface.visible = not inventory_interface.visible 
+	
+	if inventory_interface.visible :
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	else : 
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 	
 
 func _process(_delta: float) -> void:

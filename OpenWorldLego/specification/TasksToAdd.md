@@ -6,5 +6,4 @@
 
 ## World
 - Change generation tree to adapt to the biomes
-
-
+- Some details are available [here](WorldGeneration.md)

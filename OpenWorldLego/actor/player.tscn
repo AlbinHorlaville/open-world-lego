@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcrxb66y5ubhl"]
+[gd_scene load_steps=8 format=3 uid="uid://bcrxb66y5ubhl"]
 
 [ext_resource type="Script" path="res://actor/player.gd" id="1_8xc8y"]
 [ext_resource type="Script" path="res://actor/interactRay.gd" id="2_5bxt4"]
@@ -101,6 +101,5 @@ autostart = true
 
 [connection signal="timeout" from="Head/InteractRay/Destroy" to="Head/InteractRay" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Head/InteractRay/Timer" to="Head/InteractRay" method="_on_timer_timeout"]
 
 [editable path="basic_skin"]

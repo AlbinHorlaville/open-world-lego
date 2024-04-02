@@ -18,7 +18,6 @@ func fill_item_in_grid(inventory_data : InventoryData) -> void:
 		var slot = Slot.instantiate()
 		item_grid.add_child(slot)
 		
-		slot.slot_clicked.connect(inventory_data.on_slot_clicked)	
 		
 		if slot_data : 
 			slot.set_slot_data(slot_data)

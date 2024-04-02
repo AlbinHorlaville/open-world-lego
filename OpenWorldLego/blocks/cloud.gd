@@ -7,6 +7,7 @@ var Player
 var vitesse
 var distance
 # Called when the node enters the scene tree for the first time.
+# When a cloud is initialized, a skin is chosen
 func _ready():
 	var n = randi_range(0, 2)
 	var model
@@ -22,22 +23,26 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	var posx_player = Player.position.x
 	var posz_player = Player.position.z
 	
-	# Verification si nuage sort de la limite range of view en x
+	# The clouds move with the player
+	
+	# Verification in x
 	if position.x > posx_player + distance:
 		position.x = posx_player - distance
 	if position.x < posx_player - distance:
 		position.x = posx_player + distance
 	
-	# Verification si nuage sort de la limite range of view en z
+	# Verification in z
 	if position.z > posz_player + distance:
 		position.z = posz_player - distance
 	if position.z < posz_player - distance:
 		position.z = posz_player + distance
 	
+	# A cloud move according to delta
 	position.x += vitesse*delta
 	pass
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://actor/player.gd" id="1_8xc8y"]
 [ext_resource type="Script" path="res://actor/interactRay.gd" id="2_5bxt4"]
+[ext_resource type="Resource" uid="uid://bl6qvmpd5y2s4" path="res://test_inventory.tres" id="2_alodu"]
 [ext_resource type="PackedScene" uid="uid://cq7dxfqowanpv" path="res://actor/basic_skin.dae" id="2_wkixd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vi5df"]
@@ -33,6 +34,7 @@ _data = {
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_8xc8y")
+inventory_data = ExtResource("2_alodu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.8, 0, 0, 0, -0.8, 0, 0, 0, -0.8, 0, 0.605389, 0)
@@ -99,5 +101,6 @@ autostart = true
 
 [connection signal="timeout" from="Head/InteractRay/Destroy" to="Head/InteractRay" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Head/InteractRay/Timer" to="Head/InteractRay" method="_on_timer_timeout"]
 
 [editable path="basic_skin"]

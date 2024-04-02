@@ -1,5 +1,9 @@
 extends CharacterBody3D
 
+@export var inventory_data : InventoryData
+
+signal toggle_inventory()
+
 # variable keyboard
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -55,8 +59,7 @@ func _process(delta):
 		head.position.y = 0.915
 		head.position.z = -0.199
 		
-	
-	# On applique la rotation sur la caméra (axe y)
+		# On applique la rotation sur la caméra (axe y)
 	head.rotation_degrees -= Vector3(rad_to_deg(mouseDelta.y),0,0) * mouseSensitivity * delta
 	
 	head.rotation_degrees =  Vector3(clamp(head.rotation_degrees.x,lookAngleBas,lookAngleHaut),head.rotation_degrees.y, head.rotation_degrees.z)
@@ -65,6 +68,15 @@ func _process(delta):
 	rotation_degrees -= Vector3(0,rad_to_deg(mouseDelta.x),0) * mouseSensitivity * delta
 	# reinit 
 	mouseDelta = Vector2()
+	
+	
+	if Input.is_action_just_pressed("inventory") : 
+		toggle_inventory.emit()
+		
+	
+	
+	
+	
 
 
 func _physics_process(delta: float) -> void:

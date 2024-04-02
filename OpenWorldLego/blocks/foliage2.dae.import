@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ckdrgud2g085f"
-path="res://.godot/imported/foliage3.dae-eefd3654776189fd3775dfe75b959d22.scn"
+uid="uid://dk261eflfv2ex"
+path="res://.godot/imported/foliage2.dae-c47b09e2261615ebbfe729306576d4a9.scn"
 
 [deps]
 
-source_file="res://blocks/foliage3.dae"
-dest_files=["res://.godot/imported/foliage3.dae-eefd3654776189fd3775dfe75b959d22.scn"]
+source_file="res://blocks/foliage2.dae"
+dest_files=["res://.godot/imported/foliage2.dae-c47b09e2261615ebbfe729306576d4a9.scn"]
 
 [params]
 

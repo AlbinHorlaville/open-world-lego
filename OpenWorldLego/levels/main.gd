@@ -11,8 +11,12 @@ extends Node
 
 @export var Cloud: PackedScene
 
-@export var perlin_noise_height: Noise
+@export var seed:int
 @export var perlin_noise_tree: Noise
+
+# Use for imported Node
+const nodeCreator = preload("res://externConvertissor/nodeCreator.gd")
+const nodeType = preload("res://externConvertissor/nodeType.gd")
 
 var DictChunk_ON:Dictionary # Dictionnary of chunks charged
 var DictChunk_OFF:Dictionary # Dictionnary of chunks uncharged
@@ -26,9 +30,9 @@ func _ready() -> void:
 	DictChunk_OFF = {}
 	ChunksToBuild = []
 	# The player has to be on positives coordinates
-	$Player.position = Vector3(500, 50, 500)
+	$Player.position = Vector3(500, 20, 500)
 	# Choose the seed for Perlin Noise
-	perlin_noise_height.set_seed(randi_range(0, 100000))
+	seed = randi_range(0, 100000)
 	perlin_noise_tree.set_seed(randi_range(0, 100000))
 	# Build some clouds
 	GenerateCloud()
@@ -60,12 +64,13 @@ func _process(_delta: float) -> void:
 		count=0
 	
 	updateChunkToCharge()
+	addNewBrick()
 
 func ChunkInit():
 	if len(ChunksToBuild)>0:
 		var pos_chunk = ChunksToBuild.pop_front()
 		var chunk = Chunk.instantiate()
-		chunk.CreateChunk(pos_chunk.x, pos_chunk.y, perlin_noise_height, perlin_noise_tree)
+		chunk.CreateChunk(pos_chunk.x, pos_chunk.y, pos_chunk.z, seed, perlin_noise_tree)
 		DictChunk_ON[pos_chunk] = chunk
 		$World.add_child(chunk)
 		return
@@ -120,7 +125,7 @@ func GenerateCloud():
 		cloud.distance = distance
 		
 		cloud.Player = Player
-		cloud.vitesse = 1 - float(posy-hauteur_min)/(50*coeff_hauteur)
+		cloud.vitesse = (1 - float(posy-hauteur_min)/(50*coeff_hauteur))*1.5
 		
 		$Sky.add_child(cloud)
 
@@ -128,11 +133,22 @@ func GenerateCloud():
 func distance(p1, p2):
 	return sqrt(pow(p1.x-p2.x,2)+pow(p1.y-p2.y,2)+pow(p1.z-p2.z,2))
 	
-func importCustomerDae(file_path):
+func importCustomerDae(file_path , typeOfImport):
 	# Créer une node3D à partir d'un fichier .dae
-	print(file_path)
-	var scene = load(file_path)
-	var instance = scene.instantiate()
-	instance.set_scale(Vector3(62.5, 62.5, 62.5))
-	instance.position = $Player.position
-	get_tree().get_root().add_child(instance)
+	print("Importing file: ",file_path)
+	print("Type of import: ",typeOfImport)
+	var instance = null
+	match typeOfImport:
+		"Gravity":
+			instance = nodeCreator.createGravityNodeOnPlayer(file_path,$Player.position)
+		"Basic":
+			instance = nodeCreator.createBasicNodeOnPlayer(file_path,$Player.position)
+			
+	if (instance != null):
+		get_tree().get_root().add_child(instance)
+
+func addNewBrick():
+	var brick = $Player.addNewBrick()
+	if (brick!=null):
+		var pos_chunk = Vector3(int(brick.position.x/16), int(brick.position.y/16), int(brick.position.z/16))
+		DictChunk_ON[pos_chunk].addNewBrick(brick)

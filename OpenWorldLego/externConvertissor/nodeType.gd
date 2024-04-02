@@ -1,0 +1,4 @@
+enum type{
+	Basic,
+	Gravity,
+}

@@ -38,24 +38,76 @@ theme_override_constants/margin_bottom = 36
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dlpw2")
 
+[node name="Title" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.5
+offset_right = 73.5
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_3rofm")
+theme_override_font_sizes/font_size = 50
+text = "Convertissor Menu"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -90.0
+offset_right = 149.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="MarginContainer/Panel/VBoxContainer"]
+[node name="ImportLabel" type="Label" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_3rofm")
-text = "Choose the file to import"
+text = "Upload a file on the import"
 
-[node name="FileToImport" type="OptionButton" parent="MarginContainer/Panel/VBoxContainer"]
+[node name="ImportFile" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_3rofm")
+text = "Add file"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_3rofm")
+theme_override_constants/separation = 18
+
+[node name="SubVBox" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="ChooseLabel" type="Label" parent="MarginContainer/Panel/VBoxContainer/SubVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_3rofm")
+text = "Choose the file to put on the world"
+
+[node name="FileToImport" type="OptionButton" parent="MarginContainer/Panel/VBoxContainer/SubVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_3rofm")
+
+[node name="TypeOfNode" type="OptionButton" parent="MarginContainer/Panel/VBoxContainer/SubVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_3rofm")
+
+[node name="EmptyFolderLabel" type="Label" parent="MarginContainer/Panel/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_3rofm")
+text = "There is no fill to import in the world"
 
 [node name="Cancel" type="Button" parent="MarginContainer/Panel"]
 layout_mode = 1
@@ -68,7 +120,7 @@ grow_vertical = 0
 theme = ExtResource("2_3rofm")
 text = "Cancel"
 
-[node name="Import" type="Button" parent="MarginContainer/Panel"]
+[node name="ImportConfirm" type="Button" parent="MarginContainer/Panel"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -85,6 +137,9 @@ text = "Import"
 [node name="ConvertissorUtility" type="Node" parent="."]
 script = ExtResource("1_esybc")
 
-[connection signal="item_selected" from="MarginContainer/Panel/VBoxContainer/FileToImport" to="." method="_on_file_to_import_item_selected"]
+[node name="FileDialog" type="FileDialog" parent="."]
+
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/ImportFile" to="." method="_on_import_file_pressed"]
+[connection signal="item_selected" from="MarginContainer/Panel/VBoxContainer/SubVBox/FileToImport" to="." method="_on_file_to_import_item_selected"]
 [connection signal="pressed" from="MarginContainer/Panel/Cancel" to="." method="_on_cancel_pressed"]
-[connection signal="pressed" from="MarginContainer/Panel/Import" to="." method="_on_import_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/ImportConfirm" to="." method="_on_import_pressed"]

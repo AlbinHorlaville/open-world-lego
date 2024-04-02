@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dygh53v6gg0uf"]
+
+[ext_resource type="Script" path="res://actor/Ennemy.gd" id="1_t1n7r"]
+[ext_resource type="PackedScene" uid="uid://bx6f6v8s58v14" path="res://actor/cyclop.dae" id="2_pacmf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tjw1k"]
+custom_solver_bias = 1.0
+radius = 0.554569
+height = 2.48013
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0ali7"]
+radius = 0.787526
+height = 3.28294
+
+[node name="Ennemy" type="CharacterBody3D"]
+script = ExtResource("1_t1n7r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.999842, 0, -0.0178014, 0, 1, 0, 0.0178014, 0, 0.999842, 0, -0.317028, 0)
+shape = SubResource("CapsuleShape3D_tjw1k")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.328335, 0)
+shape = SubResource("CapsuleShape3D_0ali7")
+
+[node name="cyclop" parent="." instance=ExtResource("2_pacmf")]
+transform = Transform3D(62.5, 0, 0, 0, 62.5, 0, 0, 0, 62.5, 0, 0, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpr71fdfxa0vg"]
+[gd_scene load_steps=4 format=3 uid="uid://bpr71fdfxa0vg"]
 
 [ext_resource type="Script" path="res://menu/FirstMenu/menu.gd" id="1_xk8il"]
 [ext_resource type="Texture2D" uid="uid://bxd3tk2tkf6l2" path="res://menu/FirstMenu/background_menu.jpg" id="2_ubpwi"]
 [ext_resource type="Theme" uid="uid://bbwkjvh6fjmcw" path="res://menu/FirstMenu/defaultTheme.tres" id="2_x8riu"]
-[ext_resource type="Script" path="res://externConvertissor/convertissor.gd" id="4_kosin"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -36,7 +35,8 @@ theme_override_constants/margin_bottom = 80
 
 [node name="MainTitle" type="Label" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 1
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme = ExtResource("2_x8riu")
 theme_override_colors/font_color = Color(1, 0, 0.00392157, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -68,9 +68,6 @@ focus_neighbor_bottom = NodePath("../StartButton")
 theme = ExtResource("2_x8riu")
 theme_override_font_sizes/font_size = 50
 text = "Quit Game"
-
-[node name="Convertissor" type="Node" parent="."]
-script = ExtResource("4_kosin")
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_pressed"]

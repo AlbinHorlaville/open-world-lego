@@ -10,6 +10,7 @@
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_uegrl"]
 frequency = 0.007
+[ext_resource type="Script" path="res://actor/Ennemies.gd" id="6_hact3"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_as2fr"]
 frequency = 0.006
@@ -41,7 +42,6 @@ script = ExtResource("1_1c0l0")
 limit_map = Vector3(1000, 100, 1000)
 Chunk = ExtResource("2_8ee1a")
 Cloud = ExtResource("3_08fmb")
-perlin_noise_height = SubResource("FastNoiseLite_uegrl")
 perlin_noise_tree = SubResource("FastNoiseLite_as2fr")
 
 [node name="Player" parent="." instance=ExtResource("1_hphc1")]
@@ -74,4 +74,8 @@ shadow_enabled = true
 
 [node name="Sky" type="Node" parent="."]
 
+[node name="Ennemies" type="Node" parent="."]
+script = ExtResource("6_hact3")
+
 [editable path="Player"]
+[editable path="Player/basic_skin"]

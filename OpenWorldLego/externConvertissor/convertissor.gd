@@ -1,33 +1,12 @@
 extends Node
 
-var input_folder = "user://importedFiles/"
-var output_folder = "res://externConvertissor/convertedFiles/"
-var leocad_path = "C:\\Program Files\\LeoCAD\\LeoCAD.exe"
+static var input_folder = "user://importedFiles/"
+static var output_folder = "res://externConvertissor/convertedFiles/"
+static var leocad_path = "C:\\Program Files\\LeoCAD\\LeoCAD.exe"
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	var inputDir = DirAccess.open(input_folder)
-	if inputDir == null:
-		print("Le dossier d'entrée n'existe pas.")
-		DirAccess.open("user://").make_dir("importedFiles")
-		return
-	# Should check if the output folder exists
-	var outputDir = DirAccess.open(output_folder)
-	if outputDir == null:
-		print("Le dossier de sortie n'existe pas.")
-		DirAccess.open("res://externConvertissor").make_dir("convertedFiles")
-		return
-	else:
-		# Flush the output folder
-		var listeOfFiles = DirAccess.open(output_folder).get_files()
-		for file in listeOfFiles:
-			DirAccess.open(output_folder).remove(file)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-func convert_ldr_to_dae(file: String):
+static func convert_ldr_to_dae(file: String):
 	var input_file = ProjectSettings.globalize_path(input_folder) + file
 	var output_file = ProjectSettings.globalize_path(output_folder) + file.get_basename().split(".")[0] + ".dae"
 	# Appeler LeoCAD en mode CLI pour convertir le fichier LDraw en DAE 
@@ -36,10 +15,10 @@ func convert_ldr_to_dae(file: String):
 		"Windows":
 			var process = OS.execute(leocad_path, [input_file, "-dae", output_file],[],true,true)
 		"OSX":
-			print("MacOS not supported yet.")
+			var process = OS.execute("open -a leocad", [input_file, "-dae", output_file],[],true,true)
 			return
 		"X11":
-			print("Linux not supported yet.")
+			var process = OS.execute("leocad", [input_file, "-dae", output_file],[],true,true)
 			return
 
 	var process = OS.execute(leocad_path, [input_file, "-dae", output_file])
@@ -47,25 +26,44 @@ func convert_ldr_to_dae(file: String):
 		print("Erreur lors de la conversion du fichier " + file)
 	else:
 		print("Conversion du fichier " + file + " terminée.")
-
-func convertAll():
-	# Parcourir les fichiers LDraw dans le dossier d'entrée
-	
+		
+# Convert of LDraw if not all ready done
+static func convertAll():	
 	# Should check if the input folder exists
 	var inputDir = DirAccess.open(input_folder)
 	if inputDir == null:
-		print("Le dossier d'entrée n'existe pas.")
+		# Create Dir file is not created et
 		DirAccess.open("user://").make_dir("importedFiles")
 		return
-
 	
 	var listeOfFiles = DirAccess.open(input_folder).get_files()
 	if listeOfFiles.size() == 0:
-		print("Aucun fichier LDraw trouvé dans le dossier d'entrée.")
 		return
 		
-	print("Conversion en cours...")
 	for file in listeOfFiles:
-		if file.ends_with(".ldr"):
-			convert_ldr_to_dae(file)
-	print("Conversion All terminée.")
+		if file.ends_with(".ldr") || file.ends_with(".mpd"):
+			# si le fichier n'a pas déjà été converti
+			if !DirAccess.open(output_folder).file_exists(file.get_basename().split(".")[0] + ".dae"):
+				convert_ldr_to_dae(file)
+			else:
+				print("File " + file + " is already converted")
+
+# Import new Ldraw file into the input folder
+static func importNewLDR(filePath : String):
+	var outputDir = DirAccess.open(input_folder)
+	if outputDir == null:
+		DirAccess.open("user://").make_dir("importedFiles")
+		outputDir = DirAccess.open(input_folder)
+
+	var fileBasename = filePath.get_file()
+	var from = filePath
+	var to = ProjectSettings.globalize_path(input_folder) + fileBasename
+	var process = DirAccess.copy_absolute(from, to, true)
+	if process != OK:
+		printerr("Error on the copy of the file " + fileBasename + " in the input folder.")
+		return -1
+	else:		
+		convert_ldr_to_dae(fileBasename)
+		# Refresh the list of files in the output folder
+		DirAccess.open(output_folder).list_dir_begin()
+		return 1

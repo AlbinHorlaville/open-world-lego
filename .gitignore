@@ -421,3 +421,7 @@ mono_crash.*.json
 # Ignore all local history of files
 .history
 .ionide
+
+# Fichier LDR Convertit
+./OpenWorldLego/externConvertissor/convertedFiles/*
+*.dae.import

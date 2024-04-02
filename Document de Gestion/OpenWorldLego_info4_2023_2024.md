@@ -213,7 +213,7 @@ Romain : Fix Bug lors de l'importation direct de fichier puis de l'upload dans l
 # 29 Mars
 
 ## Tâches réalisés du jour :
-- Louane : 
+- Louane : Animation d'attaque + modification commandes d'aide sur menu du jeu
 - Romain : Animation de Marche + Ajout de son
 - Albin : Ajout de 4 biomes : Océan, Plaine, Montagne, Forêt. Ajout d'un timer pour éviter au joueur de traverser la map avant qu'elle ne se génère.
 - Greg :

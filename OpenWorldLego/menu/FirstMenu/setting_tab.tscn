@@ -119,33 +119,41 @@ text = "Left: Q"
 layout_mode = 2
 text = "Backward: S"
 
-[node name="put" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="run" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Put a block: E / right click"
-
-[node name="remove" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Remove a block: left click"
-
-[node name="interact" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Interact with the world: right click"
+text = "Run: Move + SHIFT"
 
 [node name="sneak" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "Sneak: SHIFT"
 
-[node name="inventory" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="attack" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Inventory: I"
+text = "Attack: left click"
+
+[node name="interact" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Interact with the world: right click"
+
+[node name="put" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Release a block: E / right click"
+
+[node name="remove" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Remove a block: hold left click"
 
 [node name="importMenu" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "Import menu: L"
 
-[node name="run" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="inventory" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Run: Move + SHIFT"
+text = "Inventory: I"
+
+[node name="item" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Select item from toolbar: 1-9 or mouse wheel"
 
 [node name="gameMenu" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2

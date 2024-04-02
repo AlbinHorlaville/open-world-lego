@@ -1,6 +1,6 @@
 extends Node3D
 class_name GravityNode
-# Ceci est une node pouvant tomber ayant de la gravité et des collisions
+# This is a node that have an hitbox but can not fall yet - TODO !
 
 func _init(myRessources : Node3D):
 	# ajouter fils
@@ -8,5 +8,5 @@ func _init(myRessources : Node3D):
 	set_scale(Vector3(62.5, 62.5, 62.5))
 	for mesh in myRessources.get_children():
 		if mesh is MeshInstance3D:
+			# add collision
 			mesh.create_convex_collision()
-	# ajouter collision

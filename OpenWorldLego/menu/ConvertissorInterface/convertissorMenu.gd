@@ -21,7 +21,6 @@ func addItemsToOption():
 	var listeOfFiles = DirAccess.open(output_folder).get_files()
 	
 	if listeOfFiles.size() == 0:
-		print("Aucun fichier LDraw trouvé dans le dossier d'entrée.")
 		return
 		
 	for file in listeOfFiles:
@@ -54,7 +53,6 @@ func _on_import_pressed():
 	var listeOfFiles = DirAccess.open(output_folder).get_files()
 	
 	if listeOfFiles.size() == 0:
-		print("Aucun fichier LDraw trouvé dans le dossier d'entrée.")
 		return
 
 	var i = 0
@@ -98,9 +96,7 @@ func _on_file_dialog_file_selected(path):
 			fileToImport.clear()
 			# Add the file to the list
 			addItemsToOption()
-	else:
-		print("Le fichier sélectionné n'est pas un fichier LDraw.")
-		
+
 func _on_import_file_pressed():
 	# Open a file dialog to select only one file to import in the import folder
 	var dialog = FileDialog.new()

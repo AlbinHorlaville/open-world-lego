@@ -9,7 +9,7 @@ static var leocad_path = "C:\\Program Files\\LeoCAD\\LeoCAD.exe"
 static func convert_ldr_to_dae(file: String):
 	var input_file = ProjectSettings.globalize_path(input_folder) + file
 	var output_file = ProjectSettings.globalize_path(output_folder) + file.get_basename().split(".")[0] + ".dae"
-	# Appeler LeoCAD en mode CLI pour convertir le fichier LDraw en DAE 
+	# Call LeoCAD in CLI mode to convert LDraw file into DAE
 	# Exemple: leocad input.ldr -dae output.dae
 	match OS.get_name():
 		"Windows":
@@ -38,6 +38,12 @@ static func convertAll():
 	
 	var listeOfFiles = DirAccess.open(input_folder).get_files()
 	if listeOfFiles.size() == 0:
+		return
+	
+	var outputDir = DirAccess.open(output_folder)
+	if outputDir == null:
+		# Create Dir file is not created et
+		DirAccess.open("res://externConvertissor/").make_dir("convertedFiles")
 		return
 		
 	for file in listeOfFiles:

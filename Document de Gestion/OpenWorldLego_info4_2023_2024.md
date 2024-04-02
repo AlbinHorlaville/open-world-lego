@@ -227,4 +227,21 @@ Romain : Fix Bug lors de l'importation direct de fichier puis de l'upload dans l
 <br>
 <br>
 
+# 02 Avril
+
+## Tâches réalisés du jour :
+- Louane : 
+- Romain : Bug Fixing + Gestion de Merge Conflict - Spécification de la documentation de conversion. 
+- Albin : 
+- Greg :
+<br>
+
+## A faire :
+<br>
+
+## Questions du jour : 
+
+<br>
+<br>
+
 

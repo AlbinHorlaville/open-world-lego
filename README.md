@@ -11,7 +11,7 @@ The aim of this project is to create an open world entirely built in LEGO where 
 
 - [Description du projet](./OpenWorldLego/README.md)
 
-- [Fiche de Suivi](./Document%20de%20Gestion/Fiche%20de%20suivi.md)
+- [Fiche de Suivi](./Document%20de%20Gestion/OpenWorldLego_info4_2023_2024.md)
 
 - [Planning](gantt.md)
 ## Diagram of branches

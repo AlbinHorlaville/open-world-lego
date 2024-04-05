@@ -7,13 +7,12 @@ This project is a motor game development based on [Godot engine](https://godoten
 ## Concept
 The aim of this project is to create an open world entirely built in LEGO where you are able to import every set of LEGO do you want and interact with them. In case, we are creating the utlimate sandbox. 
 
-## Table of contents
+## Documentations
 
-- [Description du projet](./OpenWorldLego/README.md)
+The documentation and the specification about the project can be found at the following link :
 
-- [Fiche de Suivi](./Document%20de%20Gestion/OpenWorldLego_info4_2023_2024.md)
-
-- [Planning](gantt.md)
+- [Documentatation and specification](https://gricad-gitlab.univ-grenoble-alpes.fr/Projets-INFO4/23-24/04/code)
+  
 ## Diagram of branches
 ```mermaid
 %%{init: { 'logLevel': 'debug', 'theme': 'base', 'gitGraph': {'showBranches': true}} }%%

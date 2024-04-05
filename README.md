@@ -11,7 +11,7 @@ The aim of this project is to create an open world entirely built in LEGO where 
 
 The documentation and the specification about the project can be found at the following link :
 
-- [Documentatation and specification](https://gricad-gitlab.univ-grenoble-alpes.fr/Projets-INFO4/23-24/04/code)
+- [Documentatation and specification](https://gricad-gitlab.univ-grenoble-alpes.fr/Projets-INFO4/23-24/04/docs)
   
 ## Diagram of branches
 ```mermaid

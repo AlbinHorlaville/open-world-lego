@@ -4,7 +4,7 @@ extends Node
 @onready var player : CharacterBody3D = $Player
 @onready var inventory_interface : Control = $GUI/InventoryInterface
 
-
+# SIZE MAX of the map, in width, height and depth
 @export var limit_map: Vector3
 
 @export var Chunk: PackedScene

@@ -29,7 +29,10 @@ var DictBlocks:Dictionary = {}
 # Dimension Lego piece 2x2 = 16x16x9,6
 var hlego:float = 9.6/16
 
+# instanciate all bricks in the chunk located in (x,y)
 func CreateChunk(x, y, z, seed, perlin_noise_tree):
+	
+	# set the seed of noise
 	noise_humidity.set_seed(seed)
 	noise_temperature.set_seed(seed)
 	
@@ -42,10 +45,12 @@ func CreateChunk(x, y, z, seed, perlin_noise_tree):
 	for i in range(tailleChunk):
 		for j in range(tailleChunk):
 			
+			# get world coordinates
 			var X = x*tailleChunk+i
 			var Z = z*tailleChunk+j
 			var block
 			
+			# Set high parameter depending on biome
 			current_biome_noise = get_biome_noise(X, Z)
 			var y_value
 			if current_biome_noise==noise_biome_plaine:
@@ -58,9 +63,6 @@ func CreateChunk(x, y, z, seed, perlin_noise_tree):
 				y_value = 0.1+current_biome_noise.get_noise_2d(X, Z)
 			y_value = normalize(y_value)
 			
-			#var what_biome = (noise_humidity.get_noise_2d(X, Z)+noise_temperature.get_noise_2d(X, Z)+2)/4
-			#max_height = 30
-			#var y_value = (what_biome*noise_biome_montagne.get_noise_2d(X, Z) + (1-what_biome)*noise_biome_foret.get_noise_2d(X, Z))
 			# Si la hauteur du block se trouve dans la zone du chunk 16x16x16, alors on le construit
 			if (int(y_value*max_height)*hlego >=y*tailleChunk and int(y_value*max_height)*hlego < (y+1)*tailleChunk) or y<1:
 				# WATER

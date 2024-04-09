@@ -21,12 +21,12 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		
-	# Gestion du saut automatique des obstacles
+	# automatic jump obstacle management
 	if is_on_wall() and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
 		
-	# IA de déplacement de l'ennemi
+	# Enemy movement AI
 	var dir = (player.position - position).normalized()*speed
 	dir.y = 0;
 	velocity += dir*delta
@@ -36,7 +36,7 @@ func _physics_process(delta):
 	rotate_object_local(Vector3.UP,3.14)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frames. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 	

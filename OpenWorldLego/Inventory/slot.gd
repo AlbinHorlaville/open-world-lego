@@ -1,5 +1,10 @@
 extends PanelContainer
 
+# This node is the scene for an individual slot in the inventory grid. 
+# It contains a texture to display the item icon, a label to display the item quantity 
+# and a signal to detect when the player clicks on the slot. It also defines a method 
+# for setting slot data.
+
 
 signal slot_clicked(index : int, button : int)
 

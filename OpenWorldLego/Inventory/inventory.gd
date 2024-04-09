@@ -1,5 +1,9 @@
 extends PanelContainer
 
+# It contains a slot grid for displaying items and defines a method 
+# for filling slots with player inventory data.
+
+
 const Slot = preload("res://Inventory/slot.tscn")
 
 @onready var item_grid : GridContainer = $MarginContainer/ItemGrid

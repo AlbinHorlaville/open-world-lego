@@ -25,7 +25,7 @@ var lookAngleBas = -90.0
 
 
 var mouseSensitivity = 0.4
-# mouvement de la souris
+# mouse movement
 var mouseDelta : Vector2
 
 

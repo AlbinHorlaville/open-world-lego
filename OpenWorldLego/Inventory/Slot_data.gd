@@ -1,6 +1,9 @@
 extends Resource
 class_name SlotData
 
+# This resource is used to store the data for an individual slot, 
+# including the element it contains and the quantity of that element.
+
 
 const MAX_STACK_SIZE : int = 99
 

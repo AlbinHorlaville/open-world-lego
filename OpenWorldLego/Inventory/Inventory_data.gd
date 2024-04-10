@@ -1,6 +1,11 @@
 extends Resource
 class_name InventoryData
 
+# This resource is used to store player inventory data, 
+# including an array of slot data and a signal to detect when 
+# the player interacts with the inventory. 
+# It also defines a method for retrieving data from an individual slot.
+
 
 signal inventory_interact(inventory_data : InventoryData, index : int, button : int)
 

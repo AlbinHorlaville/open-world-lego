@@ -3,6 +3,10 @@
 ## Description
 This project is carried out by a team of 4 students in their 4rd year of engineering school at Polytech Grenoble.
 This project is a motor game development based on [Godot engine](https://godotengine.org) by using [LDraw](https://www.ldraw.org) model !
+Our motive is to create a sandbox made entirely of Lego bricks, where you can import anything you want, from a car to a pyramid. We use Godot and LDraw for this.
+
+> [!NOTE]
+> This project was originally supported on gitlab for students, so not all contributors appear in the project. See the authors section at the bottom of the page.
 
 ## Concept
 The aim of this project is to create an open world entirely built in LEGO where you are able to import every set of LEGO do you want and interact with them. In case, we are creating the utlimate sandbox. 
